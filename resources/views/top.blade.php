@@ -9,15 +9,25 @@
         <meta name="keywords" content=“船,マリンプレジャー,販売,FRP,プレジャーボート,マリンエンジン,ディーゼルエンジン,海洋設備,齊敏機械,青森,深浦町,ヤンマー,ヤンマー特約店” />
 
         <title>ヤンマー特約店／青森県西津軽深浦町／齊敏機械／ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工</title>
-        
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
-        
+
     </head>
     <body>
-        <div>
-            aaaa
+        <div id="header" class=“clearfix">
+            <h1>
+                <a href=“http://homestead.app">
+                    <img src="../img/saitoshi_logo.png" width="330" height="40" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
+                </a>
+            </h1>
+            <div id="h_tel">
+                <ul class="h_tel clearfix”>
+                    <li>株式会社　SRM ホールディングス　本社　090−7076−2681</li>
+                    <li>齊敏機械　0173-76-2681</li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
