@@ -16,14 +16,14 @@
 
     </head>
     <body>
-        <div id="header" class=“clearfix">
+        <div>
             <h1>
                 <a href=“http://homestead.app">
-                    <img src="../img/saitoshi_logo.png" width="330" height="40" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
+                    <img src="../img/saitoshi_logo.png" width="100%" height="100%" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
                 </a>
             </h1>
-            <div id="h_tel">
-                <ul class="h_tel clearfix”>
+            <div>
+                <ul>
                     <li>株式会社　SRM ホールディングス　本社　090−7076−2681</li>
                     <li>齊敏機械　0173-76-2681</li>
                 </ul>
