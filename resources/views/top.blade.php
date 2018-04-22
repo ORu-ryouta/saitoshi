@@ -19,7 +19,7 @@
         <div>
             <h1>
                 <a href=“http://homestead.app">
-                    <img src="../img/saitoshi_logo.png" width="100%" height="100%" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
+                    <img src="{{ asset('/img/saitoshi_logo.png') }}" width="100%" height="100%" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
                 </a>
             </h1>
             <div>
