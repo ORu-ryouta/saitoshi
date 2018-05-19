@@ -21,8 +21,3 @@ Route::get('admin',function(){
 });
 
 
-
-
-
-
-
