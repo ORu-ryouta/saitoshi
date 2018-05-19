@@ -16,11 +16,6 @@ Route::get('/', function () {
     return view('top');
 });
 
-
-Route::get('admin',function(){
-    return view('adminlte');
-});
-
 Route::get('admin',function(){
     return view('sample');
 });
