@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('adminlte.layout')
 @section('content')
 @if (count($errors) > 0)
 <div class="alert alert-danger">
