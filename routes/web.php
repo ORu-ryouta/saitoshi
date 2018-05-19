@@ -21,7 +21,9 @@ Route::get('admin',function(){
     return view('adminlte');
 });
 
-
+Route::get('admin',function(){
+    return view('sample');
+});
 
 
 
