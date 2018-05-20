@@ -12,5 +12,7 @@ class Member extends Model
     * @var string
     */
     protected $table = 'members';
-}
 
+    public $timestamps = false;
+	
+}
