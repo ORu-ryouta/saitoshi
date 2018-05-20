@@ -10,7 +10,7 @@
 </div>
 @endif
 <div class="container">
-    <h3>Laravelで簡単なフォームを作ってみる</h3>
+    <h3>情報を入力してください。</h3>
  
     <form method="POST" action="{{ route('form::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
