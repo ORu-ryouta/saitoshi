@@ -35,14 +35,14 @@
         </div>
         <div class="form-group">
             <label>住所</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
+            <input type="text" class="form-control" name="email" placeholder="住所を入力してください">
         </div>
         <div class="form-group">
             <label>連絡先_１</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
         </div>
         <div class="form-group">
-            <label>連絡先_２</label><span class="label label-danger">必須</span>
+            <label>連絡先_２</label>
             <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
         </div>
         <div class="form-group">
