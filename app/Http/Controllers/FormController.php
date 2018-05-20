@@ -33,7 +33,7 @@ class FormController extends Controller
         $member->tel_2 = $request->tel2;
         $member->mail = $request->mail;
         $member->company = $request->company;
-        $member->ship_id = $request->shipId;
+        // $member->ship_id = $request->shipId;
         $member->save();
    
         // リロード等による二重送信防止

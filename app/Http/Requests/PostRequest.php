@@ -42,9 +42,9 @@ class PostRequest extends FormRequest
          'adles'=>'required|max:100'
          'tel_1' => 'required|max:255',
          'tel_2' => 'required|max:255',
-         'mail' => 'required|mail',
+         'mail' => 'required',
          'company' => 'required|max:100',
-         'ship_id' => 'required|max:100'
+         // 'ship_id' => 'required'
      ];
  }
  
