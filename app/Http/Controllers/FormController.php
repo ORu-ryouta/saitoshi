@@ -43,4 +43,20 @@ class FormController extends Controller
 
         return view('form.complete');
     }
+
+
+        # Http/Controllers/GreetingController.php
+        public function list(Request $request)
+    {
+        # greetingsテーブルのレコードを全件取得
+        $data = Greeting::all();
+        # data連想配列に代入&Viewファイルをlist.blade.phpに指定
+        return view('list', ['data' => $data]);
 }
+
+
+
+}
+
+
+
