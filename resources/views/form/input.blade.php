@@ -35,33 +35,30 @@
         </div>
         <div class="form-group">
             <label>住所</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="住所を入力してください">
+            <input type="text" class="form-control" name="adles" placeholder="住所を入力してください">
         </div>
         <div class="form-group">
             <label>連絡先_１</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
+            <input type="text" class="form-control" name="tel1" placeholder="電話番号を入力してください">
         </div>
         <div class="form-group">
             <label>連絡先_２</label>
-            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
+            <input type="text" class="form-control" name="tel2" placeholder="電話番号を入力してください">
         </div>
         <div class="form-group">
             <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
+            <input type="text" class="form-control" name="mail" placeholder="メールアドレスを入力してください">
         </div>
         <div class="form-group">
             <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="name" placeholder="会社名を入力してください">
+            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください">
         </div>
 
         <div class="form-group">
             <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="name" placeholder="船舶名を入力してください">
+            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください">
         </div>   
-        <div class="form-group">
-            <label>内容</label>
-            <textarea class="form-control" name="content" rows="3" placeholder="内容を入力してください"></textarea>
-        </div>
+        
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">確認する</button>
