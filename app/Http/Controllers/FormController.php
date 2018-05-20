@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-use App;
+use App\Member;
 
 class FormController extends Controller
 {
@@ -27,7 +27,7 @@ class FormController extends Controller
     public function save(PostRequest $request)
     {
         // データベース登録
-        $member = new Member;
+        $member = new Member();
         $member->name = $request->name;
         $member->gender = $request->gender;
         $member->adles = $request->adles;
