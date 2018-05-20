@@ -19,14 +19,7 @@
             <label>氏名</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="name" placeholder="氏名を入力してください">
         </div>
-        <div class="form-group">
-            <label>電話番号</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
-        </div>
-        <div class="form-group">
-            <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
-        </div>
+
         <div class="form-group">
             <label>性別</label><span class="label label-danger">必須</span>
             <div class="form-check form-check-inline">
@@ -40,6 +33,31 @@
                 </label>
             </div>
         </div>
+        <div class="form-group">
+            <label>住所</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
+        </div>
+        <div class="form-group">
+            <label>連絡先_１</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
+        </div>
+        <div class="form-group">
+            <label>連絡先_２</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
+        </div>
+        <div class="form-group">
+            <label>メールアドレス</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
+        </div>
+        <div class="form-group">
+            <label>会社名</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="name" placeholder="会社名を入力してください">
+        </div>
+
+        <div class="form-group">
+            <label>船舶名</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="name" placeholder="船舶名を入力してください">
+        </div>   
         <div class="form-group">
             <label>内容</label>
             <textarea class="form-control" name="content" rows="3" placeholder="内容を入力してください"></textarea>
