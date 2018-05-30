@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Member extends Model
 {
@@ -17,7 +18,7 @@ class Member extends Model
 
     public function getData()
     {
-    	$data = select("SELECT * FROM members");
+    	$data = DB::select("SELECT * FROM members");
 
     	return $data;
     }
