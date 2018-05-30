@@ -14,5 +14,12 @@ class Member extends Model
     protected $table = 'members';
 
     public $timestamps = false;
+
+    public function getData()
+    {
+    	$data = DB::table($this->table)->get();
+
+    	return $data;
+    }
 	
 }
