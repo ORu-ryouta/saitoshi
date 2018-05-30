@@ -50,6 +50,11 @@ class FormController extends Controller
         $md = new Member();
     // データ取得
         $data = $md->getData();
+        $logPass = "/home/vagrant/code/saitoshiHps/log";
+        error_log(print_r($data,true),"3",$logPass);
+        if (empty($data)) {
+            $data = array("name"=>"test");
+        }
 
     // ビューを返す
         return view('form.membersList', ['data' => $data]);
