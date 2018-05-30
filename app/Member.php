@@ -17,7 +17,7 @@ class Member extends Model
 
     public function getData()
     {
-    	$data = DB::table($this->table)->get();
+    	$data = Member::select("SELECT * FROM". $table);
 
     	return $data;
     }
