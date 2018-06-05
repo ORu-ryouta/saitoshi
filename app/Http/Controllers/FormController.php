@@ -26,7 +26,7 @@ class FormController extends Controller
      */
     public function save(PostRequest $request)
     {
-        $nowDate = new DateTime('now');
+        $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $member = new Member();
         $member->name    = $request->name;
