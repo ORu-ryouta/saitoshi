@@ -90,7 +90,7 @@ create table orders (
   , delete_flg TINYINT default 0 not null comment '削除フラグ'
   , recode_date DATETIME not null comment '登録日:YYYY/MM/DD'
   , update_time TIMESTAMP not null comment '更新日:YYYY/MM/DD'
-  , constraint order_PKC primary key (order_id)
+  , constraint order_PKC primary key (orders_id)
 ) comment '注文:' ;
 
 -- 顧客
