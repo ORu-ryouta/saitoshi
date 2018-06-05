@@ -65,7 +65,7 @@ create table parts (
 -- 売り上げ
 create table sale (
   sale_id int auto_increment not null comment '売り上げID'
-  , order_id INT not null comment '注文ID'
+  , orders_id INT not null comment '注文ID'
   , price INT not null comment '金額'
   , credit_date DATETIME comment '入金日'
   , delete_flg TINYINT default 0 not null comment '削除フラグ'
@@ -75,13 +75,13 @@ create table sale (
 ) comment '売り上げ:' ;
 
 -- 注文
-create table order (
-  order_id int auto_increment not null comment '注文ID'
+create table orders (
+  orders_id int auto_increment not null comment '注文ID'
   , member_id INT not null comment '顧客ID'
   , business VARCHAR(255) comment '商談内容'
   , work VARCHAR(255) comment '作業内容'
   , price INT not null comment '金額'
-  , oder_date DATETIME not null comment '注文日:YYYY/MM/DD'
+  , orders_date DATETIME not null comment '注文日:YYYY/MM/DD'
   , receipt_date DATETIME comment '受注日:YYYY/MM/DD'
   , complete_date DATETIME comment '完了日'
   , complete_plans DATETIME comment '完了予定日'
@@ -98,10 +98,10 @@ create table member (
   member_id int auto_increment not null comment '顧客ID'
   , name VARCHAR(255) not null comment '顧客名'
   , gender TINYINT not null comment '性別:０男：１女'
-  , adless VARCHAR(255) not null comment '住所'
+  , address VARCHAR(255) not null comment '住所'
   , tel_1 VARCHAR(255) not null comment '連絡先１'
   , tel_2 VARCHAR(255) comment '連絡先２'
-  , emal VARCHAR(255) not null comment 'E- mall'
+  , emal VARCHAR(255) not null comment 'E-mall'
   , company_id INT comment '会社ID'
   , delete_flg TINYINT default 0 not null comment '削除フラグ'
   , recode_date DATETIME not null comment '登録日:YYYY/MM/DD'
