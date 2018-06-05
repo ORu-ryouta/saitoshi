@@ -12,13 +12,13 @@ class Member extends Model
     *
     * @var string
     */
-    protected $table = 'members';
+    protected $table = 'member';
 
     public $timestamps = false;
 
     public function getData()
     {
-    	$data = DB::select("SELECT * FROM members");
+    	$data = DB::select("SELECT * FROM member");
 
     	return $data;
     }
