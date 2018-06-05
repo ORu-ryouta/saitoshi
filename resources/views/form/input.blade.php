@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
             <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="emall" placeholder="メールアドレスを入力してください">
+            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
  <!--       </div>
         <div class="form-group">
             <label>会社名</label><span class="label label-danger">必須</span>

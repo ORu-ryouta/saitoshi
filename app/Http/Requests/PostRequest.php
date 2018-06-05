@@ -29,7 +29,7 @@ class PostRequest extends FormRequest
             'address'=>'required|max:100',
             'tel_1' => 'required|max:255',
             'tel_2' => 'required|max:255',
-            'emall' => 'required',
+            'email' => 'required',
             // 'company' => 'required|max:100',
             // 'ship_id' => 'required'
         ];
@@ -47,8 +47,8 @@ class PostRequest extends FormRequest
             'tel1.max' => '電話番号は指定文字数以内で入力してください。',
             'tel2.required' => '電話番号を入力してください。',
             'tel2.max' => '電話番号は指定文字数以内で入力してください。',
-            'mail.required' => 'メールアドレスを入力してください。',
-            'mail.email' => 'メールアドレスは正しいメールアドレス形式で入力してください。',
+            'email.required' => 'メールアドレスを入力してください。',
+            'email.email' => 'メールアドレスは正しいメールアドレス形式で入力してください。',
             'company.required'=>'会社名を入力してください。',
             'company.max' => '会社名は指定文字数以内で入力してください。',
             'shipId.required'=>'船舶名を入力してください。',

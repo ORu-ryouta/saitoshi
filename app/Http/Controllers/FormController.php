@@ -34,7 +34,7 @@ class FormController extends Controller
         $member->address = $request->address;
         $member->tel_1   = $request->tel_1;
         $member->tel_2   = $request->tel_2;
-        $member->emall    = $request->emall;
+        $member->email    = $request->email;
         $member->recode_date = $nowDate;
         $member->save();
    
