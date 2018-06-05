@@ -26,16 +26,16 @@ class FormController extends Controller
      */
     public function save(PostRequest $request)
     {
+        $nowDate = new DateTime('now');
         // データベース登録
         $member = new Member();
         $member->name    = $request->name;
         $member->gender  = $request->gender;
-        $member->adles   = $request->adles;
-        $member->tel_1   = $request->tel1;
-        $member->tel_2   = $request->tel2;
-        $member->mail    = $request->mail;
-        $member->company = $request->company;
-        $member->ship_id = 0;
+        $member->address = $request->address;
+        $member->tel_1   = $request->tel_1;
+        $member->tel_2   = $request->tel_2;
+        $member->emll    = $request->emall;
+        $member->recode_date = $nowDate;
         $member->save();
    
         // リロード等による二重送信防止
