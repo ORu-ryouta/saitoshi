@@ -26,11 +26,11 @@ class PostRequest extends FormRequest
         return [
             'name' => 'required|max:100',
             'gender'=>'required|max:100',
-            'adles'=>'required|max:100',
-            'tel1' => 'required|max:255',
-            'tel2' => 'required|max:255',
-            'mail' => 'required',
-            'company' => 'required|max:100',
+            'address'=>'required|max:100',
+            'tel_1' => 'required|max:255',
+            'tel_2' => 'required|max:255',
+            'emall' => 'required',
+            // 'company' => 'required|max:100',
             // 'ship_id' => 'required'
         ];
     }
