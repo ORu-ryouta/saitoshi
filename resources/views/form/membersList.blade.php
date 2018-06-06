@@ -10,22 +10,17 @@
       <th>連絡先２</th>
       <th>E-mail</th>
     </tr>
-
-
-
-
-
-
+      @foreach($data as $d)
+      <tr>
+          <th>{{$d->name}}</th>
+          <th>{{$d->gender}}</th>
+          <th>{{$d->address}}</th>
+          <th>{{$d->tel_1}}</th>
+          <th>{{$d->tel_2}}</th>
+          <th>{{$d->email}}</th>
+      </tr>
+      @endforeach
   </table>
-	<ul>
-    	@foreach($data as $d)
-      		<li>{{$d->name}}</li>
-      		<li>{{$d->gender}}</li>
-      		<li>{{$d->address}}</li>
-      		<li>{{$d->tel_1}}</li>
-      		<li>{{$d->tel_2}}</li>
-      		<li>{{$d->email}}</li>
-    	@endforeach
-  	</ul>
+	
 </div>
 @endsection
