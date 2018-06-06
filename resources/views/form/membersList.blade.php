@@ -22,9 +22,15 @@
       @endforeach
       <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">確認する</button>
+                <button type="submit" class="btn btn-primary">更新する</button>
             </div>
-        </div>
+      </div>
+      
+      <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">削除する</button>
+            </div>
+       </div>
   </table>
 	
 </div>
