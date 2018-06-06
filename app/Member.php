@@ -25,7 +25,7 @@ class Member extends Model
     	return $data;
     }
 
-    public function check($memberId)
+    public function memberCheck($memberId)
     {
         $sql = 'select member_id from '.$table.' where member_id = '.$memberId;
         $result = null;
@@ -38,7 +38,7 @@ class Member extends Model
         return false;
     }
 
-    public function update(Member $memberData)
+    public function memberUpdate($memberData)
     {
         $sql = 'UPDATE '.$table.
         ' SET name = '.$memberData->name.
@@ -51,7 +51,7 @@ class Member extends Model
         return true;
     }
 
-	public function delete($memberId)
+	public function memberDelete($memberId)
     {
         $sql = 'UPDATE '.$table.' SET delete_flg = '.self::DELETE_FLG_ON.' where member_id = '.$memberId;
         
