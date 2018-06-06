@@ -1,7 +1,7 @@
 @extends('adminlte.layout')
 @section('content')
 <div class="container">
-  <table>
+  <table border="1">
     <tr>
       <th>顧客名</th>
       <th>性別</th>
