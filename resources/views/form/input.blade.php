@@ -64,6 +64,8 @@
                 <button type="submit" class="btn btn-primary">確認する</button>
             </div>
         </div>
+    </form>
+    <form>
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>
