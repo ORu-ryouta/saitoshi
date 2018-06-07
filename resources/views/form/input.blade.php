@@ -65,7 +65,7 @@
             </div>
         </div>
     </form>
-    <form>
+    <form method="POST" action="{{ route('form::membersList') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>
