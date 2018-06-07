@@ -31,6 +31,13 @@
                 <button type="submit" class="btn btn-primary">削除する</button>
             </div>
        </div>
+ <form method="GET" action="{{ route('form::input') }}">
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">新規登録</button>
+            </div>
+        </div>
+    </form>
   </table>
 	
 </div>
