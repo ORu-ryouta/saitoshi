@@ -19,7 +19,15 @@
       <th>{{$d->tel_2}}</th>
       <th>{{$d->email}}</th>
       
-    <th><button type="submit" class="btn btn-primary">編集</button></th>
+    <th>
+        <form method="GET" action="{{ route('form::input') }}">
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">編集</button>
+                </div>
+            </div>
+        </form>
+    </th>
            
     </tr>
       @endforeach
