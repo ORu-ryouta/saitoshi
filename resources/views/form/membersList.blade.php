@@ -19,7 +19,7 @@
       <th>{{$d->tel_2}}</th>
       <th>{{$d->email}}</th>
       
-    <tr><button type="submit" class="btn btn-primary">編集</button></tr>
+    <th><button type="submit" class="btn btn-primary">編集</button></th>
            
     </tr>
       @endforeach
