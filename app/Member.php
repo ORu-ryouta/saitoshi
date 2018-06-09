@@ -69,7 +69,7 @@ class Member extends Model
      */
     public function memberSelect($memberId = 0)
     {
-       $sql = "SELECT * FROM member where member_id=".$memberId."";
+       $sql = "SELECT * FROM member where member_id=1".$memberId."";
        
        $result = DB::statement($sql);
        
