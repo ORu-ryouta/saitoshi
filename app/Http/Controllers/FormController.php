@@ -14,15 +14,15 @@ class FormController extends Controller
      *
      * @return string
      */
-    public function input(PostRequest $memberId)
+    public function input(PostRequest $request)
     {
         // Frameworksモデルのインスタンス化
         $md = new Member();
         
         // データ取得
-        $data = $md->memberSelect($memberId);
+        $data = $md->memberSelect($request);
         $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
-        error_log(print_r($memberId, TRUE), 3, $logPass);
+        error_log(print_r($request, TRUE), 3, $logPass);
         error_log(print_r("non", TRUE), 3, $logPass);
         if (empty($data)) {
             $data = array("name"=>"test");
