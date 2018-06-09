@@ -29,7 +29,7 @@ class Member extends Model
     //指定したメンバーの存在確認
     public function memberCheck($memberId)
     {
-        $sql = 'select member_id from member where member_id = '.$memberId."AND delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = 'select member_id from member where member_id = '.$memberId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
 
@@ -59,7 +59,7 @@ class Member extends Model
     //指定した、メンバーを削除
     public function memberDelete($memberId)
     {
-        $sql = 'UPDATE member SET delete_flg = '.self::DELETE_FLG_ON.' where member_id = '.$memberId;
+        $sql = "UPDATE member SET delete_flg = ".self::DELETE_FLG_ON." where member_id=".$memberId;
         
         DB::update($sql);
         
