@@ -43,14 +43,14 @@ class Member extends Model
     //指定したメンバーを更新
     public function memberUpdate($memberData)
     {
-        $sql = 'UPDATE member SET name = '.$memberData->name.
-        ', gender =  '.$memberData->gender.
-        ', address =  '.$memberData->address.        
-        ', tel_1 =  '.$memberData->tel_1.        
-        ', tel_2 =  '.$memberData->tel_2.   
-        ', email =  '.$memberData->email.        
-        ', delete_flg = '.self::DELETE_FLG_OFF.
-        ' where member_id = '.$memberData->member_id;
+        $sql = "UPDATE member SET name = ".$memberData->name.
+        ", gender = ".$memberData->gender.
+        ", address = ".$memberData->address.        
+        ", tel_1 = ".$memberData->tel_1.        
+        ", tel_2 = ".$memberData->tel_2.   
+        ", email = ".'"'.$memberData->email.'"'.        
+        ", delete_flg = ".self::DELETE_FLG_OFF.
+        " where member_id = ".$memberData->member_id;
         
         DB::update($sql);
         
