@@ -14,13 +14,13 @@ class FormController extends Controller
      *
      * @return string
      */
-    public function input(PostRequest $membersId=null)
+    public function input(PostRequest $memberId=null)
     {
         // Frameworksモデルのインスタンス化
         $md = new Member();
         
         // データ取得
-        $data = $md->memberSelect($membersId);
+        $data = $md->memberSelect($memberId);
         if (empty($data)) {
             $data = array("name"=>"test");
         }

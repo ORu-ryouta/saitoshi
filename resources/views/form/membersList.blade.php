@@ -21,7 +21,7 @@
       
     <th>
         <form method="GET" action="{{ route('form::input') }}">
-            <input type="hidden" name="membersId" value="{{$d->members_id}}">
+            <input type="hidden" name="memberId" value="{{$d->member_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">編集</button>
