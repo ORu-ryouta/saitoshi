@@ -24,12 +24,12 @@
             <label>性別</label><span class="label label-danger">必須</span>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="1" @if ($data->gender == 1) checked @endif>男性
+                    <input class="form-check-input" type="radio" name="gender" value="1"  @if (!empty($data)) @if ($data->gender == 1) checked @endif @endif>男性
                 </label>
             </div>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="2" @if ($data->gender == 2) checked @endif>女性
+                    <input class="form-check-input" type="radio" name="gender" value="2" @if (!empty($data)) @if ($data->gender == 2) checked @endif @endif>女性
                 </label>
             </div>
         </div>
