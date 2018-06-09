@@ -34,7 +34,7 @@
             <input type="hidden" class="form-control" name="memberId" value="{{$d->member_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">modal</button>
+                    <button type="submit" onclick="return submitcheck();">
                 </div>
             </div>
         </form>
@@ -52,23 +52,12 @@
         </div>
     </form>
 </div>
-<!--モーダル-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">顧客削除</h4>
-            </div>
-            <div class="modal-body">
-                本当に削除？
-            </div>
-            <button type="submit" class="btn-delete">削除</button>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--ここまでモーダル-->
+
+<script  type="text/javascript">
+//    削除ダイアログ
+function submitcheck() {
+	var check = confirm('削除？');
+	return check;
+}
+</script>
 @endsection
