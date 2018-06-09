@@ -92,7 +92,7 @@ class FormController extends Controller
 
         $md = new Member(); // メンバーファイルに接続する
         
-        $data = $md->membersDelete($memberId); // 指定したメンバーIDの削除
+        $md->memberDelete($memberId); // 指定したメンバーIDの削除
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
