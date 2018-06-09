@@ -67,7 +67,7 @@ class Member extends Model
     //メンバIDから該当するメンバー情報を取得
     public function memberSelect($memberId)
     {
-       $sql = 'SELECT * FROM member where member_id='.$memberId; 
+       $sql = 'SELECT * FROM member where member_id='+$memberId; 
        
        $result =DB::statement($sql);
        
