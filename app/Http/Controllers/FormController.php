@@ -22,7 +22,7 @@ class FormController extends Controller
         // データ取得
         $data = $md->memberSelect($memberId);
         $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
-        error_log(print_r($data, TRUE), 3, $logPass);
+        error_log(print_r($memberId, TRUE), 3, $logPass);
         if (empty($data)) {
             $data = array("name"=>"test");
         }
