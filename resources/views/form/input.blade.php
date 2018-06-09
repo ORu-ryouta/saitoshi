@@ -17,7 +17,7 @@
  
         <div class="form-group">
             <label>氏名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="name" placeholder="氏名を入力してください" value="{{$data->name}}">
+            <input type="text" class="form-control" name="name" placeholder="氏名を入力してください" @if (!empty($data)) value="{{$data->name}}" @endif>
         </div>
 
         <div class="form-group">
@@ -35,28 +35,28 @@
         </div>
         <div class="form-group">
             <label>住所</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="address" placeholder="住所を入力してください" value="{{$data->address}}">
+            <input type="text" class="form-control" name="address" placeholder="住所を入力してください" @if (!empty($data)) value="{{$data->address}}"@endif>
         </div>
         <div class="form-group">
             <label>連絡先_１</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel_1" placeholder="電話番号を入力してください" value="{{$data->tel_1}}">
+            <input type="text" class="form-control" name="tel_1" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel_1}}"@endif>
         </div>
         <div class="form-group">
             <label>連絡先_２</label>
-            <input type="text" class="form-control" name="tel_2" placeholder="電話番号を入力してください" value="{{$data->tel_2}}">
+            <input type="text" class="form-control" name="tel_2" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel_2}}"@endif>
         </div>
         <div class="form-group">
             <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください" value="{{$data->email}}">
+            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください" @if (!empty($data)) value="{{$data->email}}"@endif>
  <!--       </div>
         <div class="form-group">
             <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" value="">
+            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" @if (!empty($data)) value="{{$data->company}}"@endif>
         </div>   -->
 <!-- 
         <div class="form-group">
             <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" value="">
+            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" @if (!empty($data)) value="{{$data->shipId}}"@endif>
         </div>    -->
         
         <div class="form-group row">

@@ -16,7 +16,8 @@ class FormController extends Controller
      */
     public function input(PostRequest $request=null)
     {
-        $memberId = $_GET["memberId"];
+        if(!empty($_GET["memberId"])) { // 編集（メンバーIDがある時）
+            $memberId = $_GET["memberId"];
         
         // Frameworksモデルのインスタンス化
         $md = new Member();
@@ -24,8 +25,13 @@ class FormController extends Controller
         // データ取得
         $data = $md->memberSelect($memberId);
         
+        
+        } else { // 新規登録（メンバーIDがない時）
+            
+        }
+       
         if (empty($data)) {
-            $data = array("name"=>"test");
+            $data =null;
         }
         
         // インプット画面を表示
