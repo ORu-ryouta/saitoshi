@@ -31,7 +31,7 @@ class Member extends Model
     {
         $sql = 'select member_id from member where member_id = '.$memberId;
         
-        $result = DB::statement($sql);
+        $result = DB::select($sql);
 
         if(!empty($result)) {
             return true;
@@ -48,7 +48,7 @@ class Member extends Model
         ', delete_flg = '.self::DELETE_FLG_OFF.
         ' where member_id = '.$memberData->member_id;
         
-        DB::statement($sql);
+        DB::update($sql);
         
         return true;
     }
@@ -58,7 +58,7 @@ class Member extends Model
     {
         $sql = 'UPDATE member SET delete_flg = '.self::DELETE_FLG_ON.' where member_id = '.$memberId;
         
-        DB::statement($sql);
+        DB::update($sql);
         
         return true;
     }
@@ -74,7 +74,7 @@ class Member extends Model
        $sql = "SELECT * FROM member where member_id=".$memberId;
        $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
        
-       $result = DB::statement($sql);
+       $result = DB::select($sql);
        error_log(print_r($result, TRUE), 3, $logPass);
        return $result;
     }        
