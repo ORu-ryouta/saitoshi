@@ -15,7 +15,6 @@ class Member extends Model
     protected $table = 'member';
     const DELETE_FLG_ON = 1;
     const DELETE_FLG_OFF = 0;
-    const TABLE = "member";
     
     public $timestamps = false;
 
@@ -65,7 +64,10 @@ class Member extends Model
     }
     
     //メンバIDから該当するメンバー情報を取得
-    public function memberSelect(string $memberId)
+    /*
+     * @param string $memberId
+     */
+    public function memberSelect($memberId)
     {
        $sql = "SELECT * FROM member where member_id=".$memberId; 
        
