@@ -14,7 +14,8 @@
  
     <form method="POST" action="{{ route('form::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
- 
+        @if !empty($data) <input type="hidden" class="form-control" name="memberId" value="{{$d->member_id}}"> @endif
+        
         <div class="form-group">
             <label>氏名</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="name" placeholder="氏名を入力してください" @if (!empty($data)) value="{{$data->name}}" @endif>
