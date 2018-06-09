@@ -17,8 +17,8 @@ class FormController extends Controller
     public function input(PostRequest $request=null)
     {
         $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
-        error_log(print_r("tel".$request, TRUE), 3, $logPass);
-        error_log(print_r("tetete".$_GET, TRUE), 3, $logPass);
+        error_log(print_r($request, TRUE), 3, $logPass);
+        error_log(print_r($_GET, TRUE), 3, $logPass);
         
         // Frameworksモデルのインスタンス化
         $md = new Member();
