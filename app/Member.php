@@ -73,9 +73,9 @@ class Member extends Model
        if (empty($memberId))$memberId=$testMemberId;
        $sql = "SELECT * FROM member where member_id=".$memberId;
        $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
-       error_log(print_r($sql, TRUE), 3, $logPass);
-       $result = DB::statement($sql);
        
+       $result = DB::statement($sql);
+       error_log(print_r($result, TRUE), 3, $logPass);
        return $result;
     }        
             
