@@ -30,7 +30,7 @@ class Member extends Model
     public function memberCheck($memberId)
     {
         $sql = 'select member_id from member where member_id = '.$memberId;
-        $result = null;
+        
         $result = DB::statement($sql);
 
         if(!empty($result)) {
@@ -67,7 +67,7 @@ class Member extends Model
     /*
      * @param string $memberId
      */
-    public function memberSelect($memberId = 0)
+    public function memberSelect($memberId = null)
     {
        $testMemberId=2;
        if (empty($memberId))$memberId=$testMemberId;

@@ -16,15 +16,13 @@ class FormController extends Controller
      */
     public function input(PostRequest $request=null)
     {
-        $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
-        error_log(print_r($request, TRUE), 3, $logPass);
-        error_log(print_r($_GET, TRUE), 3, $logPass);
+        $memberId = $_GET["memberId"];
         
         // Frameworksモデルのインスタンス化
         $md = new Member();
         
         // データ取得
-        $data = $md->memberSelect($request->memberId);
+        $data = $md->memberSelect($memberId);
         
         if (empty($data)) {
             $data = array("name"=>"test");
