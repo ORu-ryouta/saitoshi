@@ -29,7 +29,17 @@
             </div>
         </form>
     </th>
-           
+    <th>
+        <form method="GET" action="{{ route('form::input') }}">
+            <input type="hidden" class="form-control" name="memberId" value="{{$d->member_id}}">
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">削除</button>
+                </div>
+            </div>
+        </form>
+    </th>
+    
     </tr>
       @endforeach
   </table>

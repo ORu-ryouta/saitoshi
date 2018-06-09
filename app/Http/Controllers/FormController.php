@@ -45,6 +45,7 @@ class FormController extends Controller
      */
     public function save(PostRequest $request)
     {
+     
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $member = new Member();
@@ -54,8 +55,15 @@ class FormController extends Controller
         $member->tel_1   = $request->tel_1;
         $member->tel_2   = $request->tel_2;
         $member->email    = $request->email;
-        $member->recode_date = $nowDate;
+        
+         if(!empty($request->memberId)) { // 更新画面
+         $member->member_id = $request->memberId;
+          $data = $member->memberUpdate($member);
+         }
+         
+           else {$member->recode_date = $nowDate;
         $member->save();
+         }
    
         // リロード等による二重送信防止
         $request->session()->regenerateToken();
@@ -76,6 +84,8 @@ class FormController extends Controller
     // ビューを返す
         return view('form.membersList', ['data' => $data]);
     }
+   
+    //削除
 
 
 }
