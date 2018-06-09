@@ -34,7 +34,7 @@
             <input type="hidden" class="form-control" name="memberId" value="{{$d->member_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">削除</button>
+                    <button type="submit" class="btn-delete">削除</button>
                 </div>
             </div>
         </form>
@@ -50,5 +50,21 @@
             </div>
         </div>
     </form>
-</div>１
+</div>
+
 @endsection
+
+@section('script')
+
+<script> 
+$(function(){ 
+$(".btn-delete").click(function(){ 
+if(confirm("本当に削除しますか？")){ 
+// 削除処理。 
+}else{ 
+return false; 
+} 
+}); 
+}); 
+</script> 
+@ endsection
