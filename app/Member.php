@@ -21,7 +21,7 @@ class Member extends Model
     //全てのデータを持ってくる
     public function getData()
     {
-    	$data = DB::select("SELECT * FROM member");
+    	$data = DB::select("SELECT * FROM member where delete_flg = ".self::DELETE_FLG_OFF);
 
     	return $data;
     }
@@ -29,7 +29,7 @@ class Member extends Model
     //指定したメンバーの存在確認
     public function memberCheck($memberId)
     {
-        $sql = 'select member_id from member where member_id = '.$memberId;
+        $sql = 'select member_id from member where member_id = '.$memberId."AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
 

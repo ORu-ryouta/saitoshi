@@ -20,7 +20,7 @@ class FormController extends Controller
             $memberId = $_GET["memberId"];
         
         // Frameworksモデルのインスタンス化
-        $md = new Member();
+        $md = new Member(); // メンバーファイルに接続する
         
         // データ取得
         $data = $md->memberSelect($memberId);
@@ -48,13 +48,13 @@ class FormController extends Controller
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-        $member = new Member();
+        $member = new Member(); 
         $member->name    = $request->name;
         $member->gender  = $request->gender;
         $member->address = $request->address;
         $member->tel_1   = $request->tel_1;
         $member->tel_2   = $request->tel_2;
-        $member->email    = $request->email;
+        $member->email   = $request->email;
         
          if(!empty($request->memberId)) { // 更新画面
          $member->member_id = $request->memberId;
@@ -74,7 +74,7 @@ class FormController extends Controller
     public function membersList()
     {
     // Frameworksモデルのインスタンス化
-        $md = new Member();
+        $md = new Member(); // メンバーファイルに接続する
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
@@ -86,9 +86,20 @@ class FormController extends Controller
     }
    
     //削除
+    public function membersDelete(PostRequest $request=null)
+    {
+        $memberId = $_GET["memberId"]; // $memberIdに$_GETを入れる。
 
+        $md = new Member(); // メンバーファイルに接続する
+        
+        $data = $md->membersDelete($memberId); // 指定したメンバーIDの削除
+        
+        $data = $md->getData(); // 全てのデータを持ってくる
+         
+    // ビューを返す
+        return view('form.membersList', ['data' => $data]);
+    }
 
 }
-
 
 

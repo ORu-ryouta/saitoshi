@@ -29,5 +29,6 @@ Route::group(['as' => 'form::'], function() {
     Route::post('/save', ['as' => 'save', 'uses' => 'FormController@save']);
     // リスト画面
     Route::get('/membersList', ['as' => 'membersList', 'uses' => 'FormController@membersList']);
- 
+    // 削除画面
+    Route::get('/membersDelete',['as' => 'membersDelete', 'use' => 'FormController@membersDelete']);
 });
