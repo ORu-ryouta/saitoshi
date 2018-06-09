@@ -27,7 +27,7 @@ Route::group(['as' => 'form::'], function() {
     Route::get('/input', ['as' => 'input', 'uses' => 'FormController@input']);
     // 完了画面
     Route::post('/save', ['as' => 'save', 'uses' => 'FormController@save']);
-    // 完了画面
+    // リスト画面
     Route::get('/membersList', ['as' => 'membersList', 'uses' => 'FormController@membersList']);
  
 });

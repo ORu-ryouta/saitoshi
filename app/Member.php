@@ -18,6 +18,7 @@ class Member extends Model
 
     public $timestamps = false;
 
+    //全てのデータを持ってくる
     public function getData()
     {
     	$data = DB::select("SELECT * FROM member");
@@ -25,6 +26,7 @@ class Member extends Model
     	return $data;
     }
 
+    //指定したメンバーの存在確認
     public function memberCheck($memberId)
     {
         $sql = 'select member_id from '.$table.' where member_id = '.$memberId;
@@ -38,6 +40,7 @@ class Member extends Model
         return false;
     }
 
+    //指定したメンバーを更新
     public function memberUpdate($memberData)
     {
         $sql = 'UPDATE '.$table.
@@ -51,7 +54,8 @@ class Member extends Model
         return true;
     }
 
-	public function memberDelete($memberId)
+    //指定した、メンバーを削除
+    public function memberDelete($memberId)
     {
         $sql = 'UPDATE '.$table.' SET delete_flg = '.self::DELETE_FLG_ON.' where member_id = '.$memberId;
         
@@ -59,4 +63,15 @@ class Member extends Model
         
         return true;
     }
+    
+    //メンバIDから該当するメンバー情報を取得
+    public function memberSelect($memberId)
+    {
+       $sql = 'SELECT * FROM '.$table. 'where member_id='.$memberId; 
+       
+       $result =DB::statement($sql);
+       
+       return $result;
+    }        
+            
 }

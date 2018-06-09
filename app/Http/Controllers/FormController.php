@@ -14,9 +14,19 @@ class FormController extends Controller
      *
      * @return string
      */
-    public function input()
+    public function input(PostRequest $membersId=null)
     {
-        return view('form.input');
+        // Frameworksモデルのインスタンス化
+        $md = new Member();
+        
+        // データ取得
+        $data = $md->memberSelect($membersId);
+        if (empty($data)) {
+            $data = array("name"=>"test");
+        }
+        
+        // インプット画面を表示
+        return view('form.input', ['data' => $data]);
     }
  
     /**
