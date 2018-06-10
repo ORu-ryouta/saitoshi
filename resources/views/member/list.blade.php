@@ -18,6 +18,7 @@
       <th>{{$d->tel_1}}</th>
       <th>{{$d->tel_2}}</th>
       <th>{{$d->email}}</th>
+    </tr>
       
     <th>
         <form method="GET" action="{{ route('member::input') }}">
