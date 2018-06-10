@@ -45,3 +45,16 @@ Route::group(['as' => 'company::'], function() {
     // 削除画面
     Route::get('/companyDelete',['as' => 'delete', 'uses' => 'CompanyController@companyDelete']);
 });
+
+//parts画面群のルートパス
+Route::group(['as' => 'parts::'], function() {
+ 
+    // 入力画面
+    Route::get('/partsInput', ['as' => 'input', 'uses' => 'PartsController@partsInput']);
+    // 完了画面
+    Route::post('/partsSave', ['as' => 'save', 'uses' => 'PartsController@partsSave']);
+    // リスト画面
+    Route::get('/partsList', ['as' => 'list', 'uses' => 'PartsController@partsList']);
+    // 削除画面
+    Route::get('/partsDelete',['as' => 'delete', 'uses' => 'PartsController@partsDelete']);
+});
