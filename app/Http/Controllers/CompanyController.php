@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-use App\Member;
+use App\Company;
 
-class CompanyListFormController extends Controller
+class CompanyController extends Controller
 {
    
 	/**
@@ -71,10 +71,10 @@ class CompanyListFormController extends Controller
         return view('form.complete');
     }
 
-    public function membersList()
+    public function companyList()
     {
     // Frameworksモデルのインスタンス化
-        $md = new Member(); // メンバーファイルに接続する
+        $md = new Company(); // カンパニーファイルに接続する
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
@@ -82,9 +82,9 @@ class CompanyListFormController extends Controller
         }
 
     // ビューを返す
-        return view('form.membersList', ['data' => $data]);
+        return view('company.list', ['data' => $data]);
     }
-   
+    
     //削除
     public function membersDelete(PostRequest $request=null)
     {

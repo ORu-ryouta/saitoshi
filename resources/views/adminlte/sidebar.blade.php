@@ -9,7 +9,7 @@
                     <!-- メニュー項目 -->
                     <li><a href="{{ action('MemberController@memberList') }}">顧客管理</a></li>
 
-                    <li><a href="{{ action('MemberController@memberList') }}">顧客管理</a></li>
+                    <li><a href="{{ action('CompanyController@companyList') }}">取引先管理</a></li>
                 </ul>
             </section>
         </aside><!-- end sidebar -->
