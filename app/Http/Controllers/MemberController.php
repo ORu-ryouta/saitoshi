@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Member;
 
-class FormController extends Controller
+class MemberController extends Controller
 {
    
 	/**
@@ -14,7 +14,7 @@ class FormController extends Controller
      *
      * @return string
      */
-    public function input(PostRequest $request=null)
+    public function memberInput(PostRequest $request=null)
     {
         if(!empty($_GET["memberId"])) { // 編集（メンバーIDがある時）
             $memberId = $_GET["memberId"];
@@ -35,7 +35,7 @@ class FormController extends Controller
         }
         
         // インプット画面を表示
-        return view('form.input', ['data' => $data]);
+        return view('member.input', ['data' => $data]);
     }
  
     /**
@@ -43,7 +43,7 @@ class FormController extends Controller
      *
      * @return string
      */
-    public function save(PostRequest $request)
+    public function memberSave(PostRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
@@ -68,10 +68,10 @@ class FormController extends Controller
         // リロード等による二重送信防止
         $request->session()->regenerateToken();
 
-        return view('form.complete');
+        return view('member.complete');
     }
 
-    public function membersList()
+    public function memberList()
     {
     // Frameworksモデルのインスタンス化
         $md = new Member(); // メンバーファイルに接続する
@@ -82,11 +82,11 @@ class FormController extends Controller
         }
 
     // ビューを返す
-        return view('form.membersList', ['data' => $data]);
+        return view('member.list', ['data' => $data]);
     }
    
     //削除
-    public function membersDelete(PostRequest $request=null)
+    public function memberDelete(PostRequest $request=null)
     {
         $memberId = $_GET["memberId"]; // $memberIdに$_GETを入れる。
 
@@ -97,7 +97,7 @@ class FormController extends Controller
         $data = $md->getData(); // 全てのデータを持ってくる
          
     // ビューを返す
-        return view('form.membersList', ['data' => $data]);
+        return view('member.list', ['data' => $data]);
     }
 
 }

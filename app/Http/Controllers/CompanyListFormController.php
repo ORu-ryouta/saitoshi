@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Member;
 
-class FormController extends Controller
+class CompanyListFormController extends Controller
 {
    
 	/**

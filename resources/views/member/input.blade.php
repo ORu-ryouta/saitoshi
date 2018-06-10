@@ -12,7 +12,7 @@
 <div class="container">
     <h3>情報を入力してください。</h3>
  
-    <form method="POST" action="{{ route('form::save') }}">
+    <form method="POST" action="{{ route('member::memberSave') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         @if (!empty($data)) <input type="hidden" class="form-control" name="memberId" value="{{$data->member_id}}"> @endif
         
@@ -66,7 +66,7 @@
             </div>
         </div>
     </form>
-    <form method="GET" action="{{ route('form::membersList') }}">
+    <form method="GET" action="{{ route('member::memberList') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>

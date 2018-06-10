@@ -20,15 +20,16 @@ Route::get('admin',function(){
     return view('sample');
 });
 
-
-Route::group(['as' => 'form::'], function() {
+//member画面群のルートパス
+Route::group(['as' => 'member::'], function() {
  
     // 入力画面
-    Route::get('/input', ['as' => 'input', 'uses' => 'FormController@input']);
+    Route::get('/memberInput', ['as' => 'input', 'uses' => 'MemberController@memberInput']);
     // 完了画面
-    Route::post('/save', ['as' => 'save', 'uses' => 'FormController@save']);
+    Route::post('/memberSave', ['as' => 'save', 'uses' => 'MemberController@memberSave']);
     // リスト画面
-    Route::get('/membersList', ['as' => 'membersList', 'uses' => 'FormController@membersList']);
+    Route::get('/memberList', ['as' => 'list', 'uses' => 'MemberController@memberList']);
     // 削除画面
-    Route::get('/membersDelete',['as' => 'membersDelete', 'uses' => 'FormController@membersDelete']);
+    Route::get('/memberDelete',['as' => 'delete', 'uses' => 'MemberController@memberDelete']);
 });
+
