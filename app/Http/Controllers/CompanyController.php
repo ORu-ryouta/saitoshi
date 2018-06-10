@@ -11,10 +11,10 @@ class CompanyController extends Controller
    
 	/**
      * 入力画面
-     *
+     
      * @return string
      */
-    public function companyInput(PostRequest $request=null)
+    public function companyInput(CompanyRequest $request=null)
     {
         if(!empty($_GET["companyId"])) { // 編集（メンバーIDがある時）
             $companyId = $_GET["companyId"];
@@ -43,7 +43,7 @@ class CompanyController extends Controller
      *
      * @return string
      */
-    public function companySave(PostRequest $request)
+    public function companySave(CompanyRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
@@ -86,7 +86,7 @@ class CompanyController extends Controller
     }
     
     //削除
-    public function companyDelete(PostRequest $request=null)
+    public function companyDelete(CompanyRequest $request=null)
     {
         $companyId = $_GET["companyId"]; // $memberIdに$_GETを入れる。
 

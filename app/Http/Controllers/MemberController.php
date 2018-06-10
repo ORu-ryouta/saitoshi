@@ -14,7 +14,7 @@ class MemberController extends Controller
      *
      * @return string
      */
-    public function memberInput(PostRequest $request=null)
+    public function memberInput(MemberRequest $request=null)
     {
         if(!empty($_GET["memberId"])) { // 編集（メンバーIDがある時）
             $memberId = $_GET["memberId"];
@@ -43,7 +43,7 @@ class MemberController extends Controller
      *
      * @return string
      */
-    public function memberSave(PostRequest $request)
+    public function memberSave(MemberRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
@@ -86,7 +86,7 @@ class MemberController extends Controller
     }
    
     //削除
-    public function memberDelete(PostRequest $request=null)
+    public function memberDelete(MemberRequest $request=null)
     {
         $memberId = $_GET["memberId"]; // $memberIdに$_GETを入れる。
 
