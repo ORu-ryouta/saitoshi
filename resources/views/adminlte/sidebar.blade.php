@@ -9,6 +9,7 @@
                     <!-- メニュー項目 -->
                     <li><a href="{{ action('FormController@membersList') }}">顧客管理</a></li>
 
+                    <li><a href="{{ action('FormController@membersList') }}">顧客管理</a></li>
                 </ul>
             </section>
         </aside><!-- end sidebar -->
