@@ -10,6 +10,8 @@
                     <li><a href="{{ action('MemberController@memberList') }}">顧客管理</a></li>
 
                     <li><a href="{{ action('CompanyController@companyList') }}">取引先管理</a></li>
+                    
+                    <li><a href="{{ action('PartsController@partsList') }}">部品管理</a></li>
                 </ul>
             </section>
         </aside><!-- end sidebar -->
