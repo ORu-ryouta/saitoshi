@@ -14,7 +14,7 @@
  
     <form method="POST" action="{{ route('company::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-        @if (!empty($data)) <input type="hidden" class="form-control" name="companyId" value="{{$data->member_id}}"> @endif
+        @if (!empty($data)) <input type="hidden" class="form-control" name="companyId" value="{{$data->company_id}}"> @endif
         
         <div class="form-group">
             <label>会社名/船名</label><span class="label label-danger">必須</span>
