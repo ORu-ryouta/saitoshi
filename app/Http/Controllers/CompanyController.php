@@ -14,7 +14,7 @@ class CompanyController extends Controller
      *
      * @return string
      */
-    public function input(PostRequest $request=null)
+    public function companyInput(PostRequest $request=null)
     {
         if(!empty($_GET["companyId"])) { // 編集（メンバーIDがある時）
             $companyId = $_GET["companyId"];
@@ -43,7 +43,7 @@ class CompanyController extends Controller
      *
      * @return string
      */
-    public function save(PostRequest $request)
+    public function companySave(PostRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
