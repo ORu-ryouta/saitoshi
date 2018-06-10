@@ -37,11 +37,11 @@ Route::group(['as' => 'member::'], function() {
 Route::group(['as' => 'company::'], function() {
  
     // 入力画面
-    Route::get('/companyInput', ['as' => 'input', 'uses' => 'MemberController@memberInput']);
+    Route::get('/companyInput', ['as' => 'input', 'uses' => 'CompanyController@companyInput']);
     // 完了画面
-    Route::post('/companySave', ['as' => 'save', 'uses' => 'MemberController@memberSave']);
+    Route::post('/companySave', ['as' => 'save', 'uses' => 'CompanyController@companySave']);
     // リスト画面
     Route::get('/companyList', ['as' => 'list', 'uses' => 'CompanyController@companyList']);
     // 削除画面
-    Route::get('/companyDelete',['as' => 'delete', 'uses' => 'MemberController@memberDelete']);
+    Route::get('/companyDelete',['as' => 'delete', 'uses' => 'CompanyController@companyDelete']);
 });
