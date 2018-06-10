@@ -82,7 +82,7 @@ class MemberController extends Controller
         }
 
     // ビューを返す
-      
+      return view('member.list', ['data' => $data]);
     }
    
     //削除
