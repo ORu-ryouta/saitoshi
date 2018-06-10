@@ -39,7 +39,7 @@ class company extends Model
     public function companyUpdate($companyData)
     {
         $sql = "UPDATE company SET company = ".'"'.$companyData->company.'"'.
-        ", fixer = ".'"'.$companyData->fixer.'"'.
+        ", fixer = ".$companyData->fixer.'"'.
         ", address = ".'"'.$companyData->address.'"'.        
         ", tel = ".'"'.$companyData->tel.'"'.        
         ", note = ".'"'.$companyData->note.'"'.   

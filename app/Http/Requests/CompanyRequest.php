@@ -38,13 +38,13 @@ class CompanyRequest extends FormRequest
             'company.required' => '会社名又は船舶名を入力してください。',
             'company.max' => '会社名又は船舶名は指定文字数以内で入力してください。',
             'fixer.required' => '代表者名を入力してください。',
-            'fixer.in' => '代表者名を正しく入力してください。',
+            'fixer.max' => '代表者名を正しく入力してください。',
             'adles.required'=>'住所を正しく入力してください。',
             'adles.max'=>'住所は指定文字数以内で入力してください。',
             'tel.required' => '電話番号を入力してください。',
             'tel.max' => '電話番号は指定文字数以内で入力してください。',
             'note.required' => '備考欄を入力してください。',
-            'note.email' => '備考欄は正しいメールアドレス形式で入力してください。',
+            'note.max' => '備考欄は正しいメールアドレス形式で入力してください。',
             
         ];
     }
