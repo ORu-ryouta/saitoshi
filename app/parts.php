@@ -74,7 +74,7 @@ class Parts extends Model
      */
     public function partsSelect($partsId = null)
     {
-       $testartsId=2;
+       $testPartsId=2;
        if (empty($partsId))$partsId=$testpartsId;
        $sql = "SELECT * FROM parts where parts_id=".$partsId;
        
