@@ -16,14 +16,14 @@ class CompanyController extends Controller
      */
     public function input(PostRequest $request=null)
     {
-        if(!empty($_GET["memberId"])) { // 編集（メンバーIDがある時）
-            $memberId = $_GET["memberId"];
+        if(!empty($_GET["companyId"])) { // 編集（メンバーIDがある時）
+            $companyId = $_GET["companyId"];
         
         // Frameworksモデルのインスタンス化
-        $md = new Member(); // メンバーファイルに接続する
+        $md = new Company(); // メンバーファイルに接続する
         
         // データ取得
-        $data = $md->memberSelect($memberId);
+        $data = $md->companySelect($companyId);
         
         
         } else { // 新規登録（メンバーIDがない時）
@@ -35,7 +35,7 @@ class CompanyController extends Controller
         }
         
         // インプット画面を表示
-        return view('form.input', ['data' => $data]);
+        return view('company.input', ['data' => $data]);
     }
  
     /**
@@ -48,27 +48,27 @@ class CompanyController extends Controller
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-        $member = new Member(); 
-        $member->name    = $request->name;
-        $member->gender  = $request->gender;
-        $member->address = $request->address;
-        $member->tel_1   = $request->tel_1;
-        $member->tel_2   = $request->tel_2;
-        $member->email   = $request->email;
+        $company = new Company(); 
+        $company->company    = $request->company;
+        $company->fixer  = $request->fixer;
+        $company->address = $request->address;
+        $company->tel   = $request->tel;
+        $company->note   = $request->note;
+      
         
-         if(!empty($request->memberId)) { // 更新画面
-         $member->member_id = $request->memberId;
-          $data = $member->memberUpdate($member);
+         if(!empty($request->companyId)) { // 更新画面
+         $company->company_id = $request->companyId;
+          $data = $company->companyUpdate($company);
          }
          
-           else {$member->recode_date = $nowDate;
-        $member->save();
+           else {$company->recode_date = $nowDate;
+        $company->save();
          }
    
         // リロード等による二重送信防止
         $request->session()->regenerateToken();
 
-        return view('form.complete');
+        return view('company.complete');
     }
 
     public function companyList()
@@ -78,7 +78,7 @@ class CompanyController extends Controller
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
-            $data = array("name"=>"test");
+            $data = array("company"=>"test");
         }
 
     // ビューを返す
@@ -86,18 +86,18 @@ class CompanyController extends Controller
     }
     
     //削除
-    public function membersDelete(PostRequest $request=null)
+    public function companyDelete(PostRequest $request=null)
     {
-        $memberId = $_GET["memberId"]; // $memberIdに$_GETを入れる。
+        $companyId = $_GET["companyId"]; // $memberIdに$_GETを入れる。
 
-        $md = new Member(); // メンバーファイルに接続する
+        $md = new Company(); // メンバーファイルに接続する
         
-        $md->memberDelete($memberId); // 指定したメンバーIDの削除
+        $md->companyDelete($companyId); // 指定したメンバーIDの削除
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
     // ビューを返す
-        return view('form.membersList', ['data' => $data]);
+        return view('company.list', ['data' => $data]);
     }
 
 }

@@ -20,7 +20,7 @@
     
       
     <th>
-        <form method="GET" action="{{ route('form::input') }}">
+        <form method="GET" action="{{ route('company::input') }}">
             <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
@@ -30,7 +30,7 @@
         </form>
     </th>
     <th>
-        <form method="GET" action="{{ route('form::membersDelete') }}">
+        <form method="GET" action="{{ route('company::delete') }}">
             <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
@@ -44,7 +44,7 @@
     </tr>
       @endforeach
   </table>
-    <form method="GET" action="{{ route('form::input') }}">
+    <form method="GET" action="{{ route('company::input') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">新規登録</button>
