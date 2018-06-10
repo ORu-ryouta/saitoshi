@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\MemberRequest;
 use App\Member;
 
 class MemberController extends Controller

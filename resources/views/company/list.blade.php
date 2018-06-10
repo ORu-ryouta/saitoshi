@@ -17,7 +17,7 @@
       <th>{{$d->address}}</th>
       <th>{{$d->tel}}</th>
       <th>{{$d->note}}</th>
-    
+    </tr>
       
     <th>
         <form method="GET" action="{{ route('company::input') }}">
