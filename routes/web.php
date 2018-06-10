@@ -33,3 +33,15 @@ Route::group(['as' => 'member::'], function() {
     Route::get('/memberDelete',['as' => 'delete', 'uses' => 'MemberController@memberDelete']);
 });
 
+//company画面群のルートパス
+Route::group(['as' => 'company::'], function() {
+ 
+    // 入力画面
+    Route::get('/memberInput', ['as' => 'input', 'uses' => 'MemberController@memberInput']);
+    // 完了画面
+    Route::post('/memberSave', ['as' => 'save', 'uses' => 'MemberController@memberSave']);
+    // リスト画面
+    Route::get('/companyList', ['as' => 'list', 'uses' => 'CompanyController@companyList']);
+    // 削除画面
+    Route::get('/memberDelete',['as' => 'delete', 'uses' => 'MemberController@memberDelete']);
+});
