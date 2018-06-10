@@ -82,7 +82,7 @@ class CompanyController extends Controller
         }
 
     // ビューを返す
-        return view('company.list', ['data' => $data]);
+      return view('company.list', ['data' => $data]);
     }
     
     //削除

@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class company extends Model
 {
+    protected $table = 'company';
+    const DELETE_FLG_ON = 1;
     const DELETE_FLG_OFF = 0;
+    
+    public $timestamps = false;
     
     //全てのデータを持ってくる
     public function getData()
