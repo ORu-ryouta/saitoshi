@@ -42,7 +42,7 @@ class company extends Model
         ", fixer = ".'"'.$companyData->fixer.'"'.
         ", address = ".'"'.$companyData->address.'"'.        
         ", tel = ".'"'.$companyData->tel.'"'.        
-        ", note = ".'"'.$companyData->note.'"'.   
+        ", note = ".$companyData->note.  
         " where company_id = ".$companyData->company_id;
         
         DB::update($sql);
