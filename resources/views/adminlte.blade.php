@@ -45,6 +45,9 @@
                     <!-- メニュー項目 -->
                     <li><a href="">顧客管理</a></li>
 
+                    <li><a href="">顧客管理</a></li>
+
+                    
                 </ul>
             </section>
         </aside><!-- end sidebar -->
