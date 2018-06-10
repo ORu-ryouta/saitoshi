@@ -21,7 +21,7 @@
       
     <th>
         <form method="GET" action="{{ route('form::input') }}">
-            <input type="hidden" class="form-control" name="memberId" value="{{$d->company_id}}">
+            <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">編集</button>
@@ -31,7 +31,7 @@
     </th>
     <th>
         <form method="GET" action="{{ route('form::membersDelete') }}">
-            <input type="hidden" class="form-control" name="memberId" value="{{$d->company_id}}">
+            <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" onclick="return submitcheck();">削除</button>
