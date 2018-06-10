@@ -79,7 +79,7 @@ class Parts extends Model
        $sql = "SELECT * FROM parts where parts_id=".$partsId;
        
        $result = DB::select($sql);
-       return array_shift($result);P
+       return array_shift($result);
     }        
             
 }
