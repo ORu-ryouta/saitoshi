@@ -48,7 +48,7 @@ class PartsController extends Controller
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-         $parts = new Company(); 
+         $parts = new Parts(); 
         $parts->company    = $request->company;
         $parts->fixer  = $request->fixer;
         $parts->address = $request->address;
