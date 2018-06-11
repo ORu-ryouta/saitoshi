@@ -45,7 +45,7 @@ class Parts extends Model
     //指定したメンバーを更新
     public function partsUpdate($partsData)
     {
-         $sql = "UPDATE parts SET company = ".'"'.$partsData->parts.'"'.
+         $sql = "UPDATE parts SET parts = ".'"'.$partsData->parts.'"'.
         ", fixer = ".'"'.$partsData->fixer.'"'.
         ", address = ".'"'.$partsData->address.'"'.        
         ", tel = ".'"'.$partsData->tel.'"'.        
