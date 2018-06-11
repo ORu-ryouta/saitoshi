@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label>カテゴリ</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="category" placeholder="カテゴリを入力してください" @if (!empty($data)) value="{{$data->ategory}}" @endif>
+            <input type="text" class="form-control" name="category" placeholder="カテゴリを入力してください" @if (!empty($data)) value="{{$data->category}}" @endif>
         </div>
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
