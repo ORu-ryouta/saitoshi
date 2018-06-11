@@ -25,11 +25,8 @@ class PartsRequest extends FormRequest
     {
         return [
             
-             'company' => 'required|max:100',
-            'fixer'=>'required|max:100',
-            'address'=>'required|max:100',
-            'tel' => 'required|max:255',
-            'note' => 'required',
+             'parts' => 'required|max:100',
+            'category'=>'required|max:100',
             
         ];
     }
@@ -37,17 +34,10 @@ class PartsRequest extends FormRequest
     {
         return [
             
-           'company.required' => '会社名又は船舶名を入力してください。',
-            'company.max' => '会社名又は船舶名は指定文字数以内で入力してください。',
-            'fixer.required' => '代表者名を入力してください。',
-            'fixer.max' => '代表者名を正しく入力してください。',
-            'adles.required'=>'住所を正しく入力してください。',
-            'adles.max'=>'住所は指定文字数以内で入力してください。',
-            'tel.required' => '電話番号を入力してください。',
-            'tel.max' => '電話番号は指定文字数以内で入力してください。',
-            'note.required' => '備考欄を入力してください。',
-            'note.max' => '備考欄は正しいメールアドレス形式で入力してください。',
-            
+           'company.required' => '部品名を入力してください。',
+            'company.max' => '部品名は指定文字数以内で入力してください。',
+            'category.required' => 'カテゴリを選択してください。',
+            'category.max' => 'カテゴリを選択してください。',
         ];
     }
 }

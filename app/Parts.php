@@ -47,10 +47,7 @@ class Parts extends Model
     public function partsUpdate($partsData)
     {
          $sql = "UPDATE parts SET parts = ".'"'.$partsData->parts.'"'.
-        ", fixer = ".'"'.$partsData->fixer.'"'.
-        ", address = ".'"'.$partsData->address.'"'.        
-        ", tel = ".'"'.$partsData->tel.'"'.        
-        ", note = ".$partsData->note.  
+        ", category = ".'"'.$partsData->category.'"'.  
         " where parts_id = ".$partsData->parts_id;
         
         DB::update($sql);

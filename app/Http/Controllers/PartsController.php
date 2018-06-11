@@ -49,11 +49,8 @@ class PartsController extends Controller
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
          $parts = new Parts(); 
-        $parts->company    = $request->company;
-        $parts->fixer  = $request->fixer;
-        $parts->address = $request->address;
-        $parts->tel   = $request->tel;
-        $parts->note   = $request->note;
+        $parts->parts    = $request->parts;
+        $parts->category  = $request->category;
         
          if(!empty($request->partsId)) { // 更新画面
          $parts->parts_id = $request->partsId;
@@ -77,7 +74,16 @@ class PartsController extends Controller
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
-            $data = array("parts"=>"test");
+            $data = array(
+                array(
+                    "parts_id"=>"0",
+                    "parts"=>"test編集絶対しない",
+                    "category"=>"0",
+                    "delete_flg"=>"0",
+                    "record_date"=>now(),
+                    "update_date"=>now(),
+                    )
+                );
         }
 
     // ビューを返す

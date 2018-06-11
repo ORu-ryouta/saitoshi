@@ -3,20 +3,15 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>会社名</th>
-      <th>代表者名</th>
-      <th>住所</th>
-      <th>連絡先</th> 
-      <th>管理者備考</th>
+      <th>部品名</th>
+      <th>カテゴリ</th>
       
     </tr>
       @foreach($data as $d)
     <tr>
-      <th>{{$d->company}}</th>
-      <th>{{$d->fixer}}</th>
-      <th>{{$d->address}}</th>
-      <th>{{$d->tel}}</th>
-      <th>{{$d->note}}</th>
+      <th>{{$d->parts}}</th>
+      <th>{{$d->category}}</th>
+      
     </tr>
       
     <th>
