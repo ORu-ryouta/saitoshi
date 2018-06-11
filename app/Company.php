@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class company extends Model
+class Company extends Model
 {
     protected $table = 'company';
     const DELETE_FLG_ON = 1;

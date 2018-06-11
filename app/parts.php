@@ -67,9 +67,9 @@ class Parts extends Model
         return true;
     }
     
-    //メンバIDから該当するメンバー情報を取得
+    //パーツIDから該当するメンバー情報を取得
     /*
-     * @param string $memberId
+     * @param string $partsId
      */
     public function partsSelect($partsId = null)
     {
