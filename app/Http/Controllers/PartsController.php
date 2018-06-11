@@ -26,7 +26,7 @@ class PartsController extends Controller
         $data = $md->partsSelect($partsId);
         
         
-        } else { // 新規登録（メンバーIDがない時）
+        } else { // 新規登録（パーツIDがない時）
             
         }
        
@@ -48,13 +48,12 @@ class PartsController extends Controller
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-        $parts = new Parts(); 
-        $parts->name    = $request->name;
-        $parts->gender  = $request->gender;
+         $parts = new Company(); 
+        $parts->company    = $request->company;
+        $parts->fixer  = $request->fixer;
         $parts->address = $request->address;
-        $parts->tel_1   = $request->tel_1;
-        $parts->tel_2   = $request->tel_2;
-        $parts->email   = $request->email;
+        $parts->tel   = $request->tel;
+        $parts->note   = $request->note;
         
          if(!empty($request->partsId)) { // 更新画面
          $parts->parts_id = $request->partsId;
@@ -74,7 +73,7 @@ class PartsController extends Controller
     public function partsList()
     {
     // Frameworksモデルのインスタンス化
-        $md = new Parts(); // メンバーファイルに接続する
+        $md = new Parts(); // パーツファイルに接続する
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
@@ -88,11 +87,11 @@ class PartsController extends Controller
     //削除
     public function partsDelete(PartsRequest $request=null)
     {
-        $partsId = $_GET["partsId"]; // $memberIdに$_GETを入れる。
+        $partsId = $_GET["partsId"]; // $partsIdに$_GETを入れる。
 
         $md = new Parts(); // メンバーファイルに接続する
         
-        $md->partsDelete($partsId); // 指定したメンバーIDの削除
+        $md->partsDelete($partsId); // 指定したパーツIDの削除
         
         $data = $md->getData(); // 全てのデータを持ってくる
          

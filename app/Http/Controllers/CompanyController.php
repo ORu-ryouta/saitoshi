@@ -20,13 +20,13 @@ class CompanyController extends Controller
             $companyId = $_GET["companyId"];
         
         // Frameworksモデルのインスタンス化
-        $md = new Company(); // メンバーファイルに接続する
+        $md = new Company(); // カンパニーファイルに接続する
         
         // データ取得
         $data = $md->companySelect($companyId);
         
         
-        } else { // 新規登録（メンバーIDがない時）
+        } else { // 新規登録（カンパニーIDがない時）
             
         }
        
@@ -88,9 +88,9 @@ class CompanyController extends Controller
     //削除
     public function companyDelete(CompanyRequest $request=null)
     {
-        $companyId = $_GET["companyId"]; // $memberIdに$_GETを入れる。
+        $companyId = $_GET["companyId"]; // $companyIdに$_GETを入れる。
 
-        $md = new Company(); // メンバーファイルに接続する
+        $md = new Company(); // カンパニーファイルに接続する
         
         $md->companyDelete($companyId); // 指定したメンバーIDの削除
         
