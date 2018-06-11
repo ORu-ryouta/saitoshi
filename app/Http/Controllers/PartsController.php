@@ -50,15 +50,16 @@ class PartsController extends Controller
         // データベース登録
          $parts = new Parts(); 
         $parts->parts    = $request->parts;
-        $parts->category  = $request->category;
+        $parts->category = (int)$request->category;
         
          if(!empty($request->partsId)) { // 更新画面
          $parts->parts_id = $request->partsId;
           $data = $parts->partsUpdate($parts);
          }
          
-           else {$parts->recode_date = $nowDate;
-        $parts->save();
+           else {
+               $parts->recode_date = $nowDate;
+               $parts->save();
          }
    
         // リロード等による二重送信防止
