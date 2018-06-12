@@ -96,6 +96,12 @@ class PartsController extends Controller
     }
     
     //partsList 作る
+    public function partsList()
+    {
+        
+        
+        
+    }
    
     //削除
     public function partsDelete(PartsRequest $request=null)
