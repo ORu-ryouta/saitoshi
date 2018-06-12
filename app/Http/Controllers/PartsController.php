@@ -167,7 +167,7 @@ class PartsController extends Controller
             "サンダー・グラインダ研磨",
             "切削工具",
             "消耗備品",
-        );echo $cpartsCategory[0];
+        );
         
         return $partsCategory;
     }
