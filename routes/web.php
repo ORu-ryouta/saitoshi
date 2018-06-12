@@ -53,8 +53,10 @@ Route::group(['as' => 'parts::'], function() {
     Route::get('/partsInput', ['as' => 'input', 'uses' => 'PartsController@partsInput']);
     // 完了画面
     Route::post('/partsSave', ['as' => 'save', 'uses' => 'PartsController@partsSave']);
-    // リスト画面
-    Route::get('/partsList', ['as' => 'list', 'uses' => 'PartsController@partsList']);
+    // カテゴリ　リスト画面
+    Route::get('/ partsCategoryList', ['as' => 'categoryList', 'uses' => 'PartsController@categoryList']);
+    // パーツ　リスト画面
+    Route::get('/partsList', ['as' => 'partsList', 'uses' => 'PartsController@partsList']);
     // 削除画面
     Route::get('/partsDelete',['as' => 'delete', 'uses' => 'PartsController@partsDelete']);
 });
