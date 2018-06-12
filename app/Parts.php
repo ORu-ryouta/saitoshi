@@ -28,6 +28,8 @@ class Parts extends Model
 
     	return $data;
     }
+    
+    //
 
     //指定したメンバーの存在確認
     public function partsCheck($partsId)

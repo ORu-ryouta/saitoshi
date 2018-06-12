@@ -9,9 +9,7 @@
     </tr>
       @foreach($data as $d)
     <tr>
-      <th>{{$d->parts}}</th>
-      <th>{{$d->category}}</th>
-      
+      <th>{{$d->$partsCategory(category)}}</th>
     </tr>
       
     <th>
