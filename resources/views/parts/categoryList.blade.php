@@ -3,7 +3,7 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>カテゴリ</th>
+      <th>カテゴリ名</th>
       
     </tr>
       @foreach($data as $d)
@@ -30,8 +30,8 @@
                 </div>
             </div>
         </form>
-        
     </th>
+        
     
     </tr>
       @endforeach
