@@ -79,7 +79,7 @@ class CompanyController extends Controller
     // データ取得
         $data = $md->getData();
         if (empty($data)) {
-            $data = array("company"=>"test");
+            $data = null;
         }
 
     // ビューを返す
