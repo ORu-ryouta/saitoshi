@@ -33,9 +33,11 @@ class PartsController extends Controller
         if (empty($data)) {
             $data =null;
         }
+        // パーツカテゴリリスト取得
+        $partsCategory = self::getPartsCategory();
         
         // インプット画面を表示
-        return view('parts.input', ['data' => $data]);
+        return view('parts.input', ['data' => $data,'partsCategory' => $partsCategory]);
     }
  
     /**
@@ -86,11 +88,10 @@ class PartsController extends Controller
                     )
                 );
         }
-        // パーツカテゴリリスト取得
-        $partsCategory = self::getPartsCategory();
+        
 
     // ビューを返す
-      return view('parts.list', ['data' => $data,'partsCategory' => $partsCategory]);
+    return view('parts.list', ['data' => $data]);
     }
    
     //削除
