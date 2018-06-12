@@ -3,12 +3,12 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>カテゴリ名</th>
+      <th>部品名</th>
       
     </tr>
       @foreach($data as $d)
     <tr>
-      <th>{{$partsCategory[$d->category]}}</th>
+      <th>{{$d->category}}</th>
     </tr>
       
     <th>

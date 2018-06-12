@@ -70,7 +70,7 @@ class PartsController extends Controller
         return view('parts.complete');
     }
 
-    public function partsList()
+    public function categoryList()
     {
     // Frameworksモデルのインスタンス化
         $md = new Parts(); // パーツファイルに接続する
@@ -92,8 +92,10 @@ class PartsController extends Controller
       $partsCategory = self::getPartsCategory();
 
     // ビューを返す
-    return view('parts.list', ['data' => $data,'partsCategory' => $partsCategory]);
+    return view('parts.categoryList', ['data' => $data,'partsCategory' => $partsCategory]);
     }
+    
+    //partsList 作る
    
     //削除
     public function partsDelete(PartsRequest $request=null)
@@ -107,7 +109,7 @@ class PartsController extends Controller
         $data = $md->getData(); // 全てのデータを持ってくる
          
     // ビューを返す
-        return view('parts.list', ['data' => $data]);
+        return view('parts.categoryList', ['data' => $data]);
     }
     
     private function getPartsCategory(){
