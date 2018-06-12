@@ -10,6 +10,7 @@
       <th>連絡先２</th>
       <th>E-mail</th>
     </tr>
+      @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
       <th>{{$d->name}}</th>
@@ -44,6 +45,7 @@
     
     </tr>
       @endforeach
+      @endif
   </table>
     <form method="GET" action="{{ route('member::input') }}">
         <div class="form-group row">

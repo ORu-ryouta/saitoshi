@@ -1,4 +1,4 @@
-@extends('adminlte.layout')
+s@extends('adminlte.layout')
 @section('content')
 
 

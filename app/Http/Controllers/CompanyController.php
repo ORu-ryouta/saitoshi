@@ -22,6 +22,7 @@ class CompanyController extends Controller
         // Frameworksモデルのインスタンス化
         $md = new Company(); // カンパニーファイルに接続する
         
+        
         // データ取得
         $data = $md->companySelect($companyId);
         

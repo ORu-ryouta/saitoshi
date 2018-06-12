@@ -10,6 +10,7 @@
       <th>管理者備考</th>
       
     </tr>
+      @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
       <th>{{$d->company}}</th>
@@ -43,6 +44,7 @@
     
     </tr>
       @endforeach
+      @endif
   </table>
     <form method="GET" action="{{ route('company::input') }}">
         <div class="form-group row">

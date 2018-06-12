@@ -6,6 +6,7 @@
       <th>カテゴリ名</th>
       
     </tr>
+      @if (!empty($data))
       @foreach($data as $d)
     <tr>
       <th>{{$partsCategory[$d->category]}}</th>
@@ -35,6 +36,7 @@
     
     </tr>
       @endforeach
+      @endif
   </table>
     <form method="GET" action="{{ route('parts::input') }}">
         <div class="form-group row">
