@@ -61,8 +61,9 @@ class MemberController extends Controller
           $data = $member->memberUpdate($member);
          }
          
-           else {$member->recode_date = $nowDate;
-        $member->save();
+           else {
+               $member->recode_date = $nowDate;
+               $member->save();
          }
    
         // リロード等による二重送信防止

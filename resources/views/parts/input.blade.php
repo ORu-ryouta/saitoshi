@@ -11,7 +11,7 @@
 @endif
 <div class="container">
     <h3>情報を入力してください。</h3>
- 
+  
     <form method="POST" action="{{ route('parts::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         @if (!empty($data)) <input type="hidden" class="form-control" name="partsId" value="{{$data->parts_id}}"> @endif
@@ -22,7 +22,13 @@
         </div>
         <div class="form-group">
             <label>カテゴリ</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="category" placeholder="カテゴリを入力してください" @if (!empty($data)) value="{{$data->category}}" @endif>
+             <select name="category">
+                 @foreach ($partsCategory as $numKey => $categoryName)
+                 <option value="{{$numKey}}" @if (!empty($data)) @if ($data->category == $numKey) checked @endif @endif>{{$categoryName}}</option>
+                 @endforeach
+            
+             </select>
+       
         </div>
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
