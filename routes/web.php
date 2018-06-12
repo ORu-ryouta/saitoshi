@@ -54,7 +54,7 @@ Route::group(['as' => 'parts::'], function() {
     // 完了画面
     Route::post('/partsSave', ['as' => 'save', 'uses' => 'PartsController@partsSave']);
     // カテゴリ　リスト画面
-    Route::get('/ partsCategoryList', ['as' => 'categoryList', 'uses' => 'PartsController@categoryList']);
+    Route::get('/partsCategoryList', ['as' => 'categoryList', 'uses' => 'PartsController@categoryList']);
     // パーツ　リスト画面
     Route::get('/partsList', ['as' => 'partsList', 'uses' => 'PartsController@partsList']);
     // 削除画面
