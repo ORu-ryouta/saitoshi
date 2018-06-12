@@ -3,7 +3,6 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>部品名</th>
       <th>カテゴリ</th>
       
     </tr>
