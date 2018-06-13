@@ -95,12 +95,14 @@ class PartsController extends Controller
     return view('parts.categoryList', ['data' => $data,'partsCategory' => $partsCategory]);
     }
     
+    
+    
     //partsList 
     public function partsList()
     {// Frameworksモデルのインスタンス化
         $md = new Parts(); // パーツファイルに接続する
     // データ取得
-        $data = $md->getData();
+        $data = $md->partsSeleteByCategory();
         if (empty($data)) {
             $data = array(
                 array(

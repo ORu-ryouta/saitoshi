@@ -79,6 +79,20 @@ class Parts extends Model
        
        $result = DB::select($sql);
        return array_shift($result);
-    }        
+    }  
+    
+    
+    //指定されたカテゴリーに存在する全てのデータを持ってくる
+    public function partsSeleteByCategory($category = null)
+    {
+     
+       if (empty($partsId))$partsId=$testpartsId;
+       $sql = "SELECT * FROM parts".$partsId;
+       
+       $result = DB::select($sql);
+       return array_shift($result);
+        
+        
+    }
             
 }
