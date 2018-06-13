@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StockrRequest;
-use App\Member;
+use App\Stock;
 
 class StockController extends Controller
 {
