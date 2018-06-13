@@ -85,8 +85,7 @@ class Parts extends Model
     //カテゴリから該当する部品情報を取得
     public function partsSeleteByCategory($category = null)
     { 
-       $testPartsId="";
-       $testPartsId="2";
+       $testPartsId=2;
        if (empty($category))$category=$testPartsId;
        $sql = "SELECT * FROM parts where category =".$category;
        

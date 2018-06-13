@@ -98,22 +98,15 @@ class PartsController extends Controller
     
     
     //partsList 
-    public function partsList()
-    {// Frameworksモデルのインスタンス化
+    public function partsList(PartsRequest $request=null)
+    {
+        $category = $_GET["category"];
+    // Frameworksモデルのインスタンス化
         $md = new Parts(); // パーツファイルに接続する
     // データ取得
-        $data = $md->partsSeleteByCategory();
+        $data = $md->partsSeleteByCategory($category);
         if (empty($data)) {
-            $data = array(
-                array(
-                    "parts_id"=>"0",
-                    "parts"=>"test編集絶対しない",
-                    "category"=>"0",
-                    "delete_flg"=>"0",
-                    "record_date"=>now(),
-                    "update_date"=>now(),
-                    )
-                );
+            $data = null;
         }
        
        //パーツカテゴリのリストを取得する
