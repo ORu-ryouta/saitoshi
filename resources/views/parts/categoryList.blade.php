@@ -7,14 +7,14 @@
       
     </tr>
       @if (!empty($data))
-      @foreach($data as $d)
+      @foreach($partsCategory as $numKey => $categoryName)
     <tr> 
-      <th>{{$partsCategory[$d->category]}}</th>
+      <th>{{$categoryName}}</th>
     </tr>
       
     <th>
         <form method="GET" action="{{ route('parts::partsList') }}">
-            <input type="hidden" class="form-control" name="category" value="{{$d->category}}">
+            <input type="hidden" class="form-control" name="category" value="{{$numKey}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">部品一覧を表示</button>
