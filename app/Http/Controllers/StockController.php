@@ -91,7 +91,7 @@ class StockController extends Controller
     {
         $stockId = $_GET["stockId"]; // $stockIdに$_GETを入れる。
 
-        $md = new Member(); // 在庫ファイルに接続する
+        $md = new Stock(); // 在庫ファイルに接続する
         
         $md->stockDelete($stockId); // 指定した在庫IDの削除
         
