@@ -14,7 +14,7 @@
       
     <th>
         <form method="GET" action="{{ route('parts::partsList') }}">
-            <input type="hidden" class="form-control" name="partsId" value="{{$d->category}}">
+            <input type="hidden" class="form-control" name="category" value="{{$d->category}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">部品一覧を表示</button>
