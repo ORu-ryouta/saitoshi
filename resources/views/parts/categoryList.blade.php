@@ -29,7 +29,7 @@
     <form method="GET" action="{{ route('parts::input') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">新規登録</button>
+                <button type="submit" class="btn btn-primary">部品新規登録</button>
             </div>
         </div>
     </form>
