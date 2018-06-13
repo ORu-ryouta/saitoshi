@@ -86,8 +86,8 @@ class Parts extends Model
     public function partsSeleteByCategory($category = null)
     {
        $testPartsId=2;
-       if (empty($partsId))$partsId=$testpartsId;
-       $sql = "SELECT * FROM parts".$partsId;
+       if (empty($category))$category=$testpartsId;
+       $sql = "SELECT * FROM parts".$category;
        
        $result = DB::select($sql);
        return array_shift($result);
