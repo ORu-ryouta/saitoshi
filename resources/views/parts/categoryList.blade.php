@@ -17,6 +17,16 @@
             <input type="hidden" class="form-control" name="partsId" value="{{$d->parts_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">部品一覧を表示</button>
+                </div>
+            </div>
+        </form>
+    </th> 
+    <th>
+        <form method="GET" action="{{ route('parts::input') }}">
+            <input type="hidden" class="form-control" name="partsId" value="{{$d->parts_id}}">
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">編集</button>
                 </div>
             </div>
