@@ -29,7 +29,7 @@ class Stock extends Model
     //指定した在庫の存在確認
     public function stockCheck($stockId)
     {
-        $sql = 'select stock_id from stock where member_id = '.$stockId." AND delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = 'select stock_id from stock where stock_id = '.$stockId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
 

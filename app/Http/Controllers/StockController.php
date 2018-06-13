@@ -48,7 +48,7 @@ class StockController extends Controller
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-        $stock = new Member(); 
+        $stock = new Stock(); 
         $stock->name    = $request->name;
         $stock->gender  = $request->gender;
         $stock->address = $request->address;
