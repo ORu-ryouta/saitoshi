@@ -74,7 +74,7 @@ class Parts extends Model
     public function partsSelect($partsId = null)
     {
        $testPartsId=2;
-       if (empty($partsId))$partsId=$testpartsId;
+       if (empty($partsId))$partsId=$testPartsId;
        $sql = "SELECT * FROM parts where parts_id=".$partsId;
        
        $result = DB::select($sql);
@@ -84,9 +84,10 @@ class Parts extends Model
     
     //指定されたカテゴリーに存在する全てのデータを持ってくる
     public function partsSeleteByCategory($category = null)
-    {
-       $testPartsId=2;
-       if (empty($category))$category=$testpartsId;
+    { 
+       $testPartsId="";
+       $testPartsId="2";
+       if (empty($category))$category=$testPartsId;
        $sql = "SELECT * FROM parts".$category;
        
        $result = DB::select($sql);
