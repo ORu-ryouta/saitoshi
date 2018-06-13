@@ -17,38 +17,22 @@
         @if (!empty($data)) <input type="hidden" class="form-control" name="stockId" value="{{$data->stock_id}}"> @endif
         
         <div class="form-group">
-            <label>氏名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="name" placeholder="氏名を入力してください" @if (!empty($data)) value="{{$data->name}}" @endif>
-        </div>
-
-        <div class="form-group">
-            <label>性別</label><span class="label label-danger">必須</span>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="1"  @if (!empty($data)) @if ($data->gender == 1) checked @endif @endif>男性
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="2" @if (!empty($data)) @if ($data->gender == 2) checked @endif @endif>女性
-                </label>
-            </div>
+            <label>部品</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="parts" placeholder="部品を入力してください" @if (!empty($data)) value="{{$data->parts}}" @endif>
         </div>
         <div class="form-group">
-            <label>住所</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="address" placeholder="住所を入力してください" @if (!empty($data)) value="{{$data->address}}"@endif>
+            <label>在庫</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="stock" placeholder="在庫数を入力してください" @if (!empty($data)) value="{{$data->stock}}"@endif>
         </div>
         <div class="form-group">
-            <label>連絡先_１</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel_1" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel_1}}"@endif>
+            <label>最低在庫数</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="min_stock" placeholder="最低在庫数を入力してください" @if (!empty($data)) value="{{$data->min_stock}}"@endif>
         </div>
         <div class="form-group">
-            <label>連絡先_２</label>
-            <input type="text" class="form-control" name="tel_2" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel_2}}"@endif>
+            <label>最終仕入れ日</label>
+            <input type="text" class="form-control" name="last_data" placeholder="最終仕入れ日を入力してください" @if (!empty($data)) value="{{$data->last_data}}"@endif>
         </div>
-        <div class="form-group">
-            <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください" @if (!empty($data)) value="{{$data->email}}"@endif>
+        
  <!--       </div>
         <div class="form-group">
             <label>会社名</label><span class="label label-danger">必須</span>

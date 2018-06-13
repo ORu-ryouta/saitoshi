@@ -34,8 +34,8 @@ class PartsRequest extends FormRequest
     {
         return [
             
-           'company.required' => '部品名を入力してください。',
-            'company.max' => '部品名は指定文字数以内で入力してください。',
+           'parts.required' => '部品名を入力してください。',
+            'parts.max' => '部品名は指定文字数以内で入力してください。',
             'category.required' => 'カテゴリを選択してください。',
             'category.in' => 'カテゴリを正しく選択してください。',
         ];

@@ -3,22 +3,18 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>顧客名</th>
-      <th>性別</th>
-      <th>住所</th>
-      <th>連絡先１</th>
-      <th>連絡先２</th>
-      <th>E-mail</th>
+      <th>部品</th>
+      <th>在庫</th>
+      <th>最低在庫数</th>
+      <th>最終仕入れ日</th>
     </tr>
       @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
-      <th>{{$d->name}}</th>
-      <th>{{$d->gender}}</th>
-      <th>{{$d->address}}</th>
-      <th>{{$d->tel_1}}</th>
-      <th>{{$d->tel_2}}</th>
-      <th>{{$d->email}}</th>
+      <th>{{$d->parts}}</th>
+      <th>{{$d->stock}}</th>
+      <th>{{$d->min_stock}}</th>
+      <th>{{$d->last_data}}</th>
     </tr>
       
     <th>
