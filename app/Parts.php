@@ -67,7 +67,7 @@ class Parts extends Model
         return true;
     }
     
-    //パーツIDから該当するメンバー情報を取得
+    //パーツIDから該当する部品情報を取得
     /*
      * @param string $partsId
      */
@@ -82,13 +82,13 @@ class Parts extends Model
     }  
     
     
-    //指定されたカテゴリーに存在する全てのデータを持ってくる
+    //カテゴリから該当する部品情報を取得
     public function partsSeleteByCategory($category = null)
     { 
        $testPartsId="";
        $testPartsId="2";
        if (empty($category))$category=$testPartsId;
-       $sql = "SELECT * FROM parts where cotegory=".$category;
+       $sql = "SELECT * FROM parts where category =".$category;
        
        $result = DB::select($sql);
        return array_shift($result);
