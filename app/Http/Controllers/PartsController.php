@@ -118,7 +118,7 @@ class PartsController extends Controller
       $partsCategory = self::getPartsCategory();
 
     // ビューを返す
-    return view('parts.categoryList', ['data' => $data,'partsCategory' => $partsCategory]);
+    return view('parts.partList', ['data' => $data,'partsCategory' => $partsCategory]);
     
     }
    
