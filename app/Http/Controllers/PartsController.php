@@ -95,12 +95,31 @@ class PartsController extends Controller
     return view('parts.categoryList', ['data' => $data,'partsCategory' => $partsCategory]);
     }
     
-    //partsList 作る
+    //partsList 
     public function partsList()
-    {
-        
-        
-        
+    {// Frameworksモデルのインスタンス化
+        $md = new Parts(); // パーツファイルに接続する
+    // データ取得
+        $data = $md->getData();
+        if (empty($data)) {
+            $data = array(
+                array(
+                    "parts_id"=>"0",
+                    "parts"=>"test編集絶対しない",
+                    "category"=>"0",
+                    "delete_flg"=>"0",
+                    "record_date"=>now(),
+                    "update_date"=>now(),
+                    )
+                );
+        }
+       
+       //パーツカテゴリのリストを取得する
+      $partsCategory = self::getPartsCategory();
+
+    // ビューを返す
+    return view('parts.categoryList', ['data' => $data,'partsCategory' => $partsCategory]);
+    
     }
    
     //削除
