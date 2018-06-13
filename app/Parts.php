@@ -85,7 +85,7 @@ class Parts extends Model
     //指定されたカテゴリーに存在する全てのデータを持ってくる
     public function partsSeleteByCategory($category = null)
     {
-     
+       $testPartsId=2;
        if (empty($partsId))$partsId=$testpartsId;
        $sql = "SELECT * FROM parts".$partsId;
        
