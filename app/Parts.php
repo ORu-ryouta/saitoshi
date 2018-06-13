@@ -88,7 +88,7 @@ class Parts extends Model
        $testPartsId="";
        $testPartsId="2";
        if (empty($category))$category=$testPartsId;
-       $sql = "SELECT * FROM parts".$category;
+       $sql = "SELECT * FROM parts where cotegory=".$category;
        
        $result = DB::select($sql);
        return array_shift($result);
