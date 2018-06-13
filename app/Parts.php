@@ -91,7 +91,7 @@ class Parts extends Model
        $sql = "SELECT * FROM parts where category =".$category;
        
        $result = DB::select($sql);
-       return array_shift($result);
+       return $result;
         
         
     }
