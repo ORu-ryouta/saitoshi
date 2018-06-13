@@ -9,7 +9,7 @@
       @if (!empty($data))
       @foreach($data as $d)
     <tr>
-      <th>{{$partsCategory[$d->category]}}</th>
+      <th>{{$d->parts}}</th>
     </tr>
       
     <th>
@@ -38,13 +38,7 @@
       @endforeach
       @endif
   </table>
-    <form method="GET" action="{{ route('parts::input') }}">
-        <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">新規登録</button>
-            </div>
-        </div>
-    </form>
+    
 </div>
 
 <script  type="text/javascript">
