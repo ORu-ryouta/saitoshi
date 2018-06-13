@@ -3,7 +3,7 @@
 <div class="container">
   <table border="1">
     <tr>
-      <th>カテゴリ名</th>
+      <th>部品名</th>
       
     </tr>
       @if (!empty($data))
