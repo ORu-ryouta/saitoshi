@@ -1,5 +1,5 @@
 -- Project Name : ビジネス
--- Date/Time    : 2018/06/14 21:45:51
+-- Date/Time    : 2018/06/14 22:30:25
 -- Author       : saitoshikikaiyanmar
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
@@ -11,6 +11,9 @@
 */
 
 -- 取引先
+--* BackupToTempTable
+drop table company cascade;
+
 --* RestoreFromTempTable
 create table company (
   company_id int auto_increment not null comment '会社ID'
@@ -26,6 +29,9 @@ create table company (
 ) comment '取引先:' ;
 
 -- 仕入れ
+--* BackupToTempTable
+drop table request cascade;
+
 --* RestoreFromTempTable
 create table request (
   request_id int auto_increment not null comment '仕入れID'
@@ -41,6 +47,9 @@ create table request (
 ) comment '仕入れ:' ;
 
 -- 部品
+--* BackupToTempTable
+drop table parts cascade;
+
 --* RestoreFromTempTable
 create table parts (
   parts_id int auto_increment not null comment '部品ID'
@@ -56,6 +65,9 @@ create table parts (
 ) comment '部品:' ;
 
 -- 売り上げ
+--* BackupToTempTable
+drop table sale cascade;
+
 --* RestoreFromTempTable
 create table sale (
   sale_id int auto_increment not null comment '売り上げID'
@@ -69,6 +81,9 @@ create table sale (
 ) comment '売り上げ:' ;
 
 -- 注文
+--* BackupToTempTable
+drop table order cascade;
+
 --* RestoreFromTempTable
 create table order (
   order_id int auto_increment not null comment '注文ID'
@@ -89,6 +104,9 @@ create table order (
 ) comment '注文:' ;
 
 -- 顧客
+--* BackupToTempTable
+drop table member cascade;
+
 --* RestoreFromTempTable
 create table member (
   member_id int auto_increment not null comment '顧客ID'
