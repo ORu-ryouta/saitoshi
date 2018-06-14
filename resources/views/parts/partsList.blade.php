@@ -4,6 +4,9 @@
   <table border="1">
     <tr>
       <th>部品名</th>
+      <th>在庫数</th>
+      <th>最低在庫数</th>
+      <th>最終仕入れ日</th>
       
     </tr>
       @if (!empty($data))

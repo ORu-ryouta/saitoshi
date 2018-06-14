@@ -13,7 +13,7 @@
                     
                     <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li>
                     
-                    <li><a href="{{ action('StockController@stockList') }}">在庫管理</a></li>
+                   
                 </ul>
             </section>
         </aside><!-- end sidebar -->

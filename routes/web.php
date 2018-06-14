@@ -61,15 +61,3 @@ Route::group(['as' => 'parts::'], function() {
     Route::get('/partsDelete',['as' => 'delete', 'uses' => 'PartsController@partsDelete']);
 });
 
-//stock画面群のルートパス
-Route::group(['as' => 'stock::'], function() {
- 
-    // 入力画面
-    Route::get('/stockInput', ['as' => 'input', 'uses' => 'StockController@stockInput']);
-    // 完了画面
-    Route::post('/stockSave', ['as' => 'save', 'uses' => 'StockController@stockSave']);
-    // リスト画面
-    Route::get('/stockList', ['as' => 'list', 'uses' => 'StockController@stockList']);
-    // 削除画面
-    Route::get('/stockDelete',['as' => 'delete', 'uses' => 'StockController@stockDelete']);
-});
