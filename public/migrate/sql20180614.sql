@@ -1,5 +1,5 @@
 -- Project Name : ビジネス
--- Date/Time    : 2018/06/14 22:52:43
+-- Date/Time    : 2018/06/14 23:01:11
 -- Author       : saitoshikikaiyanmar
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
@@ -116,7 +116,7 @@ create table member (
   , address VARCHAR(255) not null comment '住所'
   , tel_1 VARCHAR(255) not null comment '連絡先１'
   , tel_2 VARCHAR(255) comment '連絡先２'
-  , emal VARCHAR(255) comment 'E- mall'
+  , email VARCHAR(255) comment 'E- mall'
   , delete_flg TINYINT default 0 not null comment '削除フラグ'
   , recode_date DATETIME not null comment '登録日:YYYY/MM/DD'
   , update_time TIMESTAMP not null comment '更新日:YYYY/MM/DD'
