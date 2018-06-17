@@ -48,7 +48,7 @@ class Demand extends Model
         ", business = ".'"'.$demandData->business.'"'.        
         ", work = ".'"'.$demandData->work.'"'.        
         ", price = ".'"'.$demandData->price.'"'.   
-        ", oder_date = ".'"'.$demandData->oder_date.'"'.
+        ", order_date = ".'"'.$demandData->order_date.'"'.
         ", receipt_date = ".'"'.$demandData->receipt_date.'"'.        
         ", complete_plans = ".'"'.$demandData->complete_plans.'"'.        
         ", complete_date = ".'"'.$demandData->complete_date.'"'. 

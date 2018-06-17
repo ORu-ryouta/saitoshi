@@ -21,7 +21,7 @@
       <th>{{$d->business}}</th>
       <th>{{$d->work}}</th>
       <th>{{$d->price}}</th>
-      <th>{{$d->oder_date}}</th>
+      <th>{{$d->order_date}}</th>
       <th>{{$d->receipt_date}}</th>
       <th>{{$d->complete_plans}}</th>
       <th>{{$d->complete_date}}</th>
