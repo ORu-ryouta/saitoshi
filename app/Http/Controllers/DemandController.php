@@ -14,7 +14,7 @@ class DemandController extends Controller
      *
      * @return string
      */
-    public function demandInputd(DemandRequest $request=null)
+    public function demandInput(DemandRequest $request=null)
     {
         if(!empty($_GET["demandId"])) { // 編集（注文IDがある時）
             $demandId = $_GET["demandId"];
