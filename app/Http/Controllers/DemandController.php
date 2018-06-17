@@ -54,7 +54,7 @@ class DemandController extends Controller
         $demand->business   = $request->business;
         $demand->work   = $request->work;
         $demand->price   = $request->price;
-        $demand->order_date   = $request->order_date;
+        $demand->demand_date   = $request->demand_date;
         $demand->receipt_date   = $request->receipt_date;
         $demand->complete_plans   = $request->complete_plans;
         $demand->complete_date   = $request->complete_date;

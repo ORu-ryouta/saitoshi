@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label>注文日</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="order_date" placeholder="注文日を入力してください" @if (!empty($data)) value="{{$data->order_date}}"@endif>
+            <input type="text" class="form-control" name="demand_date" placeholder="注文日を入力してください" @if (!empty($data)) value="{{$data->demand_date}}"@endif>
         </div>
          <div class="form-group">
             <label>受注日</label><span class="label label-danger">必須</span>
