@@ -1,6 +1,6 @@
 @extends('adminlte.layout')
 @section('content')
-<background src="{{ asset('/img/FY_logo.png') }}" width="100%" height="100%" alt="" />
+
 <div class="container">
   <table border="1">
     <tr>
