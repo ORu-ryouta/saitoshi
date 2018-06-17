@@ -18,7 +18,7 @@ class Demand extends Model
     
     public $timestamps = false;
 
-    //全てのデータを持ってくる
+    //全ての注文データを持ってくる
     public function getData()
     {
     	$data = DB::select("SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF);
