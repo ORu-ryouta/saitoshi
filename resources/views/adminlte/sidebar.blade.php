@@ -11,7 +11,9 @@
 
                     <li><a href="{{ action('CompanyController@companyList') }}">取引先管理</a></li>
                     
-                    <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li>
+                    <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li
+                    
+                    <li><a href="{{ action('DemandController@demandList') }}">注文管理</a></li>
                     
                    
                 </ul>
