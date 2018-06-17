@@ -44,7 +44,7 @@ class CompanyRequest extends FormRequest
             'tel.required' => '電話番号を入力してください。',
             'tel.max' => '電話番号は指定文字数以内で入力してください。',
             'note.required' => '備考欄を入力してください。',
-            'note.max' => '備考欄は正しいメールアドレス形式で入力してください。',
+            'note.max' => '備考欄を入力してください。',
             
         ];
     }
