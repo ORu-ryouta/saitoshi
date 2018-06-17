@@ -83,11 +83,16 @@ class Parts extends Model
     
     
     //カテゴリから該当する部品情報を取得
+    /*
+     * @param string $category
+     */
     public function partsSeleteByCategory($category = null)
     { 
        $testPartsId=2;
-       if (empty($category))$category=$testPartsId;
-       $sql = "SELECT * FROM parts where category =.$category. AND delete_flg = ".self::DELETE_FLG_OFF;
+       if (empty($category)) {
+           $category = $testPartsId;
+       }
+       $sql = "SELECT * FROM parts where category = ".$category." AND delete_flg = ".self::DELETE_FLG_OFF;
        
        $result = DB::select($sql);
        return $result;
