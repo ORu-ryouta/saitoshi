@@ -13,7 +13,7 @@
                     
                     <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li>
                     
-                    <li><a href="{{ action('DemandController@demandList') }}">注文管理</a></li
+                    <li><a href="{{ action('DemandController@demandList') }}">注文管理</a></li>
                     
                     <li><a>仕入れ管理</a></li>
                     
