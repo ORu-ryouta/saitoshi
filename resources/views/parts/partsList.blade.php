@@ -13,6 +13,9 @@
       @foreach($data as $d)
     <tr>
       <th>{{$d->parts}}</th>
+      <th>{{$d->stock}}</th>
+      <th>{{$d->min_stock}}</th>
+      <th>{{$d->last_date}}</th>
     </tr>
       
     <th>

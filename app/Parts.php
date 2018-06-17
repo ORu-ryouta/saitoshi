@@ -90,7 +90,9 @@ class Parts extends Model
     { 
        $testPartsId=2;
        if (empty($category)) {
-           $category = $testPartsId;
+           if($category!=0) {
+               $category = $testPartsId;
+           }
        }
        $sql = "SELECT * FROM parts where category = ".$category." AND delete_flg = ".self::DELETE_FLG_OFF;
        
