@@ -52,6 +52,9 @@ class PartsController extends Controller
         // データベース登録
          $parts = new Parts(); 
         $parts->parts    = $request->parts;
+        $parts->stock    = (int)$request->stock;
+        $parts->min_stock    = (int)$request->min_stock;
+        $parts->last_date    = $request->last_date;
         $parts->category = (int)$request->category;
         
          if(!empty($request->partsId)) { // 更新画面
