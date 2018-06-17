@@ -18,7 +18,7 @@ class Demand extends Model
     
     public $timestamps = false;
 
-    //全てのデータを持ってくる
+    //全ての注文データを持ってくる
     public function getData()
     {
     	$data = DB::select("SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF);
@@ -26,7 +26,7 @@ class Demand extends Model
     	return $data;
     }
 
-    //指定したメンバーの存在確認
+    //指定した注文の存在確認
     public function demandCheck($demandId)
     {
         $sql = 'select demand_id from demand where demand_id = '.$demandId." AND delete_flg = ".self::DELETE_FLG_OFF;
@@ -43,8 +43,7 @@ class Demand extends Model
     //指定した注文を更新
     public function demandUpdate($demandData)
     {
-        $sql = "UPDATE demand SET demand = ".'"'.$demandData->demand.'"'.
-        ", member_id = ".$demandData->member_id.
+        $sql = "UPDATE demand SET member_id = ".$demandData->member_id.
         ", category = ".'"'.$demandData->category.'"'.
         ", business = ".'"'.$demandData->business.'"'.        
         ", work = ".'"'.$demandData->work.'"'.        
@@ -61,7 +60,7 @@ class Demand extends Model
         return true;
     }
 
-    //指定した、メンバーを削除
+    //指定した、注文を削除
     public function demandDelete($demandId)
     {
         $sql = "UPDATE demand SET delete_flg = ".self::DELETE_FLG_ON." where demand_id=".$demandId;
@@ -71,7 +70,7 @@ class Demand extends Model
         return true;
     }
     
-    //メンバIDから該当する注文情報を取得
+    //注文IDから該当する注文情報を取得
     /*
      * @param string $demandId
      */
