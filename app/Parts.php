@@ -87,7 +87,7 @@ class Parts extends Model
     { 
        $testPartsId=2;
        if (empty($category))$category=$testPartsId;
-       $sql = "SELECT * FROM parts where category =".$category." AND delete_flg = ".self::DELETE_FLG_OFF;
+       $sql = "SELECT * FROM parts where category =.$category. AND delete_flg = ".self::DELETE_FLG_OFF;
        
        $result = DB::select($sql);
        return $result;
