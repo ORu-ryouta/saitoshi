@@ -49,7 +49,6 @@ class DemandController extends Controller
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $demand = new Demand(); 
-        $demand->demand    = $request->demand;
         $demand->member_id  = $request->member_id;
         $demand->category = $request->category;
         $demand->business   = $request->business;
