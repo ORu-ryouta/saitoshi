@@ -43,8 +43,7 @@ class Demand extends Model
     //指定した注文を更新
     public function demandUpdate($demandData)
     {
-        $sql = "UPDATE demand SET demand = ".'"'.$demandData->demand.'"'.
-        ", member_id = ".$demandData->member_id.
+        $sql = "UPDATE demand SET member_id = ".$demandData->member_id.
         ", category = ".'"'.$demandData->category.'"'.
         ", business = ".'"'.$demandData->business.'"'.        
         ", work = ".'"'.$demandData->work.'"'.        
