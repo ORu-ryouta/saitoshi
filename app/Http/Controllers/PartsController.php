@@ -132,7 +132,7 @@ class PartsController extends Controller
         $data = $md->getData(); // 全てのデータを持ってくる
          
     // ビューを返す
-        return view('parts.categoryList', ['data' => $data]);
+        return view('parts.partsList', ['data' => $data]);
     }
     
     private function getPartsCategory(){
