@@ -11,9 +11,14 @@
 
                     <li><a href="{{ action('CompanyController@companyList') }}">取引先管理</a></li>
                     
-                    <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li
+                    <li><a href="{{ action('PartsController@categoryList') }}">部品管理</a></li>
                     
-                    <li><a href="{{ action('DemandController@demandList') }}">注文管理</a></li>
+                    <li><a href="{{ action('DemandController@demandList') }}">注文管理</a></li
+                    
+                    <li><a href="{{ action('RequestController@requestList') }}">仕入れ管理</a></li>
+                    
+                    <li><a href="{{ action('SaleController@saleList') }}">売り上げ管理</a></li>
+                    
                     
                    
                 </ul>
