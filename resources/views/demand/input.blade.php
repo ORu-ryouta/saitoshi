@@ -31,11 +31,15 @@
         </div>
         <div class="form-group">
             <label>商談内容</label><span class="label label-danger">必須</span>
-            <input type="note" class="form-control" name="business" placeholder="商談内容を入力してください" @if (!empty($data)) value="{{$data->business}}"@endif>
+            <textarea name="note" row="4" cols="40" placeholder="商談内容を入力してください">
+                @if (!empty($data)) "{{$data->business}}"@endif
+            </textarea>      
         </div>
         <div class="form-group">
             <label>作業内容</label><span class="label label-danger">必須</span>
-            <input type="note" class="form-control" name="work" placeholder="作業内容を入力してください" @if (!empty($data)) value="{{$data->work}}"@endif>
+            <textarea name="note" row="4" cols="40" placeholder="作業内容を入力してください">
+                @if (!empty($data)) "{{$data->work}}"@endif
+            </textarea>
         </div>
         <div class="form-group">
             <label>金額</label>
