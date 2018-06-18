@@ -21,6 +21,15 @@ class Company extends Model
     	return $data;
     }
     
+    //companyとcompany_idを持ってくる
+    public function  getCompanyList()
+    {
+        $data = DB::select("SELECT company_id,company FROM company where delete_flg = ".self::DELETE_FLG_OFF);
+        
+        return $data;
+    }
+
+
     //指定したメンバーの存在確認
     public function companyCheck($companyId)
     {

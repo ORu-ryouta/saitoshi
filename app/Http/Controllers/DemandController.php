@@ -23,8 +23,9 @@ class DemandController extends Controller
         $md = new Demand(); // 注文ファイルに接続する
         
         // データ取得
-        $data = $md->demandSelect($emandId);
-        
+        $data = $md->demandSelect($demandId);
+        $data = $md->getCompanyList();
+                 
         
         } else { // 新規登録（注文IDがない時）
             
@@ -35,7 +36,7 @@ class DemandController extends Controller
         }
         
         // インプット画面を表示
-        return view('demand.input', ['data' => $data]);
+        return view('demand.input', ['data' => $data,'' => $companyId]);
     }
  
     /**

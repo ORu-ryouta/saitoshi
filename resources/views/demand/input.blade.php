@@ -15,10 +15,19 @@
     <form method="POST" action="{{ route('demand::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         @if (!empty($data)) <input type="hidden" class="form-control" name="demandId" value="{{$data->demand_id}}"> @endif
-        
+        <div class="form-group">
+            <label>会社名</label><span class="label label-danger">必須</span>
+             <select name="company">
+                 @foreach ($data1 as $companyName)
+                 <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{company}}</option>
+                 @endforeach
+            
+             </select>
+       
+        </div>
         <div class="form-group">
             <label>注文内容</label><span class="label label-danger">必須</span>
-            <input type="note" class="form-control" name="category" placeholder="注文内容を入力してください" @if (!empty($data)) value="{{$data->category}}" @endif>
+            <input type="note" class="form-control" name="category" placeholder="注文内容を選択してください" @if (!empty($data)) value="{{$data->category}}" @endif>
         </div>
         <div class="form-group">
             <label>商談内容</label><span class="label label-danger">必須</span>
