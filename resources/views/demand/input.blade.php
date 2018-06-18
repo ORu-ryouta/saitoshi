@@ -68,7 +68,6 @@
         </div>
         <div class="form-group">
             <label>進捗状況</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="status" placeholder="進捗状況を入力してください" @if (!empty($data)) value="{{$data->status}}"@endif>
             <select name="category">
                 @foreach ($data1 as $companyName)
                 <option value="0" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>完了</option>
