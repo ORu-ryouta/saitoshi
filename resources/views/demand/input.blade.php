@@ -66,7 +66,7 @@
         </div>
         <div class="form-group">
             <label>進捗状況</label><span class="label label-danger">必須</span>
-            <select name="complete_date">
+            <select name="status">
                 <option value="0" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>完了</option>
                 <option value="1" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>進行中</option>
                 <option value="2" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>未受注</option>

@@ -27,7 +27,7 @@
       <th>{{$d->receipt_date}}</th>
       <th>{{$d->complete_plans}}</th>
       <th>{{$d->complete_date}}</th>
-      
+      <th>{{$d->status}}</th>
     </tr>
       
     <th>
