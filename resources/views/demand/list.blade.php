@@ -4,6 +4,7 @@
 <div class="container">
   <table border="1">
     <tr>
+      <th>会社名/</th>
       <th>注文内容</th>
       <th>商談内容</th>
       <th>作業内容</th>
@@ -17,6 +18,7 @@
       @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
+      <th>{{$companyNameList[$d->company_id]}}</th>
       <th>{{$d->category}}</th>
       <th>{{$d->business}}</th>
       <th>{{$d->work}}</th>

@@ -84,6 +84,15 @@ class DemandController extends Controller
 
     public function demandList()
     {
+       $aa = new Company(); //companyファイルに接続する
+       $data1 = $aa->getCompanyList();
+       
+       // data1を元に配列番号をcompany_idに値をcompanyにした配列を作成する
+       $companyNameList = array();
+       foreach ($data1 as $company) {
+           $companyNameList[$company->company_id] = $company->company;
+       }
+        
     // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する
     // データ取得
@@ -93,7 +102,7 @@ class DemandController extends Controller
         }
 
     // ビューを返す
-      return view('demand.list', ['data' => $data]);
+      return view('demand.list', ['data' => $data,'companyNameList' => $companyNameList]);
     }
    
     //削除
