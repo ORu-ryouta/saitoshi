@@ -17,17 +17,19 @@ class DemandController extends Controller
      */
     public function demandInput(DemandRequest $request=null)
     {
+        
+        $aa = new Company(); //companyファイルに接続する
+        $data1 = $aa->getCompanyList();
         if(!empty($_GET["demandId"])) { // 編集（注文IDがある時）
             $demandId = $_GET["demandId"];
         
         // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する
         
-        $aa = new Company(); //companyファイルに接続する
+        
         
         // データ取得
         $data = $md->demandSelect($demandId);
-        $data1 = $aa->getCompanyList();
                  
         
         } else { // 新規登録（注文IDがない時）
