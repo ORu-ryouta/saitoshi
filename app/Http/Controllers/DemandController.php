@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\DemandRequest;
 use App\Demand;
+use App\Company;
 
 class DemandController extends Controller
 {
@@ -22,9 +23,11 @@ class DemandController extends Controller
         // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する
         
+        $aa = new Company(); //companyファイルに接続する
+        
         // データ取得
         $data = $md->demandSelect($demandId);
-        $data = $md->getCompanyList();
+        $data1 = $aa->getCompanyList();
                  
         
         } else { // 新規登録（注文IDがない時）
@@ -36,7 +39,7 @@ class DemandController extends Controller
         }
         
         // インプット画面を表示
-        return view('demand.input', ['data' => $data,'' => $companyId]);
+        return view('demand.input', ['data' => $data,'data1' => $data1]);
     }
  
     /**
