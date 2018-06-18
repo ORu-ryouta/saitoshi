@@ -17,7 +17,7 @@
         @if (!empty($data)) <input type="hidden" class="form-control" name="demandId" value="{{$data->demand_id}}"> @endif
         <div class="form-group">
             <label>会社名</label><span class="label label-danger">必須</span>
-             <select name="company">
+             <select name="company_id">
                  @foreach ($data1 as $companyName)
                  <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{$companyName->company}}</option>
                  @endforeach
