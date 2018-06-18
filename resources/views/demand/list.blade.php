@@ -19,7 +19,7 @@
       @foreach($data as $d)
     <tr>
       <th>{{$companyNameList[$d->company_id]}}</th>
-      <th>{{$d->category}}</th>
+      <th>{{$categoryNameList[$d->category]}}</th>
       <th>{{$d->business}}</th>
       <th>{{$d->work}}</th>
       <th>{{$d->price}}</th>
@@ -27,7 +27,7 @@
       <th>{{$d->receipt_date}}</th>
       <th>{{$d->complete_plans}}</th>
       <th>{{$d->complete_date}}</th>
-      <th>{{$d->status}}</th>
+      <th>{{$statusNameList[$d->status]}}</th>
     </tr>
       
     <th>

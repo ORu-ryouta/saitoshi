@@ -92,6 +92,9 @@ class DemandController extends Controller
        foreach ($data1 as $company) {
            $companyNameList[$company->company_id] = $company->company;
        }
+
+    
+           
         
     // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する
@@ -104,6 +107,11 @@ class DemandController extends Controller
     // ビューを返す
       return view('demand.list', ['data' => $data,'companyNameList' => $companyNameList]);
     }
+   
+       
+    
+    
+    
    
     //削除
     public function demandDelete(DemandRequest $request=null)
@@ -119,6 +127,29 @@ class DemandController extends Controller
     // ビューを返す
         return view('demand.list', ['data' => $data]);
     }
+    
+     private function demandStatus(){
+             
+        $statusNameList= array(
+            "完了",
+            "進行中",
+            "未受注",
+            "保留",
+            "破棄",
+            );
+        return $statusNameList;
+     }
+     
+     
+          private function demandCategory(){
+                
+       $categoryNameList= array(
+           "メンテナンス",
+           "発注",
+           "クレーム",
+           );
+       return $partsCategory;
+     }
 
 }
 
