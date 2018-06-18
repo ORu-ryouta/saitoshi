@@ -27,11 +27,9 @@
         <div class="form-group">
             <label>注文内容</label><span class="label label-danger">必須</span>
             <select name="category">
-                 @foreach ($data1 as $companyName)
                 <option value="0" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>メンテナンス</option>
                 <option value="1" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>発注</option>
                 <option value="2" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>クレーム</option>
-                 @endforeach
              </select>
         </div>
         <div class="form-group">
@@ -69,13 +67,11 @@
         <div class="form-group">
             <label>進捗状況</label><span class="label label-danger">必須</span>
             <select name="complete_date">
-                @foreach ($data1 as $companyName)
                 <option value="0" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>完了</option>
                 <option value="1" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>進行中</option>
                 <option value="2" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>未受注</option>
                 <option value="3" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>保留</option>
                 <option value="4" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>破棄</option>
-                @endforeach
             </select>
         </div> 
         
