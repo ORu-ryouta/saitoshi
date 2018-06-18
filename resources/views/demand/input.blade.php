@@ -19,7 +19,7 @@
             <label>会社名</label><span class="label label-danger">必須</span>
              <select name="company">
                  @foreach ($data1 as $companyName)
-                 <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{company}}</option>
+                 <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{$companyName->company_id}}</option>
                  @endforeach
             
              </select>
