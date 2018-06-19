@@ -6,6 +6,7 @@
     <tr>
       <th>会社名/</th>
       <th>金額</th>
+      <th>入金日</th>
       <th>受注日</th>
       <th>完了日</th>
     </tr>
@@ -14,6 +15,7 @@
     <tr>
       <th>{{$companyNameList[$d->company_id]}}</th>
       <th>{{$d->price}}</th>
+      <th>{{$d->credit_date}}</th>
       <th>{{$d->receipt_date}}</th>
       <th>{{$d->complete_plans}}</th>
     </tr>

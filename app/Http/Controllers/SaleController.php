@@ -59,6 +59,7 @@ class SaleController extends Controller
         $sale = new Sale(); 
         $sale->company_id  = $request->company_id;
         $sale->price   = $request->price;
+        $sale->credit_date   = $request->credit_date;
         $sale->receipt_date   = $request->receipt_date;
         $sale->complete_plans   = $request->complete_plans;
       
