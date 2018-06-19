@@ -28,7 +28,7 @@
             <input type="text" class="form-control" name="price" placeholder="金額を入力してください" @if (!empty($data)) value="{{$data->price}}"@endif>
         </div>
         <div class="form-group">
-            <label>入金日</label>
+            <label>入金日</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="credit_date" placeholder="入金日を入力してください" @if (!empty($data)) value="{{$data->credit_date}}"@endif>
         </div>
          <div class="form-group">
