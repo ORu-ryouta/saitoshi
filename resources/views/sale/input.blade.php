@@ -22,35 +22,10 @@
                  <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{$companyName->company}}</option>
                  @endforeach
              </select>
-       
-        </div>
-        <div class="form-group">
-            <label>注文内容</label><span class="label label-danger">必須</span>
-            <select name="category">
-                <option value="0" @if (!empty($data)) @if ($data->category == 0 ) checked @endif @endif>メンテナンス</option>
-                <option value="1" @if (!empty($data)) @if ($data->category == 1 ) checked @endif @endif>発注</option>
-                <option value="2" @if (!empty($data)) @if ($data->category == 2 ) checked @endif @endif>クレーム</option>             
-            </select>
-        </div>
-        <div class="form-group">
-            <label>商談内容</label><span class="label label-danger">必須</span>
-            <textarea name="business" row="4" cols="40" placeholder="商談内容を入力してください">
-                @if (!empty($data)) "{{$data->business}}"@endif
-            </textarea>      
-        </div>
-        <div class="form-group">
-            <label>作業内容</label><span class="label label-danger">必須</span>
-            <textarea name="work" row="4" cols="40" placeholder="作業内容を入力してください">
-                @if (!empty($data)) "{{$data->work}}"@endif
-            </textarea>
-        </div>
+        </div> 
         <div class="form-group">
             <label>金額</label>
             <input type="text" class="form-control" name="price" placeholder="金額を入力してください" @if (!empty($data)) value="{{$data->price}}"@endif>
-        </div>
-        <div class="form-group">
-            <label>注文日</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="demand_date" placeholder="注文日を入力してください" @if (!empty($data)) value="{{$data->demand_date}}"@endif>
         </div>
          <div class="form-group">
             <label>受注日</label><span class="label label-danger">必須</span>
@@ -60,20 +35,8 @@
             <label>完了日</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="complete_plans" placeholder="完了日を入力してください" @if (!empty($data)) value="{{$data->complete_plans}}"@endif>
         </div>
-         <div class="form-group">
-            <label>完了予定日</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="complete_date" placeholder="完了予定日を入力してください" @if (!empty($data)) value="{{$data->complete_date}}"@endif>
-        </div>
-        <div class="form-group">
-            <label>進捗状況</label><span class="label label-danger">必須</span>
-            <select name="status">
-                <option value="0" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>完了</option>
-                <option value="1" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>進行中</option>
-                <option value="2" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>未受注</option>
-                <option value="3" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>保留</option>
-                <option value="4" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>破棄</option>
-            </select>
-        </div> 
+         
+        
         
  <!--       </div>
         <div class="form-group">

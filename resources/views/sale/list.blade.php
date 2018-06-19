@@ -5,29 +5,17 @@
   <table border="1">
     <tr>
       <th>会社名/</th>
-      <th>注文内容</th>
-      <th>商談内容</th>
-      <th>作業内容</th>
       <th>金額</th>
-      <th>注文日</th>
       <th>受注日</th>
       <th>完了日</th>
-      <th>完了予定日</th>
-      <th>進捗状況</th>
     </tr>
       @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
       <th>{{$companyNameList[$d->company_id]}}</th>
-      <th>{{$category[$d->category]}}</th>
-      <th>{{$d->business}}</th>
-      <th>{{$d->work}}</th>
       <th>{{$d->price}}</th>
-      <th>{{$d->demand_date}}</th>
       <th>{{$d->receipt_date}}</th>
       <th>{{$d->complete_plans}}</th>
-      <th>{{$d->complete_date}}</th>
-      <th>{{$status[$d->status]}}</th>
     </tr>
       
     <th>

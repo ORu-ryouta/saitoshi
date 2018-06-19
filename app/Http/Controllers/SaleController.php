@@ -40,14 +40,10 @@ class SaleController extends Controller
             $data =null;
         }
         
-        // 注文ステータスリスト取得
-        $statusNameList = self::saleStatus();
-        
-        // 注文カテゴリリスト取得
-        $categoryNameList = self::saleCategory();
+
         
         // インプット画面を表示
-        return view('sale.input', ['data' => $data,'data1' => $data1,'status' => $statusNameList,'category' => $categoryNameList]);
+        return view('sale.input', ['data' => $data,'data1' => $data1]);
     }
  
     /**
@@ -62,15 +58,9 @@ class SaleController extends Controller
         // データベース登録
         $sale = new Sale(); 
         $sale->company_id  = $request->company_id;
-        $sale->category = $request->category;
-        $sale->business   = $request->business;
-        $sale->work   = $request->work;
         $sale->price   = $request->price;
-        $sale->demand_date   = $request->demand_date;
         $sale->receipt_date   = $request->receipt_date;
         $sale->complete_plans   = $request->complete_plans;
-        $sale->complete_date   = $request->complete_date;
-        $sale->status   = $request->status;
       
          if(!empty($request->saleId)) { // 更新画面
          $sale->sale_id = $request->saleId;
@@ -110,14 +100,12 @@ class SaleController extends Controller
             $data = null;
         }
         
-        // 注文ステータスリスト取得
-        $statusNameList = self::saleStatus();
+
         
-        // 注文カテゴリリスト取得
-        $categoryNameList = self::saleCategory();
+
 
     // ビューを返す
-      return view('sale.list', ['data' => $data,'companyNameList' => $companyNameList,'status' => $statusNameList,'category' => $categoryNameList]);
+      return view('sale.list', ['data' => $data,'companyNameList' => $companyNameList]);
     }
    
        
@@ -139,30 +127,5 @@ class SaleController extends Controller
     // ビューを返す
         return view('sale.list', ['data' => $data]);
     }
-    
-     private function saleStatus(){
-             
-        $statusNameList= array(
-            "完了",
-            "進行中",
-            "未受注",
-            "保留",
-            "破棄",
-            );
-        return $statusNameList;
-     }
-     
-     
-     private function saleCategory(){
-                
-        $categoryNameList= array(
-           "メンテナンス",
-           "発注",
-           "クレーム",
-           );
-       return $categoryNameList;
-     }
 
 }
-
-
