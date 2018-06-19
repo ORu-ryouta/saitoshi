@@ -61,15 +61,16 @@ Route::group(['as' => 'parts::'], function() {
     Route::get('/partsDelete',['as' => 'delete', 'uses' => 'PartsController@partsDelete']);
 });
 
-//demand画面群のルートパス
-Route::group(['as' => 'demand::'], function() {
+
+//sale画面群のルートパス
+Route::group(['as' => 'sale::'], function() {
  
     // 入力画面
-    Route::get('/demandInput', ['as' => 'input', 'uses' => 'DemandController@demandInput']);
+    Route::get('/saleInput', ['as' => 'input', 'uses' => 'SaleController@saleInput']);
     // 完了画面
-    Route::post('/demandSave', ['as' => 'save', 'uses' => 'DemandController@demandSave']);
+    Route::post('/saleSave', ['as' => 'save', 'uses' => 'SaleController@saleSave']);
     // リスト画面
-    Route::get('/demandList', ['as' => 'list', 'uses' => 'DemandController@demandList']);
+    Route::get('/saleList', ['as' => 'list', 'uses' => 'SaleController@saleList']);
     // 削除画面
-    Route::get('/demandDelete',['as' => 'delete', 'uses' => 'DemandController@demandDelete']);
+    Route::get('/saleDelete',['as' => 'delete', 'uses' => 'SaleController@saleDelete']);
 });

@@ -17,7 +17,7 @@
                     
                     <li><a>仕入れ管理</a></li>
                     
-                    <li><a>売り上げ管理</a></li>
+                    <li><a href="{{ action('SaleController@saleList') }}">>売り上げ管理</a></li>
                     
                     
                    
