@@ -61,6 +61,20 @@ Route::group(['as' => 'parts::'], function() {
     Route::get('/partsDelete',['as' => 'delete', 'uses' => 'PartsController@partsDelete']);
 });
 
+//demand画面群のルートパス
+Route::group(['as' => 'demand::'], function() {
+ 
+    // 入力画面
+    Route::get('/demandInput', ['as' => 'input', 'uses' => 'DemandController@demandInput']);
+    // 完了画面
+    Route::post('/demandSave', ['as' => 'save', 'uses' => 'DemandController@demandSave']);
+    // リスト画面
+    Route::get('/demandList', ['as' => 'list', 'uses' => 'DemandController@demandList']);
+    // 削除画面
+    Route::get('/demandDelete',['as' => 'delete', 'uses' => 'DemandController@demandDelete']);
+});
+
+
 
 //sale画面群のルートパス
 Route::group(['as' => 'sale::'], function() {
