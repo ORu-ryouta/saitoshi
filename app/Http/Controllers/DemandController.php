@@ -40,8 +40,14 @@ class DemandController extends Controller
             $data =null;
         }
         
+        // 注文ステータスリスト取得
+        $statusNameList = self::demandStatus();
+        
+        // 注文カテゴリリスト取得
+        $categoryNameList = self::demandCategory();
+        
         // インプット画面を表示
-        return view('demand.input', ['data' => $data,'data1' => $data1]);
+        return view('demand.input', ['data' => $data,'data1' => $data1,'status' => $statusNameList,'category' => $categoryNameList]);
     }
  
     /**
@@ -103,9 +109,15 @@ class DemandController extends Controller
         if (empty($data)) {
             $data = null;
         }
+        
+        // 注文ステータスリスト取得
+        $statusNameList = self::demandStatus();
+        
+        // 注文カテゴリリスト取得
+        $categoryNameList = self::demandCategory();
 
     // ビューを返す
-      return view('demand.list', ['data' => $data,'companyNameList' => $companyNameList]);
+      return view('demand.list', ['data' => $data,'companyNameList' => $companyNameList,'status' => $statusNameList,'category' => $categoryNameList]);
     }
    
        
@@ -141,14 +153,14 @@ class DemandController extends Controller
      }
      
      
-          private function demandCategory(){
+     private function demandCategory(){
                 
-       $categoryNameList= array(
+        $categoryNameList= array(
            "メンテナンス",
            "発注",
            "クレーム",
            );
-       return $partsCategory;
+       return $categoryNameList;
      }
 
 }
