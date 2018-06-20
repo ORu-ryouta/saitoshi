@@ -88,3 +88,16 @@ Route::group(['as' => 'sale::'], function() {
     // 削除画面
     Route::get('/saleDelete',['as' => 'delete', 'uses' => 'SaleController@saleDelete']);
 });
+
+//request画面群のルートパス
+Route::group(['as' => 'sale::'], function() {
+ 
+    // 入力画面
+    Route::get('/requestInput', ['as' => 'input', 'uses' => 'RequestController@requestInput']);
+    // 完了画面
+    Route::post('/requestSave', ['as' => 'save', 'uses' => 'RequestController@requestSave']);
+    // リスト画面
+    Route::get('/requestList', ['as' => 'list', 'uses' => 'RequestController@requestList']);
+    // 削除画面
+    Route::get('/requestDelete',['as' => 'delete', 'uses' => 'RequestController@requestDelete']);
+});

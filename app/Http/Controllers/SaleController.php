@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaleRequest;
 use App\Sale;
-use App\Company;
+use App\Demand;
 
 class SaleController extends Controller
 {
@@ -18,8 +18,8 @@ class SaleController extends Controller
     public function saleInput(SaleRequest $request=null)
     {
         
-        $aa = new Company(); //saleファイルに接続する
-        $data1 = $aa->getCompanyList();
+        $aa = new Demand(); //saleファイルに接続する
+        $data1 = $aa->getDemandList();
         if(!empty($_GET["saleId"])) { // 編集（注文IDがある時）
             $saleId = $_GET["saleId"];
         
@@ -57,7 +57,7 @@ class SaleController extends Controller
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $sale = new Sale(); 
-        $sale->company_id  = $request->company_id;
+        $sale->demand_id  = $request->demand_id;
         $sale->price   = $request->price;
         $sale->credit_date   = $request->credit_date;
         $sale->receipt_date   = $request->receipt_date;
@@ -81,13 +81,13 @@ class SaleController extends Controller
 
     public function saleList()
     {
-       $aa = new Company(); //companyファイルに接続する
-       $data1 = $aa->getCompanyList();
+       $aa = new Demand(); //demandファイルに接続する
+       $data1 = $aa->getdemandList();
        
-       // data1を元に配列番号をcompany_idに値をcompanyにした配列を作成する
-       $companyNameList = array();
-       foreach ($data1 as $company) {
-           $companyNameList[$company->company_id] = $company->company;
+       // data1を元に配列番号をdemand_idに値をdemandにした配列を作成する
+       $demandNameList = array();
+       foreach ($data1 as $demand) {
+           $demandNameList[$demand->demand_id] = $demand->demand;
        }
 
     
@@ -106,7 +106,7 @@ class SaleController extends Controller
 
 
     // ビューを返す
-      return view('sale.list', ['data' => $data,'companyNameList' => $companyNameList]);
+      return view('sale.list', ['data' => $data,'demandNameList' => $demandNameList]);
     }
    
        

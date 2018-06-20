@@ -1,28 +1,28 @@
 @extends('adminlte.layout')
 @section('content')
-
 <div class="container">
   <table border="1">
     <tr>
       <th>会社名</th>
-      <th>金額</th>
-      <th>入金日</th>
-      <th>受注日</th>
-      <th>完了日</th>
+      <th>代表者名</th>
+      <th>住所</th>
+      <th>連絡先</th> 
+      <th>管理者備考</th>
+      
     </tr>
       @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
-      <th>{{$demandNameList[$d->demand_id]}}</th>
-      <th>{{$d->price}}</th>
-      <th>{{$d->credit_date}}</th>
-      <th>{{$d->receipt_date}}</th>
-      <th>{{$d->complete_plans}}</th>
+      <th>{{$d->company}}</th>
+      <th>{{$d->fixer}}</th>
+      <th>{{$d->address}}</th>
+      <th>{{$d->tel}}</th>
+      <th>{{$d->note}}</th>
     </tr>
       
     <th>
-        <form method="GET" action="{{ route('sale::input') }}">
-            <input type="hidden" class="form-control" name="saleId" value="{{$d->sale_id}}">
+        <form method="GET" action="{{ route('request::input') }}">
+            <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">編集</button>
@@ -31,8 +31,8 @@
         </form>
     </th>
     <th>
-        <form method="GET" action="{{ route('sale::delete') }}">
-            <input type="hidden" class="form-control" name="saleId" value="{{$d->sale_id}}">
+        <form method="GET" action="{{ route('request::delete') }}">
+            <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" onclick="return submitcheck();">削除</button>
@@ -46,7 +46,7 @@
       @endforeach
       @endif
   </table>
-    <form method="GET" action="{{ route('sale::input') }}">
+    <form method="GET" action="{{ route('request::input') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">新規登録</button>
