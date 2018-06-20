@@ -93,7 +93,7 @@ class RequestController extends Controller
 
         $md = new Request(); // カンパニーファイルに接続する
         
-        $md->requestDelete($companyId); // 指定したメンバーIDの削除
+        $md->requestDelete($requestId); // 指定したメンバーIDの削除
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
