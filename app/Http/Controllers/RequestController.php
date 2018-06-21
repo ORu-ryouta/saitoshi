@@ -14,7 +14,7 @@ class RequestController extends Controller
      
      * @return string
      */
-    public function requestInput(requestRequest $request=null)
+    public function requestInput(RequestRequest $request=null)
     {
         if(!empty($_GET["requestId"])) { // 編集（メンバーIDがある時）
             $requestId = $_GET["requestId"];
@@ -44,7 +44,7 @@ class RequestController extends Controller
      *
      * @return string
      */
-    public function requestSave(requestRequest $request)
+    public function requestSave(RequestRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');

@@ -22,7 +22,7 @@ class Request extends Model
     }
     
     //companyとcompany_idを持ってくる
-    public function  getrequestList()
+    public function  getRequestList()
     {
         $data = DB::select("SELECT request_id,request FROM request where delete_flg = ".self::DELETE_FLG_OFF);
         
