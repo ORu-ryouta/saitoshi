@@ -30,7 +30,7 @@ create table company (
 
 -- 仕入れ
 
-drop table supplier cascade;
+
 
 
 create table supplier (
