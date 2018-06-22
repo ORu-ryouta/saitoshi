@@ -101,3 +101,6 @@ Route::group(['as' => 'supplier::'], function() {
     // 削除画面
     Route::get('/supplierDelete',['as' => 'delete', 'uses' => 'SupplierController@supplierDelete']);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
