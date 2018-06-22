@@ -19,7 +19,7 @@
                     
                     <li><a href="{{ action('SaleController@saleList') }}">売り上げ管理</a></li>
                     
-                    
+                    <li><a href="{{ action('Admin_userController@admin_userList') }}">管理者</a></li>
                    
                 </ul>
             </section>

@@ -101,6 +101,20 @@ Route::group(['as' => 'supplier::'], function() {
     // 削除画面
     Route::get('/supplierDelete',['as' => 'delete', 'uses' => 'SupplierController@supplierDelete']);
 });
+
+//admin_user画面群のルートパス
+Route::group(['as' => 'admin_user::'], function() {
+ 
+    // 入力画面
+    Route::get('/admin_userInput', ['as' => 'input', 'uses' => 'Admin_userController@admin_userInput']);
+    // 完了画面
+    Route::post('/admin_userSave', ['as' => 'save', 'uses' => 'Admin_userController@admin_userSave']);
+    // リスト画面
+    Route::get('/admin_userList', ['as' => 'list', 'uses' => 'Admin_userController@admin_userList']);
+    // 削除画面
+    Route::get('/admin_userDelete',['as' => 'delete', 'uses' => 'Admin_userController@admin_userDelete']);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
