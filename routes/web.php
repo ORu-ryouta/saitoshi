@@ -90,7 +90,7 @@ Route::group(['as' => 'sale::'], function() {
 });
 
 //supplier画面群のルートパス
-Route::group(['as' => 'sale::'], function() {
+Route::group(['as' => 'supplier::'], function() {
  
     // 入力画面
     Route::get('/supplierInput', ['as' => 'input', 'uses' => 'SupplierController@supplierInput']);
