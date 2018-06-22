@@ -27,8 +27,7 @@ class SaleRequest extends FormRequest
 
             'price' => 'required|max:100',
             'credit_date' => 'required|max:100',
-            'receipt_date' => 'required|max:100',
-            'complete_plans' => 'required|max:100',
+            
         ];
     }
     public function messages()
@@ -39,10 +38,7 @@ class SaleRequest extends FormRequest
             'price.max' => '金額を正しく入力してください。',
             'credit_date.required' => '入金日を入力してください。',
             'credit_date.max' => '入金日を正しく入力してください。',
-            'receipt_date.required' => '受注日を入力してください。',
-            'receipt_date.max' => '受注日を正しく入力してください。',
-            'complete_plans.required' => '完了日を入力してください。',
-            'complete_plans.max' => '完了日を正しく入力してください。',
+            
  
         ];
     }

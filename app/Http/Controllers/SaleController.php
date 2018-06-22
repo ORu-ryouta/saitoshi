@@ -60,8 +60,6 @@ class SaleController extends Controller
         $sale->demand_id  = $request->demand_id;
         $sale->price   = $request->price;
         $sale->credit_date   = $request->credit_date;
-        $sale->receipt_date   = $request->receipt_date;
-        $sale->complete_plans   = $request->complete_plans;
       
          if(!empty($request->saleId)) { // 更新画面
          $sale->sale_id = $request->saleId;

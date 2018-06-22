@@ -44,16 +44,9 @@ class Sale extends Model
     //指定した注文を更新
     public function saleUpdate($saleData)
     {
-        $sql = "UPDATE sale SET company_id = ".$saleData->company_id.
-        ", category = ".'"'.$saleData->category.'"'.
-        ", business = ".'"'.$saleData->business.'"'.        
-        ", work = ".'"'.$saleData->work.'"'.        
+        $sql = "UPDATE sale SET company_id = ".$saleData->company_id.       
         ", price = ".'"'.$saleData->price.'"'.   
-        ", demand_date = ".'"'.$saleData->demand_date.'"'.
-        ", receipt_date = ".'"'.$saleData->receipt_date.'"'.        
-        ", complete_plans = ".'"'.$saleData->complete_plans.'"'.        
-        ", complete_date = ".'"'.$saleData->complete_date.'"'. 
-        ", status = ".'"'.$saleData->status.'"'. 
+        ", credit_date = ".'"'.$saleData->credit_date.'"'.
         " where sale_id = ".$saleData->sale_id;
         
         DB::update($sql);
