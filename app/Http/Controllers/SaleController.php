@@ -44,8 +44,8 @@ class SaleController extends Controller
             $demandId = $_GET["demandId"];
         }
         
-        
-
+        $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
+        error_log(print_r($data1, TRUE), 3, $logPass);
         
         // インプット画面を表示
         return view('sale.input', ['data' => $data,'data1' => $data1]);
