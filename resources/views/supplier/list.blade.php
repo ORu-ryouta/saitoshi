@@ -21,8 +21,8 @@
     </tr>
       
     <th>
-        <form method="GET" action="{{ route('request::input') }}">
-            <input type="hidden" class="form-control" name="requestId" value="{{$d->request_id}}">
+        <form method="GET" action="{{ route('supplier::input') }}">
+            <input type="hidden" class="form-control" name="supplierId" value="{{$d->supplier_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">編集</button>
@@ -31,8 +31,8 @@
         </form>
     </th>
     <th>
-        <form method="GET" action="{{ route('request::delete') }}">
-            <input type="hidden" class="form-control" name="requestId" value="{{$d->request_id}}">
+        <form method="GET" action="{{ route('supplier::delete') }}">
+            <input type="hidden" class="form-control" name="supplierId" value="{{$d->supplier_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" onclick="return submitcheck();">削除</button>
@@ -46,7 +46,7 @@
       @endforeach
       @endif
   </table>
-    <form method="GET" action="{{ route('request::input') }}">
+    <form method="GET" action="{{ route('supplier::input') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">新規登録</button>

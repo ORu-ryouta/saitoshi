@@ -89,15 +89,15 @@ Route::group(['as' => 'sale::'], function() {
     Route::get('/saleDelete',['as' => 'delete', 'uses' => 'SaleController@saleDelete']);
 });
 
-//request画面群のルートパス
+//supplier画面群のルートパス
 Route::group(['as' => 'sale::'], function() {
  
     // 入力画面
-    Route::get('/requestInput', ['as' => 'input', 'uses' => 'RequestController@requestInput']);
+    Route::get('/supplierInput', ['as' => 'input', 'uses' => 'SupplierController@supplierInput']);
     // 完了画面
-    Route::post('/requestSave', ['as' => 'save', 'uses' => 'RequestController@requestSave']);
+    Route::post('/supplierSave', ['as' => 'save', 'uses' => 'SupplierController@supplierSave']);
     // リスト画面
-    Route::get('/requestList', ['as' => 'list', 'uses' => 'RequestController@requestList']);
+    Route::get('/supplierList', ['as' => 'list', 'uses' => 'SupplierController@supplierList']);
     // 削除画面
-    Route::get('/requestDelete',['as' => 'delete', 'uses' => 'RequestController@requestDelete']);
+    Route::get('/supplierDelete',['as' => 'delete', 'uses' => 'SupplierController@supplierDelete']);
 });

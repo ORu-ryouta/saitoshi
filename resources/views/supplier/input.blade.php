@@ -12,9 +12,9 @@
 <div class="container">
     <h3>情報を入力してください。</h3>
  
-    <form method="POST" action="{{ route('request::save') }}">
+    <form method="POST" action="{{ route('supplier::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-        @if (!empty($data)) <input type="hidden" class="form-control" name="requestId" value="{{$data->request_id}}"> @endif
+        @if (!empty($data)) <input type="hidden" class="form-control" name="supplierId" value="{{$data->supplier_id}}"> @endif
         
         <div class="form-group">
             <label>会社名/船名</label><span class="label label-danger">必須</span>
@@ -57,7 +57,7 @@
             </div>
         </div>
     </form>
-    <form method="GET" action="{{ route('request::list') }}">
+    <form method="GET" action="{{ route('supplier::list') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>
