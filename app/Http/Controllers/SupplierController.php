@@ -14,7 +14,7 @@ class SupplierController extends Controller
      
      * @return string
      */
-    public function supplierInput(supplierRequest $request=null)
+    public function supplierInput(SupplierRequest $request=null)
     {
         if(!empty($_GET["supplierId"])) { // 編集（メンバーIDがある時）
             $requestId = $_GET["supplierId"];
