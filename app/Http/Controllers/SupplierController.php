@@ -44,7 +44,7 @@ class SupplierController extends Controller
      *
      * @return string
      */
-    public function supplierSave(supplierRequest $request)
+    public function supplierSave(SupplierRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
