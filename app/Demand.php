@@ -89,7 +89,7 @@ class Demand extends Model
     public function  getDemandList()
     {
         $data = DB::select("SELECT demand.demand_id,company.company from "
-                . "demand inner join company on demand.demand_id = company.company where delete_flg = ".self::DELETE_FLG_OFF);
+                . "demand inner join company on demand.demand_id = company.company where demand.delete_flg = ".self::DELETE_FLG_OFF);
        
         return $data;
     }
