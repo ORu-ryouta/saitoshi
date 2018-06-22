@@ -85,11 +85,12 @@ class Demand extends Model
     }   
     
     
-    // demandとdemand _idを持ってくる
+    // companyとdemand _idを持ってくる
     public function  getDemandList()
     {
-        $data = DB::select("SELECT demand_id,demand FROM demand where delete_flg = ".self::DELETE_FLG_OFF);
-        
+        $data = DB::select("SELECT demand.demand_id,company.company from "
+                . "demand inner join company on demand.demand_id = company.company where delete_flg = ".self::DELETE_FLG_OFF);
+       
         return $data;
     }
             

@@ -99,7 +99,7 @@ class SaleController extends Controller
        // data1を元に配列番号をdemand_idに値をdemandにした配列を作成する
        $demandNameList = array();
        foreach ($data1 as $demand) {
-           $demandNameList[$demand->demand_id] = $demand->demand;
+           $demandNameList[$demand->demand_id] = $demand->company;
        }      
 
         
