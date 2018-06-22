@@ -17,7 +17,7 @@ class SupplierController extends Controller
     public function supplierInput(SupplierRequest $request=null)
     {
         if(!empty($_GET["supplierId"])) { // 編集（メンバーIDがある時）
-            $requestId = $_GET["supplierId"];
+            $supplierId = $_GET["supplierId"];
         
         // Frameworksモデルのインスタンス化
         $md = new Supplier(); // カンパニーファイルに接続する
