@@ -24,7 +24,7 @@ class Supplier extends Model
     //companyとcompany_idを持ってくる
     public function  getSupplierList()
     {
-        $data = DB::select("SELECT request_id,supplier FROM request where delete_flg = ".self::DELETE_FLG_OFF);
+        $data = DB::select("SELECT supplier_id,supplier FROM supplier where delete_flg = ".self::DELETE_FLG_OFF);
         
         return $data;
     }
