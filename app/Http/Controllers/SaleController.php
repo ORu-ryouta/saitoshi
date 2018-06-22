@@ -17,28 +17,33 @@ class SaleController extends Controller
      */
     public function saleInput(SaleRequest $request=null)
     {
-        
-        $aa = new Demand(); //saleファイルに接続する
-        $data1 = $aa->getDemandList();
-        if(!empty($_GET["saleId"])) { // 編集（注文IDがある時）
+         if(!empty($_GET["saleId"])) { // 編集（メンバーIDがある時）
             $saleId = $_GET["saleId"];
         
         // Frameworksモデルのインスタンス化
-        $md = new Sale(); // 注文ファイルに接続する
-        
+        $md = new Sale(); // カンパニーファイルに接続する
         
         
         // データ取得
         $data = $md->saleSelect($saleId);
-                 
         
-        } else { // 新規登録（売り上げIDがない時）
+        
+        } else { // 新規登録（カンパニーIDがない時）
             
         }
        
         if (empty($data)) {
             $data =null;
         }
+        
+     
+        
+        $aa = new Demand(); //saleファイルに接続する
+        $data1 = $aa->getDemandList();
+        if(!empty($_GET["demandId"])) { // 編集（注文IDがある時）
+            $demandId = $_GET["demandId"];
+        }
+        
         
 
         
@@ -79,17 +84,6 @@ class SaleController extends Controller
 
     public function saleList()
     {
-       $aa = new Demand(); //demandファイルに接続する
-       $data1 = $aa->getdemandList();
-       
-       // data1を元に配列番号をdemand_idに値をdemandにした配列を作成する
-       $demandNameList = array();
-       foreach ($data1 as $demand) {
-           $demandNameList[$demand->demand_id] = $demand->demand;
-       }
-
-    
-           
         
     // Frameworksモデルのインスタンス化
         $md = new Sale(); // 注文ファイルに接続する
@@ -99,6 +93,14 @@ class SaleController extends Controller
             $data = null;
         }
         
+        $aa = new Demand(); //demandファイルに接続する
+       $data1 = $aa->getdemandList();
+       
+       // data1を元に配列番号をdemand_idに値をdemandにした配列を作成する
+       $demandNameList = array();
+       foreach ($data1 as $demand) {
+           $demandNameList[$demand->demand_id] = $demand->demand;
+       }      
 
         
 

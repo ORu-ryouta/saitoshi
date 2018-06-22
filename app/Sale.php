@@ -44,7 +44,7 @@ class Sale extends Model
     //指定した注文を更新
     public function saleUpdate($saleData)
     {
-        $sql = "UPDATE sale SET company_id = ".$saleData->company_id.       
+        $sql = "UPDATE sale SET sale_id = ".$saleData->sale_id.       
         ", price = ".'"'.$saleData->price.'"'.   
         ", credit_date = ".'"'.$saleData->credit_date.'"'.
         " where sale_id = ".$saleData->sale_id;
