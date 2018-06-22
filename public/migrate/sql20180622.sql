@@ -11,10 +11,10 @@
 */
 
 -- 取引先
---* BackupToTempTable
+
 drop table company cascade;
 
---* RestoreFromTempTable
+
 create table company (
   company_id int auto_increment not null comment '会社ID'
   , company VARCHAR(255) not null comment '会社名'
@@ -29,10 +29,10 @@ create table company (
 ) comment '取引先:' ;
 
 -- 仕入れ
---* BackupToTempTable
+
 drop table supplier cascade;
 
---* RestoreFromTempTable
+
 create table supplier (
   supplier_id int auto_increment not null comment '仕入れID'
   , parts_id INT not null comment '部品ID'
@@ -47,10 +47,10 @@ create table supplier (
 ) comment '仕入れ:' ;
 
 -- 部品
---* BackupToTempTable
+
 drop table parts cascade;
 
---* RestoreFromTempTable
+
 create table parts (
   parts_id int auto_increment not null comment '部品ID'
   , parts VARCHAR(255) not null comment '部品名'
@@ -65,10 +65,10 @@ create table parts (
 ) comment '部品:' ;
 
 -- 注文
---* BackupToTempTable
+
 drop table demand cascade;
 
---* RestoreFromTempTable
+
 create table demand (
   demand_id int auto_increment not null comment '注文ID'
   , company_id INT not null comment '会社ID'
@@ -88,10 +88,10 @@ create table demand (
 ) comment '注文:' ;
 
 -- 顧客
---* BackupToTempTable
+
 drop table member cascade;
 
---* RestoreFromTempTable
+
 create table member (
   member_id int auto_increment not null comment '顧客ID'
   , company_id INT comment '会社ID'
