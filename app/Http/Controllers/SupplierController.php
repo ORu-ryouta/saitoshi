@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SupplierRequest;
 use App\Supplier;
-use App\company;
-use App\parts;
+use App\Company;
+use App\Parts;
 
 class SupplierController extends Controller
 {
