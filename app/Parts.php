@@ -101,5 +101,14 @@ class Parts extends Model
         
         
     }
+    
+    // partsとparts _idを持ってくる
+    public function  getpartsList()
+    {
+        $data = DB::select("SELECT parts.parts_id,parts.parts from "
+                . "parts inner join parts on parts.parts_id = parts.parts_id where parts.delete_flg = ".self::DELETE_FLG_OFF);
+       
+        return $data;
+    }
             
 }

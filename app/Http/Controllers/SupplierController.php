@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SupplierRequest;
 use App\Supplier;
+use App\company;
+use App\parts;
 
 class SupplierController extends Controller
 {
@@ -35,6 +37,19 @@ class SupplierController extends Controller
             $data =null;
         }
         
+        $aa = new Company(); //companyファイルに接続する
+        $data1 = $aa->getCompanyList();
+        if(!empty($_GET["companyId"])) { // 編集（会社IDがある時）
+            $companyId = $_GET["companyId"];
+        }
+        
+        $bb = new Parts(); //partsファイルに接続する
+        $data2 = $bb->getPartsList();
+        if(!empty($_GET["partsId"])) { // 編集（部品IDがある時）
+            $partsId = $_GET["partsId"];
+        }
+        
+        
         // インプット画面を表示
         return view('supplier.input', ['data' => $data]);
     }
@@ -50,11 +65,12 @@ class SupplierController extends Controller
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $supplier = new Supplier(); 
-        $supplier->company    = $request->company;
-        $supplier->fixer  = $request->fixer;
-        $supplier->address = $request->address;
-        $supplier->tel   = $request->tel;
-        $supplier->note   = $request->note;
+        $sale->parts_id  = $request->parts_id;
+        $sale->company_id  = $request->company_id;
+        $supplier->request_num    = $request->request_num;
+        $supplier->price  = $request->price;
+        $supplier->request_date = $request->request_date;
+       
       
         
          if(!empty($request->supplierId)) { // 更新画面
@@ -81,6 +97,28 @@ class SupplierController extends Controller
         if (empty($data)) {
             $data = null;
         }
+        
+        $aa = new Company(); //companyファイルに接続する
+       $data1 = $aa->getCompanyList();
+       
+       // data1を元に配列番号をcompany_idに値をcompanyにした配列を作成する
+       $companyNameList = array();
+       foreach ($data1 as $company) {
+           $companyNameList[$company->company_id] = $company->company; 
+       }      
+       
+       $bb = new Parts(); //partsファイルに接続する
+       $data2 = $bb->getpartsList();
+       
+       // data2を元に配列番号をparts_idに値をpartsにした配列を作成する
+       $partsNameList = array();
+       foreach ($data2 as $parts) {
+           $partsNameList[$parts->parts_id] = $parts->parts;
+       }      
+       
+       
+       
+       
 
     // ビューを返す
       return view('supplier.list', ['data' => $data]);

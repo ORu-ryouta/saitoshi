@@ -81,7 +81,11 @@ class Company extends Model
        
        $result = DB::select($sql);
        return array_shift($result);
-    }        
+    }      
+    
+    
+    
+   
             
     
     

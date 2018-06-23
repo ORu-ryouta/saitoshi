@@ -15,29 +15,35 @@
     <form method="POST" action="{{ route('supplier::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         @if (!empty($data)) <input type="hidden" class="form-control" name="supplierId" value="{{$data->supplier_id}}"> @endif
+        <div class="form-group">
+            <label>部品名</label><span class="label label-danger">必須</span>
+             <select name="parts_id">
+                 @foreach ($data2 as $partsName)
+                 <option value="{{$partsName->parts_id}}" @if (!empty($data)) @if ($data->parts_id == $partsName->parts_id ) checked @endif @endif>{{$partsName->parts
+                         }}</option>
+                 @endforeach
+             </select>
+        </div> 
+        <div class="form-group">
+            <label>会社名</label><span class="label label-danger">必須</span>
+             <select name="company_id">
+                 @foreach ($data1 as $companyName)
+                 <option value="{{$companyName->company_id}}" @if (!empty($data)) @if ($data->company_id == $companyName->company_id ) checked @endif @endif>{{$companyName->company}}</option>
+                 @endforeach
+             </select>
+        </div> 
         
         <div class="form-group">
-            <label>会社名/船名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名又は船舶名を入力してください" @if (!empty($data)) value="{{$data->company}}" @endif>
+            <label>仕入数</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="request_num" placeholder="仕入数を入力してください" @if (!empty($data)) value="{{$data->request_num}}"@endif>
         </div>
         <div class="form-group">
-            <label>代表者名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="fixer" placeholder="代表者名を入力してください" @if (!empty($data)) value="{{$data->fixer}}" @endif>
-        </div>
-        
-        <div class="form-group">
-            <label>住所</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="address" placeholder="住所を入力してください" @if (!empty($data)) value="{{$data->address}}"@endif>
+            <label>単価</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="price" placeholder="単価を入力してください" @if (!empty($data)) value="{{$data->price}}"@endif>
         </div>
         <div class="form-group">
-            <label>連絡先</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel}}"@endif>
-        </div>
-        <div class="form-group">
-            <label>備考</label>
-            <textarea name="note" row="4" cols="40" placeholder="備考を入力してください">
-                @if (!empty($data)) "{{$data->note}}"@endif
-            </textarea>
+            <label>仕入れ日</label><span class="label label-danger">必須</span>
+            <input type="text" class="form-control" name="request_date" placeholder="仕入れ日を入力してください" @if (!empty($data)) value="{{$data->request_date}}"@endif>
         </div>
        
  <!--       </div>

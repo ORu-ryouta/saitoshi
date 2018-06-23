@@ -24,27 +24,23 @@ class SupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'company' => 'required|max:100',
-            'fixer'=>'required|max:100',
-            'address'=>'required|max:100',
-            'tel' => 'required|max:255',
-            'note' => 'required',
+            'request_num' => 'required|max:100',
+            'price'=>'required|max:100',
+            'request_date'=>'required|max:100',
+           
             
         ];
     }
     public function messages()
     {
         return [
-            'company.required' => '会社名又は船舶名を入力してください。',
-            'company.max' => '会社名又は船舶名は指定文字数以内で入力してください。',
-            'fixer.required' => '代表者名を入力してください。',
-            'fixer.max' => '代表者名を正しく入力してください。',
-            'adles.required'=>'住所を正しく入力してください。',
-            'adles.max'=>'住所は指定文字数以内で入力してください。',
-            'tel.required' => '電話番号を入力してください。',
-            'tel.max' => '電話番号は指定文字数以内で入力してください。',
-            'note.required' => '備考欄を入力してください。',
-            'note.max' => '備考欄を入力してください。',
+            'request_num.required' => '仕入数を入力してください。',
+            'request_num.max' => '仕入数を指定文字数以内で入力してください。',
+            'price.required' => '単価を入力してください。',
+            'price.max' => '単価を正しく入力してください。',
+            'request_date.required'=>'仕入れ日を正しく入力してください。',
+            'request_date.max'=>'仕入れ日は指定文字数以内で入力してください。',
+            
             
         ];
     }

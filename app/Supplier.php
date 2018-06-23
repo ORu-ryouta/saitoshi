@@ -21,14 +21,6 @@ class Supplier extends Model
     	return $data;
     }
     
-    //companyとcompany_idを持ってくる
-    public function  getSupplierList()
-    {
-        $data = DB::select("SELECT supplier_id,supplier FROM supplier where delete_flg = ".self::DELETE_FLG_OFF);
-        
-        return $data;
-    }
-
 
     //指定したメンバーの存在確認
     public function supplierCheck($supplierId)
@@ -47,12 +39,11 @@ class Supplier extends Model
     //指定したメンバーを更新
     public function supplierUpdate($supplierData)
     {
-        $sql = "UPDATE supplier SET supplier = ".'"'.$supplierData->company.'"'.
-        ", fixer = ".'"'.$supplierData->fixer.'"'.
-        ", address = ".'"'.$supplierData->address.'"'.        
-        ", tel = ".'"'.$supplierData->tel.'"'.        
-        ", note = ".$supplierData->note.  
-        " where supplier_id = ".$supplierData->company_id;
+        $sql = "UPDATE supplier SET supplier_id = ".$supplierData->supplier_id.      
+        ", request_num = ".'"'.$supplierData->request_num.'"'.
+        ", price = ".'"'.$supplierData->price.'"'.        
+        ", request_date = ".'"'.$supplierData->request_date.'"'.  
+        " where supplier_id = ".$supplierData->supplier_id;
         
         DB::update($sql);
         

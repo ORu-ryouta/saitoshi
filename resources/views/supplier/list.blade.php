@@ -3,21 +3,21 @@
 <div class="container">
   <table border="1">
     <tr>
+      <th>部品名</th>
       <th>会社名</th>
-      <th>代表者名</th>
-      <th>住所</th>
-      <th>連絡先</th> 
-      <th>管理者備考</th>
+      <th>仕入数</th>
+      <th>単価</th> 
+      <th>仕入れ日</th>
       
     </tr>
       @if (!empty($data)) 
       @foreach($data as $d)
     <tr>
-      <th>{{$d->company}}</th>
-      <th>{{$d->fixer}}</th>
-      <th>{{$d->address}}</th>
-      <th>{{$d->tel}}</th>
-      <th>{{$d->note}}</th>
+      <th>{{$partsNameList[$d->parts_id]}}</th>
+      <th>{{$companyNameList[$d->company_id]}}</th>
+      <th>{{$d->request_num}}</th>
+      <th>{{$d->price}}</th>
+      <th>{{$d->request_date}}</th>
     </tr>
       
     <th>
