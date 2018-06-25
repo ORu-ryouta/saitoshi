@@ -18,9 +18,11 @@ class SupplierController extends Controller
      */
     public function supplierInput(SupplierRequest $request=null)
     {
+        
+    
         $aa = new Company(); //companyファイルに接続する
         $data1 = $aa->getCompanyList();
-        if(!empty($_GET["supplierId"])) { // 編集（会社IDがある時）
+        if(!empty($_GET["supplierId"]))  // 編集（会社IDがある時）
             $supplierId = $_GET["supplierId"];
         
         
