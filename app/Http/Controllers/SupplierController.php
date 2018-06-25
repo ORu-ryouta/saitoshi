@@ -24,8 +24,8 @@ class SupplierController extends Controller
             $supplierId = $_GET["supplierId"];
         
         
-        $bb = new Parts(); //partsファイルに接続する
-        $data2 = $bb->getPartsList();
+        $aa = new Parts(); //partsファイルに接続する
+        $data2 = $aa->getPartsList();
         if(!empty($_GET["supplierId"])) { // 編集（部品IDがある時）
             $supplierId = $_GET["supplierId"];
         }
