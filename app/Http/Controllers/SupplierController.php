@@ -24,11 +24,11 @@ class SupplierController extends Controller
             $supplierId = $_GET["supplierId"];
         
         
-        $aa = new Parts(); //partsファイルに接続する
-        $data2 = $aa->getPartsList();
+        $bb = new Parts(); //partsファイルに接続する
+        $data2 = $bb->getPartsList();
         if(!empty($_GET["supplierId"])) { // 編集（部品IDがある時）
             $supplierId = $_GET["supplierId"];
-        }
+        
         
         // Frameworksモデルのインスタンス化
         $md = new Supplier(); // カンパニーファイルに接続する
