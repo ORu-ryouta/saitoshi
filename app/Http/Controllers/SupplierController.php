@@ -45,11 +45,7 @@ class SupplierController extends Controller
         if (empty($data)) {
             $data =null;
         }
-        
-        
-        
-        
-        
+
         // インプット画面を表示
         return view('supplier.input', ['data' => $data,'data1' => $data1,'data2' => $data2]);
     }
