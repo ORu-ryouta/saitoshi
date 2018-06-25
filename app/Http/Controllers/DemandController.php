@@ -98,9 +98,6 @@ class DemandController extends Controller
        foreach ($data1 as $company) {
            $companyNameList[$company->company_id] = $company->company;
        }
-
-    
-           
         
     // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する

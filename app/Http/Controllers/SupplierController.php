@@ -51,7 +51,7 @@ class SupplierController extends Controller
         
         
         // インプット画面を表示
-        return view('supplier.input', ['data' => $data,'data1' => $data1,'data2' => $data2,]);
+        return view('supplier.input', ['data' => $data,'data1' => $data1,'data2' => $data2]);
     }
  
     /**
