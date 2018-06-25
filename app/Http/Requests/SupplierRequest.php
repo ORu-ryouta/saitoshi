@@ -24,9 +24,9 @@ class SupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'request_num' => 'required|max:100',
+            'supplier_num' => 'required|max:100',
             'price'=>'required|max:100',
-            'request_date'=>'required|max:100',
+            'supplier_date'=>'required|max:100',
            
             
         ];
@@ -34,12 +34,12 @@ class SupplierRequest extends FormRequest
     public function messages()
     {
         return [
-            'request_num.required' => '仕入数を入力してください。',
-            'request_num.max' => '仕入数を指定文字数以内で入力してください。',
+            'supplier_num.required' => '仕入数を入力してください。',
+            'supplier_num.max' => '仕入数を指定文字数以内で入力してください。',
             'price.required' => '単価を入力してください。',
             'price.max' => '単価を正しく入力してください。',
-            'request_date.required'=>'仕入れ日を正しく入力してください。',
-            'request_date.max'=>'仕入れ日は指定文字数以内で入力してください。',
+            'supplier_date.required'=>'仕入れ日を正しく入力してください。',
+            'supplier_date.max'=>'仕入れ日は指定文字数以内で入力してください。',
             
             
         ];

@@ -40,9 +40,9 @@ class Supplier extends Model
     public function supplierUpdate($supplierData)
     {
         $sql = "UPDATE supplier SET supplier_id = ".$supplierData->supplier_id.      
-        ", request_num = ".'"'.$supplierData->request_num.'"'.
+        ", supplier_num = ".'"'.$supplierData->supplier_num.'"'.
         ", price = ".'"'.$supplierData->price.'"'.        
-        ", request_date = ".'"'.$supplierData->request_date.'"'.  
+        ", supplier_date = ".'"'.$supplierData->supplier_date.'"'.  
         " where supplier_id = ".$supplierData->supplier_id;
         
         DB::update($sql);

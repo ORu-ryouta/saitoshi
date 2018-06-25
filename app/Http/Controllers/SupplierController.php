@@ -65,9 +65,9 @@ class SupplierController extends Controller
         $supplier = new Supplier(); 
         $supplier->parts_id  = $request->parts_id;
         $supplier->company_id  = $request->company_id;
-        $supplier->request_num    = $request->request_num;
+        $supplier->supplier_num    = $request->supplier_num;
         $supplier->price  = $request->price;
-        $supplier->request_date = $request->request_date;
+        $supplier->supplier_date = $request->supplier_date;
        
       
         
