@@ -63,8 +63,8 @@ class SupplierController extends Controller
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
         $supplier = new Supplier(); 
-        $parts->parts_id  = $request->parts_id;
-        $company->company_id  = $request->company_id;
+        $supplier->parts_id  = $request->parts_id;
+        $supplier->company_id  = $request->company_id;
         $supplier->request_num    = $request->request_num;
         $supplier->price  = $request->price;
         $supplier->request_date = $request->request_date;
