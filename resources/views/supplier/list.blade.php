@@ -15,9 +15,9 @@
     <tr>
       <th>{{$partsNameList[$d->parts_id]}}</th>
       <th>{{$companyNameList[$d->company_id]}}</th>
-      <th>{{$d->request_num}}</th>
+      <th>{{$d->supplier_num}}</th>
       <th>{{$d->price}}</th>
-      <th>{{$d->request_date}}</th>
+      <th>{{$d->supplier_date}}</th>
     </tr>
       
     <th>

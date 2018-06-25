@@ -34,7 +34,7 @@
         
         <div class="form-group">
             <label>仕入数</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="request_num" placeholder="仕入数を入力してください" @if (!empty($data)) value="{{$data->request_num}}"@endif>
+            <input type="text" class="form-control" name="supplier_num" placeholder="仕入数を入力してください" @if (!empty($data)) value="{{$data->supplier_num}}"@endif>
         </div>
         <div class="form-group">
             <label>単価</label><span class="label label-danger">必須</span>
@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
             <label>仕入れ日</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="request_date" placeholder="仕入れ日を入力してください" @if (!empty($data)) value="{{$data->request_date}}"@endif>
+            <input type="text" class="form-control" name="supplier_date" placeholder="仕入れ日を入力してください" @if (!empty($data)) value="{{$data->supplier_date}}"@endif>
         </div>
        
  <!--       </div>
