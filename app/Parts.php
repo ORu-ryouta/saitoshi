@@ -29,7 +29,13 @@ class Parts extends Model
     	return $data;
     }
     
-    //
+     //partsとparts_idを持ってくる
+    public function  getPartsList()
+    {
+        $data = DB::select("SELECT parts_id,parts FROM parts where delete_flg = ".self::DELETE_FLG_OFF);
+        
+        return $data;
+    }
 
     //指定したメンバーの存在確認
     public function partsCheck($partsId)
@@ -102,12 +108,6 @@ class Parts extends Model
         
     }
     
-    // partsとparts _idを持ってくる
-    public function  getpartsList()
-    {
-        $data = DB::select("SELECT parts.parts_id,parts.parts from parts  where parts.delete_flg = ".self::DELETE_FLG_OFF);
-       
-        return $data;
-    }
+  
             
 }

@@ -19,8 +19,7 @@
             <label>部品名</label><span class="label label-danger">必須</span>
              <select name="parts_id">
                  @foreach ($data2 as $partsName)
-                 <option value="{{$partsName->parts_id}}" @if (!empty($data)) @if ($data->parts_id == $partsName->parts_id ) checked @endif @endif>{{$partsName->parts
-                         }}</option>
+                 <option value="{{$partsName->parts_id}}" @if (!empty($data)) @if ($data->parts_id == $partsName->parts_id ) checked @endif @endif>{{$partsName->parts}}</option>
                  @endforeach
              </select>
         </div> 
