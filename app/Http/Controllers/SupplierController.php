@@ -18,8 +18,17 @@ class SupplierController extends Controller
      */
     public function supplierInput(SupplierRequest $request=null)
     {
-        if(!empty($_GET["supplierId"])) { // 編集（メンバーIDがある時）
+        $aa = new Company(); //companyファイルに接続する
+        $data1 = $aa->getCompanyList();
+        if(!empty($_GET["supplierId"])) { // 編集（会社IDがある時）
             $supplierId = $_GET["supplierId"];
+        
+        
+        $bb = new Parts(); //partsファイルに接続する
+        $data2 = $bb->getPartsList();
+        if(!empty($_GET["supplierId"])) { // 編集（部品IDがある時）
+            $supplierId = $_GET["supplierId"];
+        }
         
         // Frameworksモデルのインスタンス化
         $md = new Supplier(); // カンパニーファイルに接続する
@@ -37,21 +46,12 @@ class SupplierController extends Controller
             $data =null;
         }
         
-        $aa = new Company(); //companyファイルに接続する
-        $data1 = $aa->getCompanyList();
-        if(!empty($_GET["companyId"])) { // 編集（会社IDがある時）
-            $companyId = $_GET["companyId"];
-        }
         
-        $bb = new Parts(); //partsファイルに接続する
-        $data2 = $bb->getPartsList();
-        if(!empty($_GET["partsId"])) { // 編集（部品IDがある時）
-            $partsId = $_GET["partsId"];
-        }
+        
         
         
         // インプット画面を表示
-        return view('supplier.input', ['data' => $data]);
+        return view('supplier.input', ['data' => $data,'data1' => $data1,'data2' => $data2,]);
     }
  
     /**
