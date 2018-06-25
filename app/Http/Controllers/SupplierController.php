@@ -90,13 +90,6 @@ class SupplierController extends Controller
 
     public function supplierList()
     {
-    // Frameworksモデルのインスタンス化
-        $md = new Supplier(); // カンパニーファイルに接続する
-    // データ取得
-        $data = $md->getData();
-        if (empty($data)) {
-            $data = null;
-        }
         
         $aa = new Company(); //companyファイルに接続する
        $data1 = $aa->getCompanyList();
@@ -117,11 +110,16 @@ class SupplierController extends Controller
        }      
        
        
-       
-       
-
+    // Frameworksモデルのインスタンス化
+        $md = new Supplier(); // カンパニーファイルに接続する
+    // データ取得
+        $data = $md->getData();
+        if (empty($data)) {
+            $data = null;
+        }
+        
     // ビューを返す
-      return view('supplier.list', ['data' => $data]);
+      return view('supplier.list', ['data' => $data,'companyNameList' => $companyNameList,'partsNameList' => $partsNameList]);
     }
     
     //削除
