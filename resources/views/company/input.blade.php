@@ -12,6 +12,8 @@
 <div class="container">
     <h3>情報を入力してください。</h3>
  
+    
+    
     <form method="POST" action="{{ route('company::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         @if (!empty($data)) <input type="hidden" class="form-control" name="companyId" value="{{$data->company_id}}"> @endif
@@ -39,6 +41,11 @@
                 @if (!empty($data)) "{{$data->note}}"@endif
             </textarea>
         </div>
+        
+        
+        
+        
+        
        
  <!--       </div>
         <div class="form-group">

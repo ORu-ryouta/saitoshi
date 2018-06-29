@@ -46,6 +46,22 @@
       @endforeach
       @endif
   </table>
+   
+     <meta charset="utf-8">
+     <title>会社名の検索</title>
+   
+     <form action="" method="get">
+       <p>会社名の検索</p>
+       <input type="text" name="search" value="<?php echo $search_value ?>"><br>
+       <input type="submit" name="" value="検索">
+     </form>
+     <?php foreach ($stmt as $key): ?>
+       <p><strong>記事の名前</strong><br>
+         <?php echo $key['nam'] ?><br>
+         <?php echo $key['dat']; ?></p>
+     <?php endforeach; ?>
+    
+    
     <form method="GET" action="{{ route('company::input') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
