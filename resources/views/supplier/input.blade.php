@@ -1,5 +1,6 @@
 @extends('adminlte.layout')
 @section('content')
+
 @if (count($errors) > 0)
 <div class="alert alert-danger">
     <ul>
@@ -9,6 +10,7 @@
     </ul>
 </div>
 @endif
+
 <div class="container">
     <h3>情報を入力してください。</h3>
  
@@ -48,17 +50,6 @@
             <label>仕入れ日</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="supplier_date" placeholder="仕入れ日を入力してください" @if (!empty($data)) value="{{$data->supplier_date}}"@endif>
         </div>
-       
- <!--       </div>
-        <div class="form-group">
-            <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" >
-        </div>   -->
-<!-- 
-        <div class="form-group">
-            <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" >
-        </div>    -->
         
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
@@ -66,6 +57,7 @@
             </div>
         </div>
     </form>
+    
     <form method="GET" action="{{ route('supplier::list') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
@@ -73,5 +65,6 @@
             </div>
         </div>
     </form>
+    
 </div>
 @endsection
