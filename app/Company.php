@@ -8,15 +8,25 @@ use Illuminate\Support\Facades\DB;
 class Company extends Model
 {
     protected $table = 'company';
-    const DELETE_FLG_ON = 1;
+    
+    const DELETE_FLG_ON  = 1;
     const DELETE_FLG_OFF = 0;
     
     public $timestamps = false;
     
     //全てのデータを持ってくる
-    public function getData()
+    /*
+     * @param string $searchCompany
+     */
+    public function getData($searchCompany = null)
     {
-    	$data = DB::select("SELECT * FROM company where delete_flg = ".self::DELETE_FLG_OFF);
+        $sql = "SELECT * FROM company where delete_flg = ".self::DELETE_FLG_OFF;
+        // 検索文字列がある場合クエリにLIKE文を追加
+        if (!empty($searchCompany)){
+            $sql .= " AND company LIKE '%".$searchCompany."%'";
+        }
+        
+    	$data = DB::select($sql);
 
     	return $data;
     }
@@ -82,12 +92,6 @@ class Company extends Model
        $result = DB::select($sql);
        return array_shift($result);
     }      
-    
-    
-    
-   
-            
-    
-    
+     
     
 }

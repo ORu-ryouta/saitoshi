@@ -74,16 +74,21 @@ class CompanyController extends Controller
 
     public function companyList()
     {
-    // Frameworksモデルのインスタンス化
+        $search = null;
+        if (!empty($_GET["search"])) {
+            $search = $_GET["search"]; // 検索文字列
+        }
+        // Frameworksモデルのインスタンス化
         $md = new Company(); // カンパニーファイルに接続する
-    // データ取得
-        $data = $md->getData();
+        
+        // データ取得
+        $data = $md->getData($search);
         if (empty($data)) {
             $data = null;
         }
 
-    // ビューを返す
-      return view('company.list', ['data' => $data]);
+        // ビューを返す
+        return view('company.list', ['data' => $data]);
     }
     
     //削除
