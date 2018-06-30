@@ -24,10 +24,10 @@ class Demand extends Model
      */
     public function getData($searchDemand = null)
     {
-        $sql = "SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = "SELECT demand.* FROM demand inner join company on demand.company_id = company.company_id  where demand.delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
         if (!empty($searchDemand)){
-            $sql .= " AND company_id LIKE '%".$searchDemand."%'";
+            $sql .= " AND company.company LIKE '%".$searchDemand."%'";
         }
         
     	$data = DB::select($sql);
