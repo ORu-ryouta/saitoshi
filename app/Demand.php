@@ -27,7 +27,7 @@ class Demand extends Model
         $sql = "SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
         if (!empty($searchDemand)){
-            $sql .= " AND status LIKE '%".$searchDemand."%'";
+            $sql .= " AND companyNameList LIKE '%".$searchDemand."%'";
         }
         
     	$data = DB::select($sql);
