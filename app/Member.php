@@ -27,7 +27,7 @@ class Member extends Model
         $sql = "SELECT * FROM member where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
         if (!empty($searchMember)){
-            $sql .= " AND member LIKE '%".$searchMember."%'";
+            $sql .= " AND name LIKE '%".$searchMember."%'";
         }
         
     	$data = DB::select($sql);
