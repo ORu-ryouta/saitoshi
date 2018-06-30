@@ -62,7 +62,7 @@
         
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">確認する</button>
+                <button type="submit" class="btn btn-primary">保存</button>
             </div>
         </div>
     </form>
