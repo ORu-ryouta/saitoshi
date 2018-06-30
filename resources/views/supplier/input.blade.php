@@ -35,7 +35,7 @@
         </div> 
         
         <div class="form-group">
-            @if (!empty($data)){{$supplierNum = $data->supplier_num;}}
+            @if (!empty($data)) {{$supplierNum = $data->supplier_num}}
             @else {{$supplierNum = 0;}}
             @endif
             
