@@ -80,17 +80,19 @@
             </div>
         </div>
     </form>
-    <from method="GET" action="{{ route('sale::input') }}">
-        <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">売り上げ登録</button>
-            </div>
-        </div>
-    </from>
+    
     <form method="GET" action="{{ route('demand::list') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>
+            </div>
+        </div>
+    </form>
+    
+    <form method="GET" action="{{ route('sale::input') }}">
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">売上げ登録</button>
             </div>
         </div>
     </form>
