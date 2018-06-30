@@ -16,7 +16,7 @@ class PartsController extends Controller
      */
     public function partsInput(PartsRequest $request=null)
     {
-        if(!empty($_GET["partsId"])) { // 編集（パーツIDがある時）
+        if(!empty($_GET["partsId"])) { // 詳細（パーツIDがある時）
             $partsId = $_GET["partsId"];
         
         // Frameworksモデルのインスタンス化

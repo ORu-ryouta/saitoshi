@@ -16,7 +16,7 @@ class CompanyController extends Controller
      */
     public function companyInput(CompanyRequest $request=null)
     {
-        if(!empty($_GET["companyId"])) { // 編集（メンバーIDがある時）
+        if(!empty($_GET["companyId"])) { // 詳細（メンバーIDがある時）
             $companyId = $_GET["companyId"];
         
         // Frameworksモデルのインスタンス化

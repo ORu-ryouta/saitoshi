@@ -17,7 +17,7 @@ class SaleController extends Controller
      */
     public function saleInput(SaleRequest $request=null)
     {
-         if(!empty($_GET["saleId"])) { // 編集（メンバーIDがある時）
+         if(!empty($_GET["saleId"])) { // 詳細（メンバーIDがある時）
             $saleId = $_GET["saleId"];
         
         // Frameworksモデルのインスタンス化
@@ -40,7 +40,7 @@ class SaleController extends Controller
         
         $aa = new Demand(); //saleファイルに接続する
         $data1 = $aa->getDemandList();
-        if(!empty($_GET["demandId"])) { // 編集（注文IDがある時）
+        if(!empty($_GET["demandId"])) { // 詳細（注文IDがある時）
             $demandId = $_GET["demandId"];
         }
         

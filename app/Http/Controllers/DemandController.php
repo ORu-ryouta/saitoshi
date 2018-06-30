@@ -20,7 +20,7 @@ class DemandController extends Controller
         
         $aa = new Company(); //companyファイルに接続する
         $data1 = $aa->getCompanyList();
-        if(!empty($_GET["demandId"])) { // 編集（注文IDがある時）
+        if(!empty($_GET["demandId"])) { // 詳細（注文IDがある時）
             $demandId = $_GET["demandId"];
         
         // Frameworksモデルのインスタンス化

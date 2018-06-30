@@ -22,13 +22,13 @@ class SupplierController extends Controller
     
         $aa = new Company(); //companyファイルに接続する
         $data1 = $aa->getCompanyList();
-        if(!empty($_GET["supplierId"]))  // 編集（会社IDがある時）
+        if(!empty($_GET["supplierId"]))  // 詳細（会社IDがある時）
             $supplierId = $_GET["supplierId"];
         
         
         $bb = new Parts(); //partsファイルに接続する
         $data2 = $bb->getPartsList();
-        if(!empty($_GET["supplierId"])) { // 編集（部品IDがある時）
+        if(!empty($_GET["supplierId"])) { // 詳細（部品IDがある時）
             $supplierId = $_GET["supplierId"];
         
         

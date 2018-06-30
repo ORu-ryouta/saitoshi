@@ -16,7 +16,7 @@ class MemberController extends Controller
      */
     public function memberInput(MemberRequest $request=null)
     {
-        if(!empty($_GET["memberId"])) { // 編集（メンバーIDがある時）
+        if(!empty($_GET["memberId"])) { // 詳細（メンバーIDがある時）
             $memberId = $_GET["memberId"];
         
         // Frameworksモデルのインスタンス化

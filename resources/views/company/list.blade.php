@@ -30,7 +30,7 @@
               <input type="hidden" class="form-control" name="companyId" value="{{$d->company_id}}">
               <div class="form-group row">
                   <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-primary">編集</button>
+                      <button type="submit" class="btn btn-primary">詳細</button>
                   </div>
               </div>
           </form>

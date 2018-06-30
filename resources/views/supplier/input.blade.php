@@ -33,8 +33,12 @@
         </div> 
         
         <div class="form-group">
+            @if (!empty($data)){{$supplierNum = $data->supplier_num;}}
+            @else {{$supplierNum = 0;}}
+            @endif
+            
             <label>仕入数</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="supplier_num" placeholder="仕入数を入力してください" @if (!empty($data)) value="{{$data->supplier_num}}"@endif>
+            <input type="text" class="form-control" name="supplier_num" placeholder="仕入数を入力してください" value="{{$supplierNum}}">
         </div>
         <div class="form-group">
             <label>単価</label><span class="label label-danger">必須</span>
