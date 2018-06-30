@@ -38,7 +38,7 @@
         <div class="form-group">
             <label>備考</label>
             <textarea name="note" row="4" cols="40" placeholder="備考を入力してください">
-                @if (!empty($data)) {{$data->note}}@endif
+                @if (!empty($data))"{{$data->note}}"@endif
             </textarea>
         </div>
         
