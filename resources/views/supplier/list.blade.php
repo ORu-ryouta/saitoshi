@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <form method="GET" action="{{ route('supplier::list') }}">
-        <p>会社名の検索</p>
+        <p>部品名の検索</p>
         <input type="text" name="search" value="">
         <button type="submit" class="btn btn-primary">検索</button>
     </form>
