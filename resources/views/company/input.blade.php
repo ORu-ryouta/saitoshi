@@ -10,7 +10,7 @@
 </div>
 @endif
 <div class="container">
-    <h3>情報を入力してください。</h3>
+    <h3>取引先情報を入力してください。</h3>
  
     
     

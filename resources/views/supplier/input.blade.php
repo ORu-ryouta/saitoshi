@@ -12,7 +12,7 @@
 @endif
 
 <div class="container">
-    <h3>情報を入力してください。</h3>
+    <h3>仕入れ情報を入力してください。</h3>
  
     <form method="POST" action="{{ route('supplier::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

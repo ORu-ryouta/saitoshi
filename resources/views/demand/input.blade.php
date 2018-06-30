@@ -10,7 +10,7 @@
 </div>
 @endif
 <div class="container">
-    <h3>情報を入力してください。</h3>
+    <h3>注文情報を入力してください。</h3>
  
     <form method="POST" action="{{ route('demand::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
