@@ -20,9 +20,18 @@ class Sale extends Model
     public $timestamps = false;
 
     //全ての売り上げデータを持ってくる
-    public function getData()
+    /*
+     * @param string $searchSale
+     */
+    public function getData($searchSale = null)
     {
-    	$data = DB::select("SELECT * FROM sale where delete_flg = ".self::DELETE_FLG_OFF);
+        $sql = "SELECT * FROM sale where delete_flg = ".self::DELETE_FLG_OFF;
+        // 検索文字列がある場合クエリにLIKE文を追加
+        if (!empty($searchSale)){
+            $sql .= " AND sale LIKE '%".$searchSale."%'";
+        }
+        
+    	$data = DB::select($sql);
 
     	return $data;
     }

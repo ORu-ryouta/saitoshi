@@ -19,9 +19,18 @@ class Member extends Model
     public $timestamps = false;
 
     //全てのデータを持ってくる
-    public function getData()
+     /*
+     * @param string $searchMember
+     */
+    public function getData($searchMember = null)
     {
-    	$data = DB::select("SELECT * FROM member where delete_flg = ".self::DELETE_FLG_OFF);
+        $sql = "SELECT * FROM member where delete_flg = ".self::DELETE_FLG_OFF;
+        // 検索文字列がある場合クエリにLIKE文を追加
+        if (!empty($searchMember)){
+            $sql .= " AND member LIKE '%".$searchMember."%'";
+        }
+        
+    	$data = DB::select($sql);
 
     	return $data;
     }
@@ -29,6 +38,8 @@ class Member extends Model
     //指定したメンバーの存在確認
     public function memberCheck($memberId)
     {
+        
+        
         $sql = 'select member_id from member where member_id = '.$memberId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);

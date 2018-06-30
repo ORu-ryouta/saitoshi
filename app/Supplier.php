@@ -14,9 +14,18 @@ class Supplier extends Model
     public $timestamps = false;
     
     //全てのデータを持ってくる
-    public function getData()
+    /*
+     * @param string $searchSupplier
+     */
+    public function getData($searchSupplier = null)
     {
-    	$data = DB::select("SELECT * FROM supplier where delete_flg = ".self::DELETE_FLG_OFF);
+        $sql = "SELECT * FROM supplier where delete_flg = ".self::DELETE_FLG_OFF;
+        // 検索文字列がある場合クエリにLIKE文を追加
+        if (!empty($searchSupplier)){
+            $sql .= " AND supplier LIKE '%".$searchSupplier."%'";
+        }
+        
+    	$data = DB::select($sql);
 
     	return $data;
     }

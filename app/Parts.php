@@ -22,8 +22,10 @@ class Parts extends Model
     public $timestamps = false;
 
     //全てのデータを持ってくる
+    
     public function getData()
     {
+        
     	$data = DB::select("SELECT * FROM parts where delete_flg = ".self::DELETE_FLG_OFF);
 
     	return $data;

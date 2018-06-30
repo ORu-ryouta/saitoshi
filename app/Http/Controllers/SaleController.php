@@ -81,11 +81,15 @@ class SaleController extends Controller
 
     public function saleList()
     {
-        
-    // Frameworksモデルのインスタンス化
+        $search = null;
+        if (!empty($_GET["search"])) {
+            $search = $_GET["search"]; // 検索文字列
+        }  
+        // Frameworksモデルのインスタンス化
         $md = new Sale(); // 注文ファイルに接続する
-    // データ取得
-        $data = $md->getData();
+        //
+        // データ取得
+        $data = $md->getData($search);
         if (empty($data)) {
             $data = null;
         }

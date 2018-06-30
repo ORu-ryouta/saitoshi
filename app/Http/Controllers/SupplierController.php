@@ -88,6 +88,10 @@ class SupplierController extends Controller
 
     public function supplierList()
     {
+        $search = null;
+        if (!empty($_GET["search"])) {
+            $search = $_GET["search"]; // 検索文字列
+        }
         
         $aa = new Company(); //companyファイルに接続する
        $data1 = $aa->getCompanyList();

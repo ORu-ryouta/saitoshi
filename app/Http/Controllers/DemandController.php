@@ -90,6 +90,12 @@ class DemandController extends Controller
 
     public function demandList()
     {
+        
+       $search = null;
+        if (!empty($_GET["search"])) {
+            $search = $_GET["search"]; // 検索文字列
+        }
+        
        $aa = new Company(); //companyファイルに接続する
        $data1 = $aa->getCompanyList();
        
@@ -102,7 +108,7 @@ class DemandController extends Controller
     // Frameworksモデルのインスタンス化
         $md = new Demand(); // 注文ファイルに接続する
     // データ取得
-        $data = $md->getData();
+        $data = $md->getData($search);
         if (empty($data)) {
             $data = null;
         }

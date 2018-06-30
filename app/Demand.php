@@ -19,9 +19,18 @@ class Demand extends Model
     public $timestamps = false;
 
     //全ての注文データを持ってくる
+    /*
+     * @param string $searchDemand
+     */
     public function getData()
     {
-    	$data = DB::select("SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF);
+        $sql = "SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF;
+        // 検索文字列がある場合クエリにLIKE文を追加
+        if (!empty($searchDemand)){
+            $sql .= " AND demand LIKE '%".$searchDemand."%'";
+        }
+        
+    	$data = DB::select($sql);
 
     	return $data;
     }
