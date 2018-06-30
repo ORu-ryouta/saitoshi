@@ -73,16 +73,6 @@
             </select>
         </div> 
         
- <!--       </div>
-        <div class="form-group">
-            <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" >
-        </div>   -->
-<!-- 
-        <div class="form-group">
-            <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" >
-        </div>    -->
         
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
@@ -90,6 +80,13 @@
             </div>
         </div>
     </form>
+    <from method="GET" action="{{ route('sale::input') }}">
+    <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">売り上げ登録</button>
+            </div>
+        </div>
+    </from>
     <form method="GET" action="{{ route('demand::list') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
