@@ -22,7 +22,7 @@ class Demand extends Model
     /*
      * @param string $searchDemand
      */
-    public function getData()
+    public function getData($searchDemand = null)
     {
         $sql = "SELECT * FROM demand where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
