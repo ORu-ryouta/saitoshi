@@ -3,7 +3,7 @@
 
 <div class="container">
      <form method="GET" action="{{ route('demand::list') }}">
-       <p>名の検索</p>
+       <p>会社名　進陟状況　の検索</p>
        <input type="text" name="search" value="">
        <button type="submit" class="btn btn-primary">検索</button>
     </form>
