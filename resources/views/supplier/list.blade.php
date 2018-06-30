@@ -28,7 +28,7 @@
                     <input type="hidden" class="form-control" name="supplierId" value="{{$d->supplier_id}}">
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">詳細</button>
+                            <button type="submit" class="btn btn-primary">部品詳細</button>
                         </div>
                     </div>
                 </form>
