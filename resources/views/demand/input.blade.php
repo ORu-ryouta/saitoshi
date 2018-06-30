@@ -39,8 +39,7 @@
         </div>
         <div class="form-group">
             <label>作業内容</label><span class="label label-danger">必須</span>
-            <textarea name="work" row="4" cols="40" placeholder="作業内容を入力してください">
-                @if (!empty($data)){{$data->work}}@endif
+            <textarea name="work" row="4" cols="40" placeholder="作業内容を入力してください">@if (!empty($data)){{$data->work}}@endif
             </textarea>
         </div>
         <div class="form-group">
