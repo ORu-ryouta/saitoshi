@@ -34,8 +34,7 @@
         </div>
         <div class="form-group">
             <label>商談内容</label><span class="label label-danger">必須</span>
-            <textarea name="business" row="4" cols="40" style="text-align : left" placeholder="商談内容を入力してください">
-                @if (!empty($data)){{$data->business}}@endif
+            <textarea name="business" row="4" cols="40" style="text-align : left" placeholder="商談内容を入力してください">@if (!empty($data)){{$data->business}}@endif
             </textarea>      
         </div>
         <div class="form-group">
