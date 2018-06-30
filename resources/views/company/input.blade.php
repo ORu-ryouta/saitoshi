@@ -36,15 +36,16 @@
             <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください" @if (!empty($data)) value="{{$data->tel}}"@endif>
         </div>
         <div class="form-group">
-            <label>備考</label><span class="label label-danger">必須</span>
-            <textarea name="note" row="4" cols="40" placeholder="備考を入力してください">@if (!empty($data)){{$data->note}}@endif
+            <label>備考</label>
+            <textarea name="note" row="4" cols="40" placeholder="備考を入力してください">
+                @if (!empty($data)) "{{$data->note}}"@endif
             </textarea>
         </div>
         
         
         
         
-       
+        
        
  <!--       </div>
         <div class="form-group">
