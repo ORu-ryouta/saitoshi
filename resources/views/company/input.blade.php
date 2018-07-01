@@ -20,7 +20,7 @@
         
         <div class="form-group">
             <label>会社名/船名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名又は船舶名を入力してください" @if (!empty($data)) value="{{$data->company}}" @endif>
+            <input type="text" width="300px"  class="form-control" name="company" placeholder="会社名又は船舶名を入力してください" @if (!empty($data)) value="{{$data->company}}" @endif>
         </div>
         <div class="form-group">
             <label>代表者名</label><span class="label label-danger">必須</span>
