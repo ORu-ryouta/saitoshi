@@ -10,7 +10,15 @@ aside.main-sidebar {
    width: 8%;
 }
 
-header.logo a{
+ul.navbar-nav {
+    margin: 0px;               /* メニューバー外側の余白(ゼロ) */
+   padding: 0px 0px 0px 0px; /* メニューバー内側の余白(左に15px) */
+   background-color: #c70067; /* バーの背景色(濃い赤色) */
+   color: #c70067;
+   width: 0%;
+    
+}
+header.logo li{
     margin: 0px;               /* メニューバー外側の余白(ゼロ) */
    padding: 0px 0px 0px 0px; /* メニューバー内側の余白(左に15px) */
    background-color: #c70067; /* バーの背景色(濃い赤色) */
