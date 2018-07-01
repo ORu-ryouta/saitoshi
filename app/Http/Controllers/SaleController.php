@@ -17,34 +17,42 @@ class SaleController extends Controller
      */
     public function saleInput(SaleRequest $request=null)
     {
-         if(!empty($_GET["saleId"])) { // 詳細（メンバーIDがある時）
+        if(!empty($_GET["saleId"])) { // 詳細（メンバーIDがある時）
             $saleId = $_GET["saleId"];
-        
-        // Frameworksモデルのインスタンス化
-        $md = new Sale(); // カンパニーファイルに接続する
-        
-        
-        // データ取得
-        $data = $md->saleSelect($saleId);
-        
-        
-        } else { // 新規登録（カンパニーIDがない時）
+            // Frameworksモデルのインスタンス化
+            $md = new Sale(); // カンパニーファイルに接続する
+            // データ取得
+            $data = $md->saleSelect($saleId);
             
-        }
-       
-        if (empty($data)) {
+        } else if(!empty($_GET["demandId"])) { // 注文詳細からの遷移時（注文IDがある時）
+            $demandId = $_GET["demandId"]; // リクエストで送られたdemandIdを変数に格納
+
+            // saleテーブルに注文IDに該当するデータが存在するかチェック
+            $dbSale = new Sale(); // Sale.phpを使用するため$dbSaleとして宣言
+            $saleId = $dbSale->saleCheckByDemand($demandId); // demandId用チェック関数を使用　返り値:saleId)
+            
+            if ($saleId) {// demandIdに該当するsaleIdがあった
+                $data = $dbSale->saleSelect($saleId); // saleIdに紐づく全てのデータを取得する
+            } else { // saleIdが存在しないため代わりにdemandテーブルのデータを使用する
+                // demandテーブルに保存されている(demandId,price)を取得する
+                $dbDemand   = new Demand(); //Demand.phpを使用するため$dbDemandとして宣言
+                $demandData = $dbDemand->demandSelect($demandId); // demandIdに紐づく全てのデータを取得する
+                
+                // 取得したdemandデータをsaleのデータに変換する
+                $data = new Sale(); // saleクラスを使用する
+                $data->demand_id   = $demandData->demand_id;
+                $data->price       = $demandData->price;
+                $data->credit_date = now(); // とりあえず現在時刻
+            }
+        }else { // 新規登録
             $data =null;
         }
-        
-     
-        
-        $aa = new Demand(); //saleファイルに接続する
-        $data1 = $aa->getDemandList();
-        if(!empty($_GET["demandId"])) { // 詳細（注文IDがある時）
-            $demandId = $_GET["demandId"];
+       
+        if (empty($data)) { // データがないので新規登録。念のためデータを空にする
+            $data =null;
         }
-        
-        // インプット画面を表示
+
+        // 売上げ詳細画面を表示
         return view('sale.input', ['data' => $data,'data1' => $data1]);
     }
  

@@ -30,20 +30,7 @@
         <div class="form-group">
             <label>入金日</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="credit_date" placeholder="入金日を入力してください" @if (!empty($data)) value="{{$data->credit_date}}"@endif>
-        
-         
-        
-        
- <!--       </div>
-        <div class="form-group">
-            <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" >
-        </div>   -->
-<!-- 
-        <div class="form-group">
-            <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" >
-        </div>    -->
+ 
         
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">

@@ -49,6 +49,20 @@ class Sale extends Model
         
         return false;
     }
+    
+    // demandIdのsaleレコードが存在するか確認する
+    public function saleCheckByDemandId($demandId)
+    {
+        $sql = 'select sale_id from sale where demand_id = '.$demandId." AND delete_flg = ".self::DELETE_FLG_OFF;
+        
+        $result = DB::select($sql);
+
+        if(!empty($result)) {
+            return $result;
+        }
+        
+        return null;
+    }
 
     //指定した注文を更新
     public function saleUpdate($saleData)

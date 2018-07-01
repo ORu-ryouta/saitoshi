@@ -83,7 +83,7 @@
     
     <form method="GET" action="{{ route('sale::input') }}">
         <div class="form-group row">
-            <input type="hidden" class="form-control" name="demand_id" @if (!empty($data)) value="{{$data->demand_id}}"@endif>
+            <input type="hidden" class="form-control" name="demandId" @if (!empty($data)) value="{{$data->demand_id}}"@endif>
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">売上げ登録</button>
             </div>
