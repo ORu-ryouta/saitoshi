@@ -131,12 +131,23 @@ class SupplierController extends Controller
          
         $aa    = new Company(); //companyファイルに接続する
         $data1 = $aa->getCompanyList();
+        // data1を元に配列番号をcompany_idに値をcompanyにした配列を作成する
+       $companyNameList = array();
+       foreach ($data1 as $company) {
+           $companyNameList[$company->company_id] = $company->company; 
+       }      
         
         $bb    = new Parts(); //partsファイルに接続する
         $data2 = $bb->getpartsList();
         
+       // data2を元に配列番号をparts_idに値をpartsにした配列を作成する
+       $partsNameList = array();
+       foreach ($data2 as $parts) {
+           $partsNameList[$parts->parts_id] = $parts->parts;
+       }  
+        
     // ビューを返す
-        return view('supplier.list', ['data' => $data,'companyNameList' => $data1,'partsNameList' => $data2 ]);
+        return view('supplier.list', ['data' => $data,'companyNameList' => $data1,'partsNameList' => $partsNameList ]);
     }
 
 }
