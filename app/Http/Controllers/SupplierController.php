@@ -136,7 +136,7 @@ class SupplierController extends Controller
         $data2 = $bb->getpartsList();
         
     // ビューを返す
-        return view('supplier.list', ['data' => $data]);
+        return view('supplier.list', ['data' => $data,'companyNameList' => $companyNameList,'partsNameList' => $partsNameList ]);
     }
 
 }
