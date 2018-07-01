@@ -129,8 +129,10 @@ class SupplierController extends Controller
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
+        $aa    = new Company(); //companyファイルに接続する
         $data1 = $aa->getCompanyList();
         
+        $bb    = new Parts(); //partsファイルに接続する
         $data2 = $bb->getpartsList();
         
     // ビューを返す
