@@ -155,7 +155,7 @@ class DemandController extends Controller
         $categoryNameList = self::demandCategory();
          
     // ビューを返す
-        return view('demand.list', ['data' => $data]);
+        return view('demand.list', ['data' => $data,'companyNameList' => $companyNameList,'status' => $statusNameList,'category' => $categoryNameList]);
     }
     
      private function demandStatus(){
