@@ -34,7 +34,7 @@ class Parts extends Model
      //partsとparts_idを持ってくる
     public function  getPartsList()
     {
-        $data = DB::select("SELECT parts_id,parts FROM parts");
+        $data = DB::select("SELECT parts_id,parts FROM parts" );
         
         return $data;
     }
