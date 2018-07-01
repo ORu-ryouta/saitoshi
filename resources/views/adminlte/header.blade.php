@@ -7,7 +7,7 @@
             <!-- トップメニュー -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li><a href="">顧客管理</a></li>
+                    <li><a href="www.yanmar.com/jp/">顧客管理</a></li>
                 </ul>
             </nav>
 
