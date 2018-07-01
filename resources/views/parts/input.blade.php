@@ -37,7 +37,7 @@
             <label>カテゴリ</label><span class="label label-danger">必須</span>
              <select name="category">
                  @foreach ($partsCategory as $numKey => $categoryName)
-                 <option value="{{$numKey}}" @if (!empty($data)) @if ($data->category == $numKey) checked @endif @endif>{{$categoryName}}</option>
+                 <option value="{{$numKey}}" @if (!empty($data)) @if ($data->category == $numKey) selected @endif @endif>{{$categoryName}}</option>
                  @endforeach
             
              </select>
