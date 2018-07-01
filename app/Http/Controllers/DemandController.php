@@ -138,6 +138,21 @@ class DemandController extends Controller
         $md->demandDelete($demandId); // 指定した注文IDの削除
         
         $data = $md->getData(); // 全てのデータを持ってくる
+        
+        $aa = new Company(); //companyファイルに接続する
+       $data1 = $aa->getCompanyList();
+       
+       // data1を元に配列番号をcompany_idに値をcompanyにした配列を作成する
+       $companyNameList = array();
+       foreach ($data1 as $company) {
+           $companyNameList[$company->company_id] = $company->company;
+       }
+       
+       // 注文ステータスリスト取得
+        $statusNameList = self::demandStatus();
+        
+        // 注文カテゴリリスト取得
+        $categoryNameList = self::demandCategory();
          
     // ビューを返す
         return view('demand.list', ['data' => $data]);
