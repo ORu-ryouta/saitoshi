@@ -129,6 +129,10 @@ class SupplierController extends Controller
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
+        $data1 = $aa->getCompanyList();
+        
+        $data2 = $bb->getpartsList();
+        
     // ビューを返す
         return view('supplier.list', ['data' => $data]);
     }
