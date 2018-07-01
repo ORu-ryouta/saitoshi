@@ -14,6 +14,7 @@
     <!-- adminLTE style -->
     <link href="{{asset("bower_components/admin-lte/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("bower_components/admin-lte/dist/css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("/css/blade.css")}}" rel="stylesheet" type="text/css" />
 </head>
 <body class="skin-blue">
     <div class="wrapper">

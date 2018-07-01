@@ -20,7 +20,7 @@
         
         <div class="form-group">
             <label>会社名/船名</label><span class="label label-danger">必須</span>
-            <input type="text" width="300"  class="form-control" name="company" placeholder="会社名又は船舶名を入力してください" @if (!empty($data)) value="{{$data->company}}" @endif>
+            <input type="text" class="form-control" name="company" placeholder="会社名又は船舶名を入力してください" @if (!empty($data)) value="{{$data->company}}" @endif>
         </div>
         <div class="form-group">
             <label>代表者名</label><span class="label label-danger">必須</span>
@@ -41,23 +41,7 @@
                 @if (!empty($data)) "{{$data->note}}"@endif
             </textarea>
         </div>
-        
-        
-        
-        
-        
-       
- <!--       </div>
-        <div class="form-group">
-            <label>会社名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="company" placeholder="会社名を入力してください" >
-        </div>   -->
-<!-- 
-        <div class="form-group">
-            <label>船舶名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="shipId" placeholder="船舶名を入力してください" >
-        </div>    -->
-        
+     
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">保存</button>
