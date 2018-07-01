@@ -126,8 +126,17 @@ class SaleController extends Controller
         
         $data = $md->getData(); // 全てのデータを持ってくる
          
+        $aa = new Demand(); //demandファイルに接続する
+       $data1 = $aa->getdemandList();
+       
+       // data1を元に配列番号をdemand_idに値をdemandにした配列を作成する
+       $demandNameList = array();
+       foreach ($data1 as $demand) {
+           $demandNameList[$demand->demand_id] = $demand->company;
+       }      
+       
     // ビューを返す
-        return view('sale.list', ['data' => $data]);
+        return view('sale.list', ['data' => $data,'demandNameList' => $demandNameList]);
     }
 
 }
