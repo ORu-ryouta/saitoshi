@@ -56,9 +56,9 @@ class Sale extends Model
         $sql = 'select sale_id from sale where demand_id = '.$demandId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
-
         if(!empty($result)) {
-            return $result;
+            $result = array_shift($result);
+            return $result->sale_id;
         }
         
         return null;
