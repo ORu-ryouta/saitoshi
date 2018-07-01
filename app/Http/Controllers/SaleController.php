@@ -30,7 +30,8 @@ class SaleController extends Controller
             // saleテーブルに注文IDに該当するデータが存在するかチェック
             $dbSale = new Sale(); // Sale.phpを使用するため$dbSaleとして宣言
             $saleId = $dbSale->saleCheckByDemandId($demandId); // demandId用チェック関数を使用　返り値:saleId)
-            
+            $logPass="/home/vagrant/code/saitoshiHps/log/query.log";
+            error_log(print_r($saleId, TRUE), 3, $logPass);
             if ($saleId) {// demandIdに該当するsaleIdがあった
                 $data = $dbSale->saleSelect($saleId); // saleIdに紐づく全てのデータを取得する
             } else { // saleIdが存在しないため代わりにdemandテーブルのデータを使用する
