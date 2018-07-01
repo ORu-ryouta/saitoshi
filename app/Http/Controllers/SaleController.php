@@ -52,6 +52,9 @@ class SaleController extends Controller
         if (empty($data)) { // データがないので新規登録。念のためデータを空にする
             $data =null;
         }
+        
+        $dbDemand = new Demand();
+        $data1 = $dbDemand->getdemandList();
 
         // 売上げ詳細画面を表示
         return view('sale.input', ['data' => $data,'data1' => $data1]);
