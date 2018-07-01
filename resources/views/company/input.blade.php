@@ -10,7 +10,7 @@
 </div>
 @endif
 <div class="container">
-    <img src="{{ asset('/img/saitoshi_logo.png') }}" width="100%" height="100%" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
+    <background img src="{{ asset('/img/saitoshi_logo.png') }}" width="100%" height="100%" alt="ヤンマー特約店｜青森県深浦町｜齊敏機械｜ヤンマー舶用製品、マリンプレジャーの販売・整備・修理・加工" />
     <h3>取引先情報を入力してください。</h3>
  
     
