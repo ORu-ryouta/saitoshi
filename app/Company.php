@@ -34,7 +34,7 @@ class Company extends Model
     //companyとcompany_idを持ってくる
     public function  getCompanyList()
     {
-        $data = DB::select("SELECT company_id,company FROM company");
+        $data = DB::select("SELECT company_id,company FROM company" );
         
         return $data;
     }
