@@ -37,7 +37,7 @@ class DemandController extends Controller
         }
        
         if (empty($data)) {
-            $data =null;
+            $data = null;
         }
         
         // 注文ステータスリスト取得

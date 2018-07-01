@@ -27,9 +27,10 @@
         <div class="form-group">
             <label>注文内容</label><span class="label label-danger">必須</span>
             <select name="category">
-                <option value="0" @if (!empty($data)) @if ($data->category == "0" ) checked @endif @endif>メンテナンス</option>
-                <option value="1" @if (!empty($data)) @if ($data->category == "1" ) checked @endif @endif>発注</option>
-                <option value="2" @if (!empty($data)) @if ($data->category == "2" ) checked @endif @endif>クレーム</option>             
+                <?php $checked="checked" ?>
+                <option value="0"  >メンテナンス</option>
+                <option value="1" {{$checked}} >発注</option>
+                <option value="2"  >クレーム</option>             
             </select>
         </div>
         <div class="form-group">
