@@ -147,8 +147,11 @@ class SupplierController extends Controller
        }  
         
     // ビューを返す
-        return view('supplier.list', ['data' => $data,'companyNameList' => $data1,'partsNameList' => $partsNameList ]);
-    }
+        // return view('supplier.list', ['data' => $data,'companyNameList' => $data1,'partsNameList' => $partsNameList ]);
+    
+       self::supplierList();
+
+       }
 
 }
 
