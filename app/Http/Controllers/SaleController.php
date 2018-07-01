@@ -29,7 +29,7 @@ class SaleController extends Controller
 
             // saleテーブルに注文IDに該当するデータが存在するかチェック
             $dbSale = new Sale(); // Sale.phpを使用するため$dbSaleとして宣言
-            $saleId = $dbSale->saleCheckByDemand($demandId); // demandId用チェック関数を使用　返り値:saleId)
+            $saleId = $dbSale->saleCheckByDemandId($demandId); // demandId用チェック関数を使用　返り値:saleId)
             
             if ($saleId) {// demandIdに該当するsaleIdがあった
                 $data = $dbSale->saleSelect($saleId); // saleIdに紐づく全てのデータを取得する
