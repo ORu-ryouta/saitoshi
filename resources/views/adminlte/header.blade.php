@@ -7,8 +7,8 @@
             <!-- トップメニュー -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li><a href="www.yanmar.com/jp/">YANMAR</a></li>
-                    <li><a href="www.yanmar.com/jp/">YDS</a></li>
+                    <li><a href="www.yanmar.com/jp/" class="nav">YANMAR</a></li>
+                    <li><a href="www.yanmar.com/jp/" class="nav">YDS</a></li>
                 </ul>
             </nav>
 

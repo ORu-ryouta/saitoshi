@@ -2,8 +2,10 @@ input.form-control{
     width: 300px;
 }
 
-ul.nav navbar-nav li {
+ul.nav navbar-nav {
   font-size: 0;
+}
+li.nav {
   background-color: #222222;
   display: inline-block;
   font-size: 12px;
