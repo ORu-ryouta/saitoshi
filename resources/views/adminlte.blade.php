@@ -27,7 +27,7 @@
             <!-- トップメニュー -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li><a href="">顧客管理</a></li>
+                    <li><a href="">YANMAR</a></li>
                 </ul>
             </nav>
 
