@@ -48,7 +48,9 @@ class Supplier extends Model
     //指定したメンバーを更新
     public function supplierUpdate($supplierData)
     {
-        $sql = "UPDATE supplier SET supplier_id = ".$supplierData->supplier_id.      
+        $sql = "UPDATE supplier SET supplier_id = ".$supplierData->supplier_id.    
+        ", parts_id = ".'"'.$supplierData->parts_id.'"'.
+        ", company_id = ".'"'.$supplierData->company_id.'"'.       
         ", supplier_num = ".'"'.$supplierData->supplier_num.'"'.
         ", price = ".'"'.$supplierData->price.'"'.        
         ", supplier_date = ".'"'.$supplierData->supplier_date.'"'.  
