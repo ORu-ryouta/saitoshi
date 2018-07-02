@@ -1,5 +1,5 @@
 -- Project Name : ビジネス
--- Date/Time    : 2018/07/02 21:28:45
+-- Date/Time    : 2018/07/02 21:57:33
 -- Author       : saitoshikikaiyanmar
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
@@ -16,14 +16,14 @@
 
 
 create table admin_user (
-  admin_user_id int auto__increment not null comment '管理者ID'
+  admin_user_id id_increment not null comment '管理者ID'
   , name VARCHAR(255) not null comment '名前'
   , password VARCHAR(255) not null comment 'パスワード:半角英数字8桁のパス'
   , email VARCHAR(255) not null comment 'メールアドレス'
   , delete_flg TINYINT default 0 not null comment '削除フラグ'
   , recode_date DATETIME not null comment '登録日:YYYY/MM/DD'
   , update_time TIMESTAMP not null comment '更新日:YYYY/MM/DD'
-  , constraint user_PKC primary key (user_id)
+  , constraint admin_user_PKC primary key (admin_user_id)
 ) comment '管理者:' ;
 
 -- 取引先
