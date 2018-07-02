@@ -9,6 +9,10 @@ use App\Demand;
 
 class SaleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
    
 	/**
      * 入力画面
@@ -150,5 +154,7 @@ class SaleController extends Controller
     // ビューを返す
         return view('sale.list', ['data' => $data,'demandNameList' => $demandNameList]);
     }
+    
+    
 
 }

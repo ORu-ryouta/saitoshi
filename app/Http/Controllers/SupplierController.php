@@ -10,6 +10,10 @@ use App\Parts;
 
 class SupplierController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
    
 	/**
      * 入力画面
@@ -148,10 +152,10 @@ class SupplierController extends Controller
         
     // ビューを返す
         return view('supplier.list', ['data' => $data,'companyNameList' => $data1,'partsNameList' => $partsNameList ]);
-    
- 
-
+        
        }
+       
+       
 
 }
 

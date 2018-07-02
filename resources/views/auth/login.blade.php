@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@php
+    $title = __('Login');
+@endphp
+@extends('layouts.my')
 
 @section('content')
 <div class="container">
@@ -12,7 +15,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -43,7 +46,8 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
@@ -51,7 +55,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="submit" type="submit" name="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 

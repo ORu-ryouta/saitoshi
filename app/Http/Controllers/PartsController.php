@@ -8,6 +8,10 @@ use App\Parts;
 
 class PartsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
    
 	/**
      * 入力画面
@@ -197,6 +201,8 @@ class PartsController extends Controller
         
         return $partsCategory;
     }
+    
+    
     
 
 }

@@ -9,6 +9,10 @@ use App\Company;
 
 class DemandController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
    
 	/**
      * 入力画面
@@ -180,6 +184,8 @@ class DemandController extends Controller
            );
        return $categoryNameList;
      }
+     
+    
 
 }
 

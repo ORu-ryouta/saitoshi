@@ -8,6 +8,10 @@ use App\Member;
 
 class MemberController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
    
 	/**
      * 入力画面
@@ -105,6 +109,8 @@ class MemberController extends Controller
     // ビューを返す
         return view('member.list', ['data' => $data]);
     }
+    
+    
 
 }
 
