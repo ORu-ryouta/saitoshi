@@ -16,7 +16,7 @@
 
 
 create table user (
-  user_id id_increment not null comment '管理者ID'
+  user_id int auto__increment not null comment '管理者ID'
   , name VARCHAR(255) not null comment '名前'
   , password VARCHAR(255) not null comment 'パスワード:半角英数字8桁のパス'
   , email VARCHAR(255) not null comment 'メールアドレス'
