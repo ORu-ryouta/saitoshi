@@ -20,8 +20,8 @@ class AdminUserController extends Controller
      */
     public function adminUserInput(AdminUserRequest $request=null)
     {
-        if(!empty($_GET["admin_user_id"])) { // 詳細（メンバーIDがある時）
-            $adminUserId = $_GET["admin_user_id"];
+        if(!empty($_GET["admin_userId"])) { // 詳細（メンバーIDがある時）
+            $adminUserId = $_GET["admin_userId"];
         
         // Frameworksモデルのインスタンス化
         $md = new AdminUser(); // メンバーファイルに接続する
