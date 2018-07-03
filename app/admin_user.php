@@ -26,7 +26,7 @@ class Admin_User extends Model
     {
         $sql = "SELECT * FROM admin_user where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
-        if (!empty($searchMember)){
+        if (!empty($searchAdmin_User)){
             $sql .= " AND name LIKE '%".$searchAdmin_User."%'";
         }
         
@@ -55,8 +55,8 @@ class Admin_User extends Model
     public function admin_userUpdate($admin_userData)
     {
         $sql = "UPDATE admin_user SET name = ".'"'.$admin_userData->name.'"'.
-        ", address = ".'"'.$admin_userData->address.'"'.           
-        ", password = ".'"'.$admin_userData->password.'"'.
+        ", password = ".'"'.$admin_userData->password.'"'.          
+        ", email = ".'"'.$admin_userData->email.'"'.
         " where admin_user_id = ".$admin_userData->admin_user_id;
         
         DB::update($sql);
@@ -89,4 +89,3 @@ class Admin_User extends Model
     }        
             
 }
-
