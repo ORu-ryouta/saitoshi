@@ -12,9 +12,9 @@
 <div class="container">
     <h3>情報を入力してください。</h3>
  
-    <form method="POST" action="{{ route('admin_user::save') }}">
+    <form method="POST" action="{{ route('adminUser::save') }}">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-        @if (!empty($data)) <input type="hidden" class="form-control" name="admin_userId" value="{{$data->admin_user_id}}"> @endif
+        @if (!empty($data)) <input type="hidden" class="form-control" name="admin_user_id" value="{{$data->admin_user_id}}"> @endif
         
         <div class="form-group">
             <label>名前</label><span class="label label-danger">必須</span>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </form>
-    <form method="GET" action="{{ route('admin_user::list') }}">
+    <form method="GET" action="{{ route('adminUser::list') }}">
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">リストに戻る</button>

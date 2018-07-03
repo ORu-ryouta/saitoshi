@@ -26,8 +26,8 @@ class AdminUser extends Model
     {
         $sql = "SELECT * FROM admin_user where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
-        if (!empty($searchAdmin_User)){
-            $sql .= " AND name LIKE '%".$searchAdmin_User."%'";
+        if (!empty($searchAdminUser)){
+            $sql .= " AND name LIKE '%".$searchAdminUser."%'";
         }
         
     	$data = DB::select($sql);
@@ -36,11 +36,11 @@ class AdminUser extends Model
     }
 
     //指定したメンバーの存在確認
-    public function admin_userCheck($admin_userId)
+    public function admin_userCheck($adminUserId)
     {
         
         
-        $sql = 'select admin_user_id from admin_user where admin_user_id = '.$admin_userId." AND delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = 'select admin_user_id from admin_user where admin_user_id = '.$adminUserId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
 
