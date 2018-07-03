@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\AdminUserRequest;
-use App\AdminUser;
+use App\Http\Requests\Admin_userRequest;
+use App\Admin_user;
 
-class AdminUserController extends Controller
+class Admin_userController extends Controller
 {
     public function __construct()
     {
@@ -18,13 +18,13 @@ class AdminUserController extends Controller
      *
      * @return string
      */
-    public function adminUserInput(AdminUserRequest $request=null)
+    public function adminUserInput(Admin_userRequest $request=null)
     {
-        if(!empty($_GET["admin_userId"])) { // 詳細（メンバーIDがある時）
-            $adminUserId = $_GET["admin_userId"];
+        if(!empty($_GET["adminUserId"])) { // 詳細（メンバーIDがある時）
+            $adminUserId = $_GET["adminUserId"];
         
         // Frameworksモデルのインスタンス化
-        $md = new AdminUser(); // メンバーファイルに接続する
+        $md = new Admin_user(); // メンバーファイルに接続する
         
         // データ取得
         $data = $md->adminUserSelect($adminUserId);
@@ -47,18 +47,18 @@ class AdminUserController extends Controller
      *
      * @return string
      */
-    public function adminUserSave(AdminUserRequest $request)
+    public function adminUserSave(Admin_userRequest $request)
     {
      
         $nowDate = date('Y/m/d H:i:s');
         // データベース登録
-        $adminUser = new AdminUser(); 
+        $adminUser = new Admin_user(); 
         $adminUser->name    = $request->name;
         $adminUser->password  = $request->password;
         $adminUser->email   = $request->email;
         
-         if(!empty($request->admin_user_id)) { // 更新画面
-         $adminUser->admin_user_id = $request->admin_user_id;
+         if(!empty($request->adminUserId)) { // 更新画面
+         $adminUser->adminUser_id = $request->adminUserId;
           $data = $adminUser->adminUserUpdate($adminUser);
          }
        
@@ -80,7 +80,7 @@ class AdminUserController extends Controller
             $search = $_GET["search"]; // 検索文字列
         }
         // Frameworksモデルのインスタンス化
-        $md = new AdminUser(); // メンバーファイルに接続する
+        $md = new Admin_user(); // メンバーファイルに接続する
         
         // データ取得
         $data = $md->getData($search);
@@ -93,11 +93,11 @@ class AdminUserController extends Controller
     }
    
     //削除
-    public function adminUserDelete(AdminUserRequest $request=null)
+    public function adminUserDelete(Admin_userRequest $request=null)
     {
-        $adminUserId = $_GET["admin_user_id"]; // $memberIdに$_GETを入れる。
+        $adminUserId = $_GET["adminUserId"]; // $memberIdに$_GETを入れる。
 
-        $md = new AdminUser(); // メンバーファイルに接続する
+        $md = new Admin_User(); // メンバーファイルに接続する
         
         $md->adminUserDelete($adminUserId); // 指定したメンバーIDの削除
         
