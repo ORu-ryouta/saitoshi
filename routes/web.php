@@ -13,7 +13,7 @@
 
 Route::get('', function () {
 //    return view('welcome');
-    return view('company::list');
+    return view('welcome');
 });
 
 Route::get('admin',function(){
