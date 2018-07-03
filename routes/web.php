@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('adminlte', function () {
 //    return view('welcome');
-    return view('adminlte::sidebar');
+    return view('sidebar.blade.php');
 });
 
 Route::get('admin',function(){
