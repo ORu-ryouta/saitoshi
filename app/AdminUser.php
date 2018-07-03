@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Admin_User extends Model
+class AdminUser extends Model
 {
      /**
     * The table associated with the model.
@@ -22,7 +22,7 @@ class Admin_User extends Model
      /*
      * @param string $searchMember
      */
-    public function getData($searchAdmin_User = null)
+    public function getData($searchAdminUser= null)
     {
         $sql = "SELECT * FROM admin_user where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加

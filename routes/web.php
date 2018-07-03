@@ -102,17 +102,17 @@ Route::group(['as' => 'supplier::'], function() {
     Route::get('/supplierDelete',['as' => 'delete', 'uses' => 'SupplierController@supplierDelete']);
 });
 
-//admin_user画面群のルートパス
-Route::group(['as' => 'admin_user::'], function() {
+//adminUser画面群のルートパス
+Route::group(['as' => 'adminUser::'], function() {
  
     // 入力画面
-    Route::get('/admin_userInput', ['as' => 'input', 'uses' => 'Admin_userController@admin_userInput']);
+    Route::get('/adminUserInput', ['as' => 'input', 'uses' => 'Admin_userController@adminUserInput']);
     // 完了画面
-    Route::post('/admin_userSave', ['as' => 'save', 'uses' => 'Admin_userController@admin_userSave']);
+    Route::post('/adminUserSave', ['as' => 'save', 'uses' => 'Admin_userController@adminUserSave']);
     // リスト画面
-    Route::get('/admin_userList', ['as' => 'list', 'uses' => 'Admin_userController@admin_userList']);
+    Route::get('/adminUserList', ['as' => 'list', 'uses' => 'Admin_userController@adminUserList']);
     // 削除画面
-    Route::get('/admin_userDelete',['as' => 'delete', 'uses' => 'Admin_userController@admin_userDelete']);
+    Route::get('/adminUserDelete',['as' => 'delete', 'uses' => 'Admin_userController@adminUserDelete']);
 });
 
 Auth::routes();
