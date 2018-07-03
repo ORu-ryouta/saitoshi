@@ -13,7 +13,7 @@
 
 Route::get('', function () {
 //    return view('welcome');
-    return view('sidebar');
+    return adminlte('adminlte');
 });
 
 Route::get('admin',function(){
