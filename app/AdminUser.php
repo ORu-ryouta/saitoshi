@@ -5,14 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Admin_user extends Model
+class AdminUser extends Model
 {
      /**
     * The table associated with the model.
     *
     * @var string
     */
-    protected $table = 'adminUser';
+    protected $table = 'admin_user';
     const DELETE_FLG_ON = 1;
     const DELETE_FLG_OFF = 0;
     
@@ -22,12 +22,12 @@ class Admin_user extends Model
      /*
      * @param string $searchMember
      */
-    public function getData($searchAdmin_user= null)
+    public function getData($searchAdminUser= null)
     {
-        $sql = "SELECT * FROM adminUser where delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = "SELECT * FROM admin_user where delete_flg = ".self::DELETE_FLG_OFF;
         // 検索文字列がある場合クエリにLIKE文を追加
-        if (!empty($searchAdmin_user)){
-            $sql .= " AND name LIKE '%".$searchAdmin_user."%'";
+        if (!empty($searchAdminUser)){
+            $sql .= " AND name LIKE '%".$searchAdminUser."%'";
         }
         
     	$data = DB::select($sql);
@@ -36,11 +36,11 @@ class Admin_user extends Model
     }
 
     //指定したメンバーの存在確認
-    public function adminUserCheck($adminUserId)
+    public function admin_userCheck($admin_userId)
     {
         
         
-        $sql = 'select adminUser_id from adminUser where adminUser_id = '.$adminUserId." AND delete_flg = ".self::DELETE_FLG_OFF;
+        $sql = 'select admin_user_id from admin_user where admin_user_id = '.$admin_userId." AND delete_flg = ".self::DELETE_FLG_OFF;
         
         $result = DB::select($sql);
 
@@ -52,12 +52,12 @@ class Admin_user extends Model
     }
 
     //指定したメンバーを更新
-    public function adminUserUpdate($adminUserData)
+    public function admin_userUpdate($admin_userData)
     {
-        $sql = "UPDATE admin_user SET name = ".'"'.$adminUserData->name.'"'.
-        ", password = ".'"'.$adminUserData->password.'"'.          
-        ", email = ".'"'.$adminUserData->email.'"'.
-        " where adminUser_id = ".$adminUserData->adminUser_id;
+        $sql = "UPDATE admin_user SET name = ".'"'.$admin_userData->name.'"'.
+        ", password = ".'"'.$admin_userData->password.'"'.          
+        ", email = ".'"'.$admin_userData->email.'"'.
+        " where admin_user_id = ".$admin_userData->admin_user_id;
         
         DB::update($sql);
         
@@ -65,9 +65,9 @@ class Admin_user extends Model
     }
 
     //指定した、メンバーを削除
-    public function adminUserDelete($adminUserId)
+    public function admin_userDelete($admin_userId)
     {
-        $sql = "UPDATE adminUser SET delete_flg = ".self::DELETE_FLG_ON." where adminUser_id=".$adminUserId;
+        $sql = "UPDATE admin_user SET delete_flg = ".self::DELETE_FLG_ON." where admin_user_id=".$admin_userId;
         
         DB::update($sql);
         
@@ -78,11 +78,12 @@ class Admin_user extends Model
     /*
      * @param string $memberId
      */
-    public function adminUserSelect($adminUserId = null)
+    public function admin_userSelect($admin_userId = null)
     {
        $testAdmin_userId=2;
-       if (empty($adminUserId))$adminUserId=$testAdmin_userId;
-       $sql = "SELECT * FROM adminUser where adminUser_id=".$adminUserId;
+       if (empty($admin_userId))$admin_userId=$testAdminUserId;
+       $sql = "SELECT * FROM admi_user where admin_user_id=".$admin_userId;
+       
        
        $result = DB::select($sql);
        return array_shift($result);
