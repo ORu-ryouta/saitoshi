@@ -106,13 +106,13 @@ Route::group(['as' => 'supplier::'], function() {
 Route::group(['as' => 'admin_user::'], function() {
  
     // 入力画面
-    Route::get('/admin_userInput', ['as' => 'input', 'uses' => 'AdminUserController@adminUserInput']);
+    Route::get('/admin_userInput', ['as' => 'input', 'uses' => 'AdminUserController@admin_userInput']);
     // 完了画面
-    Route::post('/admin_userSave', ['as' => 'save', 'uses' => 'AdminUserController@adminUserSave']);
+    Route::post('/admin_userSave', ['as' => 'save', 'uses' => 'AdminUserController@admin_userSave']);
     // リスト画面
-    Route::get('/admin_userList', ['as' => 'list', 'uses' => 'AdminUserController@adminUserList']);
+    Route::get('/admin_userList', ['as' => 'list', 'uses' => 'AdminUserController@admin_userList']);
     // 削除画面
-    Route::get('/admin_userDelete',['as' => 'delete', 'uses' => 'AdminUserController@adminUserDelete']);
+    Route::get('/admin_userDelete',['as' => 'delete', 'uses' => 'AdminUserController@admin_userDelete']);
 });
 
 Auth::routes();
