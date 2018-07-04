@@ -32,8 +32,8 @@
         </form>
     </th>
     <th>
-        <form method="GET" action="{{ route('adminUser::delete') }}">
-            <input type="hidden" class="form-control" name="admin_user_id" value="{{$d->adminUser_id}}">
+        <form method="GET" action="{{ route('admin_user::delete') }}">
+            <input type="hidden" class="form-control" name="admin_user_id" value="{{$d->admin_user_id}}">
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" onclick="return submitcheck();">削除</button>
