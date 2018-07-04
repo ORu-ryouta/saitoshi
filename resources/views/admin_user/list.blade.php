@@ -8,7 +8,6 @@
     </form>
   <table border="1">
     <tr>
-      <th></th>
       <th>名前</th>
       <th>パスワード</th>
       <th>メールアドレス</th>
