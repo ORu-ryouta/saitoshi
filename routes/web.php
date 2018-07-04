@@ -17,7 +17,7 @@ Route::get('', function () {
 });
 
 Route::get('admin',function(){
-    return view('sample');
+    return view('member/list');
 });
 
 //member画面群のルートパス
